@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+				*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 12px 6px 0px 8px;
+	    	}
+	    	.mui-content{
+	    		width: 90%;
+	    		margin: 10px auto;
+	    	}
+	    	.top-content{
+	    		height: 42px;
+	    	}
+	    	.waihongdian{
+	    		padding: 5px;
+	    		width: 20px;
+	    		height: 20px;
+	    		border-radius:40px;
+	    		background: #ffe8df;
+	    		margin-top: 15px;
+	    		float: left;
+	    		
+	    	}
+	    	.neihongdian{
+	    		width: 10px;
+	    		height: 10px;
+	    		border-radius:20px;
+	    		background: #ff9a70;
+	    	}
+	    	.wailandian{
+	    		padding: 5px;
+	    		width: 20px;
+	    		height: 20px;
+	    		border-radius:40px;
+	    		background: #d4f5fe;
+	    		margin-top: 15px;
+	    		float: left;
+	    	}
+	    	.neilandian{
+	    		width: 10px;
+	    		height: 10px;
+	    		border-radius:20px;
+	    		background: #26c6ff;
+	    	}
+	    	.top-title{
+	    		float: left;
+	    		margin-top: 12px;
+	    		margin-left: 5px;
+	    		height: 30px;
+	    	}
+	    	.body-content{
+	    		border-left:2px solid #999999;
+	    		margin-left: 8px;
+	    		padding-left:10px;
+	    		padding-top:5px;
+	    		padding-bottom:5px;
+	    	}
+	    	.body-content p{
+	    		font-size: 16px;
+	    		color: #222222;
+	    		margin:10px 5px;
+	    	}
+	    	.body-content span{
+	    		color: #CF2D28;
+	    	}
+	    	.list{
+	    		line-height: 30px;
+	    	}
+	    	.list01{
+	    		color: #000000!important;
+	    	}
+	    	.list02{
+	    		color: #26c6ff!important;
+	    	}
+	    	.list03{
+	    		color: #888!important;
+	    	}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+			});
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">提货信息</h1>
+		    <a class="mui-pull-right top-tubiao top-tubiao-right" id="help">
+				<div class="mui-text-center">
+					<img src="img/kefu.png" alt="" />
+				</div>
+			</a>
+		</header>
+		<div class="mui-content">
+			<div class="top-content">
+				<div class="waihongdian">
+					<div class="neihongdian">
+					</div>
+				</div>
+				<div class="top-title">
+					备案号:000001
+				</div>
+			</div>
+			<div class="body-content">
+				<p>时间: <span>2017.09.05</span></p>
+				<p>地点: <span>滨海新区天津港······</span></p>
+			</div>
+			<div class="top-content">
+				<div class="wailandian">
+					<div class="neilandian">
+					</div>
+				</div>
+				<div class="top-title">
+					车辆使用情况
+				</div>
+			</div>
+			<div class="body-content">
+				<div class="list"><span class="list01">津A00001</span><span class="mui-pull-right list02">丙烯30吨</span></div>
+				<div class="list"><span class="list01">津A00001</span><span class="mui-pull-right list02">丙烯30吨</span></div>
+				<div class="list"><span class="list01">津A00001</span><span class="mui-pull-right list03">未使用</span></div>
+			</div>
+		</div>
+	</body>
+
+</html>

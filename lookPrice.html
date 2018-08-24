@@ -1,0 +1,412 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+				*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 12px 6px 0px 8px;
+	    	}
+	    	
+	    	.content{
+	    		width: 100%;
+	    	}
+	    	.content-list-top{
+	    		width: 100%;
+	    		height: 35px;
+
+	    	}
+	    	.content-list-top img{
+	    		width: 15px;
+	    		height: 20px;
+	    	}
+	    	.dian{
+	    		width: 10px;
+	    		height: 10px;
+	    		border-radius:20px;
+	    		background: #ff9a70;
+	    	}
+	    	.waiquan{
+	    		width: 20px;
+	    		height: 20px;
+	    		border-radius:20px;
+	    		background: #ffe8df;
+	    		padding: 5px;
+	    		margin-top: 12px;
+	    		margin-left: 7px;
+	    	}
+	    	.list-left-photo{
+	    		margin-top: 10px;
+	    		margin-left: 10px;
+	    	}
+	    	.list-left-photo img{
+	    		height: 20px;
+	    	}
+	    	.num{
+	    		margin-top: 7px;
+	    		margin-left: 10px;
+	    		line-height: 30px;
+	    		font-size:16px;
+	    		color:#777;
+	    		
+	    	}
+	    	.mui-btn-danger{
+	    		color:#ff9a70!important;
+	    		border-color:#ff9a70!important ;
+	    	}
+	    	.button{
+	    		height: 35px;
+	    		width: 100%;
+	    		text-align: right;
+	    	}
+	    	.button button{
+	    		margin-top: 10px;
+	    		padding: 3px 5px 0px 5px;
+	    	}
+	    	.mui-btn-outlined{
+	    		font-size: 14px
+	    	}
+	    	.kuozhan{
+	    		height: 80px;
+	    		padding-left: 20px;
+	    	}
+	    	.kuozhan button{
+	    		margin-top: 12px;
+	    		margin-right: 20px;
+	    		padding-bottom:0px ;
+	    	}
+	    	.info{
+	    		margin: 0px 15px auto 0px;
+	    		background: url("img/background.png") no-repeat;
+	    		background-size:100% 100% ;
+	    		padding-top: 8px;
+	    		float: left;
+	    		width: 85%;
+	    	}
+	    	.info span{
+	    		margin-left: 15px;
+	    		color: white;
+	    		font-size: 15px;
+	    	}
+	    	.dixian{
+	    		height: 30px;
+	    		width: 30%;
+	    		float: left;
+	    		line-height: 30px;
+	    		margin-left: 5px;
+	    	}
+	    	.dixian hr{
+	    		margin-top: 20px; 
+	    		height:20px;
+	    		border:none;
+	    		border-top:2px solid #ddd;"
+	    	}
+	    	.dixian-span{
+	    		height: 30px;
+	    		float: left;
+	    		line-height: 30px;
+	    		padding-top: 6px;
+	    	}
+	    	.dixian-span span{
+	    		margin-top: 20px;
+	    		margin-left: 5px;
+	    		font-size: 15px;
+	    		color: #999;
+	    	}
+	    	.list-span{
+	    		line-height: 30px;
+	    		width: 100%;
+	    	}
+	    	.div-top{
+	    		width: 100%;
+	    		height: 24px;
+	    	}
+	    	.content-address{
+	    		color: #555;
+	    		border-left: solid 3px #999 ;
+	    		padding-bottom: 8px;
+	    		padding-top: 5px;
+	    		padding-left: 15px;
+	    		margin-left: 15px;
+	    		float: left;
+	    		margin-top: -40px;
+	    	}
+	    	.mui-btn{
+	    		padding:2px 5px;
+	    	}
+	    	.list-span-top{
+	    		height: 40px;
+	    	}
+	    	.list-span-top-img{
+	    		float: left;
+	    	}
+	    	.list-span-top-img img{
+	    		width: 30px;
+	    		margin-left: 20px;
+	    	}
+	    	.list-span-top-span{
+	    		line-height: 30px;
+	    	}
+	    	.list-span-top-span span{
+	    		margin: auto 20px;
+	    	}
+	    	.mui-icon-arrowdown{
+	    		margin-right: 5px;
+	    		position: relative;
+	    		bottom: 30px;
+	    		font-size: 30px!important;
+	    	}
+	    	#release{
+	    		font-size: 16px!important;
+	    		width: 80%;
+				margin: auto;
+				border-radius:20px!important ;	    	
+	    	}
+	    	.whole{
+	    		margin-left: -30px;
+	    		margin-top: 10px;
+	    		float: left;
+	    		width: 108%;
+	    	}
+	    	.info-left{
+	    		width: 10%;
+	    		height: 30px;
+	    		float: left;
+	    		line-height: 130;
+	    		margin-top: 60px;
+	    		
+	    	}
+	    	.info-left img{
+	    		width: 30px!important;
+	    		height: 30px;
+	    		float: left;
+	    	}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js">
+		</script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+			});
+			function huoqu(){
+				mui.openWindow({
+					url:'carPoolOrder.html',id:'carPoolOrder'
+				})
+			}
+			function hid(span){
+//			console.log(img.src);
+		
+			var nextdiv=span.parentNode;
+			var div=$(nextdiv).find(".hid")[0];
+			
+			
+			if (div.style.display == "none"){
+				span.class = "mui-icon mui-icon-arrowup";
+				div.style.display = "block"; 
+			}else{
+				span.class = "mui-icon mui-icon-arrowdown";
+				div.style.display = "none"; 
+			}
+		}
+			$(function(){
+				$(".img").click(function(){
+					if(this.src.indexOf("img/duigou.png")>=0){
+						this.src="img/duigou_1.png";
+					}else{
+						this.src="img/duigou.png";
+					}
+				})
+			})
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">查看报价</h1>
+		    <a id="help"class="mui-pull-right top-tubiao top-tubiao-right">
+				<div class="mui-text-center">
+					<img src="img/kefu.png" alt="" />
+				</div>
+			</a>
+		</header>
+		<div class="mui-content">
+			<div class="content">
+				<div class="content-list">
+					<div class="content-list-top">
+						<div class="waiquan mui-pull-left">
+							<div class="dian"></div>
+						</div>
+						<div class="mui-pull-left list-left-photo">
+							<img src="img/fire-1.png" alt="" />
+						</div>
+						<div class="mui-pull-left num">171020120586</div>
+						<div class="mui-pull-right kuozhan">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined"onclick="huoqu()">获取匹配</button>
+						</div>
+						
+					</div>
+					<div class="content-address">
+						<div class="div"><span>南开———乌马营</span></div>
+						<div class="whole">
+							<div class="info-left">
+								<img src="img/duigou.png"class="img" alt="" />
+							</div>
+							<div class="info"id="info" >
+								<div class="div-top">
+									<span class="mui-pull-left">营业执照:171020120586</span>
+									<span class="mui-pull-right"style="float: right;margin-right: 10px;">2017年7月6日</span>
+								</div>
+								<hr style="border: dashed 1px white;"/>
+								<div class="div-content">
+									<div class="list-span-top">
+										<div class="list-span-top-img">
+											<img src="img/img.png" alt="" />
+										</div>
+										<div class="list-span-top-span">
+											<span>田伊郎</span>
+											<span>中介司机</span>
+										</div>
+									</div>
+									<div class="list-span">
+										<span>报价:&nbsp; </span><span style="font-size: 22px;margin-left: 2px;">￥</span>
+										<span style="font-size: 30px;margin-left: 0px;">22,082.00</span>
+										<span style="margin-left: 0px;">元/吨</span>
+										
+									</div>
+									<div class="hid" style="display: none;">
+										<div class="list-span">
+											<span>成员数:&nbsp; 2人</span>
+										</div>
+										<div class="list-span">
+											<span>完成单数:&nbsp; 46</span>
+										</div>
+										<div class="list-span">
+											<span>常运路线:&nbsp; 天津——山东</span>
+										</div>
+										<div class="list-span">
+											<span>常驻地址:&nbsp; 山东</span>
+										</div>
+									</div>
+									<span class="mui-icon mui-icon-arrowdown mui-pull-right"onclick="hid(this)"></span>
+								</div>
+							</div>
+						</div>
+						<div class="whole">
+							<div class="info-left">
+								<img src="img/duigou.png"class="img" alt="" />
+							</div>
+							<div class="info"id="info" >
+								<div class="div-top">
+									<span class="mui-pull-left">营业执照:171020120586</span>
+									<span class="mui-pull-right"style="float: right;margin-right: 10px;">2017年7月6日</span>
+								</div>
+								<hr style="border: dashed 1px white;"/>
+								<div class="div-content">
+									<div class="list-span-top">
+										<div class="list-span-top-img">
+											<img src="img/img.png" alt="" />
+										</div>
+										<div class="list-span-top-span">
+											<span>田伊郎</span>
+											<span>中介司机</span>
+										</div>
+									</div>
+									<div class="list-span">
+										<span>报价:&nbsp; </span><span style="font-size: 22px;margin-left: 2px;">￥</span>
+										<span style="font-size: 30px;margin-left: 0px;">22,082.00</span>
+										<span style="margin-left: 0px;">元/吨</span>
+										
+									</div>
+									<div class="hid" style="display: none;">
+										<div class="list-span">
+											<span>成员数:&nbsp; 2人</span>
+										</div>
+										<div class="list-span">
+											<span>完成单数:&nbsp; 46</span>
+										</div>
+										<div class="list-span">
+											<span>常运路线:&nbsp; 天津——山东</span>
+										</div>
+										<div class="list-span">
+											<span>常驻地址:&nbsp; 山东</span>
+										</div>
+									</div>
+									<span class="mui-icon mui-icon-arrowdown mui-pull-right"onclick="hid(this)"></span>
+								</div>
+							</div>
+						</div>
+						<div class="whole">
+							<div class="info-left">
+								<img src="img/duigou.png"class="img" alt="" />
+							</div>
+							<div class="info"id="info" >
+								<div class="div-top">
+									<span class="mui-pull-left">营业执照:171020120586</span>
+									<span class="mui-pull-right"style="float: right;margin-right: 10px;">2017年7月6日</span>
+								</div>
+								<hr style="border: dashed 1px white;"/>
+								<div class="div-content">
+									<div class="list-span-top">
+										<div class="list-span-top-img">
+											<img src="img/img.png" alt="" />
+										</div>
+										<div class="list-span-top-span">
+											<span>田伊郎</span>
+											<span>中介司机</span>
+										</div>
+									</div>
+									<div class="list-span">
+										<span>报价:&nbsp; </span><span style="font-size: 22px;margin-left: 2px;">￥</span>
+										<span style="font-size: 30px;margin-left: 0px;">22,082.00</span>
+										<span style="margin-left: 0px;">元/吨</span>
+										
+									</div>
+									<div class="hid" style="display: none;">
+										<div class="list-span">
+											<span>成员数:&nbsp; 2人</span>
+										</div>
+										<div class="list-span">
+											<span>完成单数:&nbsp; 46</span>
+										</div>
+										<div class="list-span">
+											<span>常运路线:&nbsp; 天津——山东</span>
+										</div>
+										<div class="list-span">
+											<span>常驻地址:&nbsp; 山东</span>
+										</div>
+									</div>
+									<span class="mui-icon mui-icon-arrowdown mui-pull-right"onclick="hid(this)"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="height: 50px;width: 10px;float: left;">	</div>
+			</div>
+			<nav class="mui-bar mui-bar-tab mui-text-center">
+			    <input type="submit" value="确 认 成 交" id="release"class="mui-btn mui-text-center ">
+			</nav>
+		</div>
+	</body>
+
+</html>

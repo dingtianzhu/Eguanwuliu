@@ -1,0 +1,512 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+			*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 20px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 12px 6px 0px 8px;
+	    	}
+	    	.mui-slider{z-index: auto;}
+        .mui-pull-top-tips {
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                margin-left: -25px;
+                width: 40px;
+                height: 70px;
+                border-radius: 100%;
+            }
+            .mui-bar~.mui-pull-top-tips {
+                top: 24px;
+            }
+            .mui-pull-top-wrapper {
+                width: 70px;
+                height: 70px;
+                display: block;
+                text-align: center;
+                background-color: #efeff4;
+                border: 1px solid #ddd;
+                border-radius: 25px;
+                background-clip: padding-box;
+                box-shadow: 0 4px 10px #bbb;
+                overflow: hidden;
+            }
+            .mui-pull-top-tips.mui-transitioning {
+                -webkit-transition-duration: 200ms;
+                transition-duration: 200ms;
+            }
+            .mui-pull-top-tips .mui-pull-loading {
+                /*-webkit-backface-visibility: hidden;
+                -webkit-transition-duration: 400ms;
+                transition-duration: 400ms;*/
+
+                margin: 0;
+            }
+            .mui-pull-top-wrapper .mui-icon,
+            .mui-pull-top-wrapper .mui-spinner {
+                margin-top: 7px;
+            }
+            .mui-pull-top-wrapper .mui-icon.mui-reverse {
+                /*-webkit-transform: rotate(180deg) translateZ(0);*/
+            }
+            .mui-pull-bottom-tips {
+                text-align: center;
+                background-color: #efeff4;
+                font-size: 15px;
+                line-height: 70px;
+                color: #777;
+            }
+            .mui-pull-top-canvas {
+                overflow: hidden;
+                background-color: #fafafa;
+                border-radius: 70px;
+                box-shadow: 0 4px 10px #bbb;
+                width: 70px;
+                height: 70px;
+                margin: 0 auto;
+            }
+            .mui-pull-top-canvas canvas {
+                width: 70px;
+            }
+            .mui-slider-indicator.mui-segmented-control {
+                background: white;
+            }
+            .mui-scroll-wrapper.mui-segmented-control{
+            	height: 70px;
+            }
+            .mui-scroll{
+            	width: 100%!important;
+            	height: 70px!important;
+            }
+            .mui-fullscreen .mui-segmented-control~.mui-slider-group{
+            	top:70px;
+            }
+            .mui-segmented-control .mui-control-item{
+            	line-height: 20px;
+            	margin-top: 20px;
+            	padding: 0px!important;
+            }
+            /*样式*/
+           *{
+				font-family: "微软雅黑";
+			}
+	    	.mui-control-item img{
+	    		width: 20px;
+	    		height: 20px;
+	    	}
+	    	.content{
+	    		background: url("img/cue_back_1.png") no-repeat;
+				background-size:100% 100% ;
+				margin: 5px auto auto 10px;
+				padding: 10px 10px 15px 5px;
+	    	}
+	    	.content-top{
+	    		height: 50px;	
+	    	}
+	    	.content-top-h5{
+	    		line-height: 50px;
+	    		color: white;
+	    		margin-left:10px ;
+	    		float:left;
+	    		font-size: 16px;
+	    	}
+	    	.content-top-left-img{
+	    		float: left;
+	    		margin-left: 15px;
+	    	}
+	    	.content-top-left-img img{
+	    		height: 50px;
+	    		width: 50px!important;
+	    		border-radius: 30px;
+	    	}
+	    	.content-top-right-img{
+	    		float: right;
+	    		margin-right: 20px;
+	    	}
+	    	.content-top-right-img img{
+	    		height: 10px;
+	    		line-height: 50px;
+	    		width: 20px!important;
+	    		margin: 20px 5px auto auto;
+	    	}
+	    	.content-body{
+	    		border-top: 1px solid white;
+	    		margin-top: 10px;
+	    		width: 98%;
+	    		padding-bottom: 15px;
+	    	}
+	    	.body-list{
+	    		line-height: 20px;
+	    		color: white;
+	    		font-size: 16px;
+	    		padding: 10px;
+	    	}
+	    	.join{
+	    		margin: 0px;
+	    		color: white;
+	    		padding: 2px 2px 0px 2px;
+	    		margin: 15px 12px auto auto;
+	    	}
+	    	
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+			});
+			(function($){
+				$(".mui-scroll-wrapper").scroll({
+				bounce: true,//滚动条是否有弹力默认是true
+				indicators: true, //是否显示滚动条,默认是true
+				});
+				
+			})(mui);
+			$(document).ready(function () {
+				$('a.btn-ok, #dialog-overlay, #dialog-box').click(function () {  
+					$('#dialog-overlay, #dialog-box').hide();  
+					return false;
+				});
+				$(window).resize(function () {
+					if (!$('#dialog-box').is(':hidden')) popup();  
+				}); 
+			});
+			function outmed(){
+				mui.openWindow({
+					url: 'outmed.html',
+					id: 'outmed'
+				})
+			}
+			function updateIcon(){
+			var arr={
+				img0:{
+					gray:"img/icon_peo_1.png",
+					light:"img/icon_peo.png"
+				},
+				img1:{
+					gray:"img/icon_car.png",
+					light:"img/icon_car_1.png"
+				}
+			};
+			
+					
+				var iconContainers=$(".for_icon_change");
+				for(var i=0;i<iconContainers.length;i++){
+					var img=$(iconContainers[i]).find("img")[0];
+					if($(iconContainers[i]).hasClass("mui-active")){
+						img.src= arr[img.id].light;	
+					}else{
+						img.src=arr[img.id].gray;
+					}
+				}
+			}
+			$(function(){
+				$(".mui-scroll").on('tap',updateIcon);
+				$(".body-button>.mui-btn").click(function(){
+					if(this.innerText=="竞价"){
+						mui.openWindow({url:"jingjia.html",id:"jingjia"});	
+					}
+				});
+			});
+			function hid(img){
+			var nextdiv=img.parentNode.parentNode;
+			var div=$(nextdiv).next("div").find(".content-body")[0];
+			if (div.style.display == "none"){
+				img.src = "img/jiantou_9.png";
+				div.style.display = "block"; 
+			}else{
+				img.src = "img/jiantou_10.png";
+				div.style.display = "none"; 
+			}
+		}
+		
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">加盟</h1>
+		    <a class="mui-pull-right top-tubiao top-tubiao-right"id="help">
+				<div class="mui-text-center">
+					<img src="img/kefu.png" alt="" />
+				</div>
+			</a>
+			<a class="mui-pull-right top-tubiao top-tubiao-right">
+				<div class="mui-text-center">
+					<img src="img/icon_j.png" alt="" />
+				</div>
+			</a>
+		</header>
+		<div class="mui-content">
+        <div id="purchaselist" class="mui-slider mui-fullscreen">
+            <div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                <div class="mui-scroll">
+                	<div class="mui-col mui-col-xs-6 mui-text-center mui-pull-left">
+	                    <a class="mui-control-item  mui-active for_icon_change" href="#item1mobile"onclick="tiaozhuan1()">
+			           		<img src="img/icon_peo.png"alt="" id="img0"/>
+			           		<div class="mui-media-body ">中介</div>
+	                    </a>
+					</div>
+					<div class="mui-col mui-col-xs-6 mui-text-center mui-pull-left">
+	                    <a class="mui-control-item for_icon_change" href="#item2mobile"onclick="tiaozhuan2()">
+							<img src="img/icon_car.png"alt="" id="img1"/><span class="mui-badge mui-badge-warning">3</span></span>
+			           		<div class="mui-media-body ">车队</div>
+	                    </a>
+	                </div> 
+                </div>
+            </div>
+            <div class="mui-slider-group">
+                <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                    <div  class="mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                        	<div class="content">
+                        		<div class="content-top">
+                        			<div class="content-top-left-img">
+                        				<img src="img/img.png" alt="" />
+                        			</div>
+                        			<div class="content-top-h5">田伊朗</div>
+                        			<div class="content-top-right-img">
+                        				<button type="button" class="mui-btn mui-btn-default mui-btn-outlined join">申请休假</button>
+                        				<button onclick="outmed()"type="button" class="mui-btn mui-btn-default mui-btn-outlined join">申请退出</button>
+                        				<img src="img/jiantou_10.png"onclick="hid(this)" alt="" />
+                        			</div>
+                        		</div>
+                        		<div class="father-body">
+                        			<div class="content-body"style="display: none;">
+	                        			<div class="body-list">
+	                        				<span>实名认证: 未完成/个人实名/企业实名</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>常运路线: 天津——山西</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>车辆数: 10辆</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>运营人员: 20人</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>累计运输量: 1500吨</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>近况: 2017年9月16日完成(信息更新/订单竞价)</span>
+	                        			</div>
+	                        		</div>
+                        		</div>
+                        	</div>
+                        	<div class="content">
+                        		<div class="content-top">
+                        			<div class="content-top-left-img">
+                        				<img src="img/img.png" alt="" />
+                        			</div>
+                        			<div class="content-top-h5">田伊朗</div>
+                        			<div class="content-top-right-img">
+                        				<button type="button" class="mui-btn mui-btn-default mui-btn-outlined join">申请休假</button>
+                        				<button onclick="outmed()"type="button" class="mui-btn mui-btn-default mui-btn-outlined join">同意辞退</button>
+                        				<img src="img/jiantou_10.png"onclick="hid(this)" alt="" />
+                        			</div>
+                        		</div>
+                        		<div class="father-body">
+                        			<div class="content-body"style="display: none;">
+	                        			<div class="body-list">
+	                        				<span>实名认证: 未完成/个人实名/企业实名</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>常运路线: 天津——山西</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>车辆数: 10辆</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>运营人员: 20人</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>累计运输量: 1500吨</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>近况: 2017年9月16日完成(信息更新/订单竞价)</span>
+	                        			</div>
+	                        		</div>
+                        		</div>
+                        	</div>
+                        	<div class="content">
+                        		<div class="content-top">
+                        			<div class="content-top-left-img">
+                        				<img src="img/img.png" alt="" />
+                        			</div>
+                        			<div class="content-top-h5">田伊朗</div>
+                        			<div class="content-top-right-img">
+                        				<button type="button" class="mui-btn mui-btn-default mui-btn-outlined join">申请加入</button>
+                        				<img src="img/jiantou_10.png"onclick="hid(this)" alt="" />
+                        			</div>
+                        		</div>
+                        		<div class="father-body">
+                        			<div class="content-body"style="display: none;">
+	                        			<div class="body-list">
+	                        				<span>实名认证: 未完成/个人实名/企业实名</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>常运路线: 天津——山西</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>车辆数: 10辆</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>运营人员: 20人</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>累计运输量: 1500吨</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>近况: 2017年9月16日完成(信息更新/订单竞价)</span>
+	                        			</div>
+	                        		</div>
+                        		</div>
+                        	</div>
+                        	
+						   <!--/接/-->
+                        </div>
+                    </div>
+                </div>
+                <div id="item2mobile" class="mui-slider-item mui-control-content">
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll">
+                        	<div class="content">
+                        		<div class="content-top">
+                        			<div class="content-top-left-img">
+                        				<img src="img/img.png" alt="" />
+                        			</div>
+                        			<div class="content-top-h5">田伊朗</div>
+                        			<div class="content-top-right-img">
+                        				<button type="button" class="mui-btn mui-btn-default mui-btn-outlined join">申请休假</button>
+                        				<button onclick="outmed()"type="button" class="mui-btn mui-btn-default mui-btn-outlined join">同意辞退</button>
+                        				<img src="img/jiantou_10.png"onclick="hid(this)" alt="" />
+                        			</div>
+                        		</div>
+                        		<div class="father-body">
+                        			<div class="content-body"style="display: none;">
+	                        			<div class="body-list">
+	                        				<span>实名认证: 未完成/个人实名/企业实名</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>常运路线: 天津——山西</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>车辆数: 10辆</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>运营人员: 20人</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>累计运输量: 1500吨</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>近况: 2017年9月16日完成(信息更新/订单竞价)</span>
+	                        			</div>
+	                        		</div>
+                        		</div>
+                        	</div>
+                        	<div class="content">
+                        		<div class="content-top">
+                        			<div class="content-top-left-img">
+                        				<img src="img/img.png" alt="" />
+                        			</div>
+                        			<div class="content-top-h5">田伊朗</div>
+                        			<div class="content-top-right-img">
+                        				<button type="button" class="mui-btn mui-btn-default mui-btn-outlined join">申请休假</button>
+                        				<button onclick="outmed()"type="button" class="mui-btn mui-btn-default mui-btn-outlined join">申请退出</button>
+                        				<img src="img/jiantou_10.png"onclick="hid(this)" alt="" />
+                        			</div>
+                        		</div>
+                        		<div class="father-body">
+                        			<div class="content-body"style="display: none;">
+	                        			<div class="body-list">
+	                        				<span>实名认证: 未完成/个人实名/企业实名</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>常运路线: 天津——山西</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>车辆数: 10辆</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>运营人员: 20人</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>累计运输量: 1500吨</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>近况: 2017年9月16日完成(信息更新/订单竞价)</span>
+	                        			</div>
+	                        		</div>
+                        		</div>
+                        	</div>
+                        	<div class="content">
+                        		<div class="content-top">
+                        			<div class="content-top-left-img">
+                        				<img src="img/img.png" alt="" />
+                        			</div>
+                        			<div class="content-top-h5">田伊朗</div>
+                        			<div class="content-top-right-img">
+                        				<button type="button" class="mui-btn mui-btn-default mui-btn-outlined join">无权加入</button>
+                        				<img src="img/jiantou_10.png"onclick="hid(this)" alt="" />
+                        			</div>
+                        		</div>
+                        		<div class="father-body">
+                        			<div class="content-body"style="display: none;">
+	                        			<div class="body-list">
+	                        				<span>实名认证: 未完成/个人实名/企业实名</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>常运路线: 天津——山西</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>车辆数: 10辆</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>运营人员: 20人</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>累计运输量: 1500吨</span>
+	                        			</div>
+	                        			<div class="body-list">
+	                        				<span>近况: 2017年9月16日完成(信息更新/订单竞价)</span>
+	                        			</div>
+	                        		</div>
+                        		</div>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	</body>
+	<script src="js/mui.min.js"></script>
+    <script src="js/mui.pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/mui.pullToRefresh.material.js" ></script>
+    <script type="text/javascript">
+    	mui.init();
+    	mui('.mui-slider').slider().setStopped(true);
+    </script>
+</html>

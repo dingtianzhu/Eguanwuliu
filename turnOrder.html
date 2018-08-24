@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+				*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 12px 6px 0px 8px;
+	    	}
+	    	.content{
+	    		width: 100%;
+	    	}
+	    	.content-list-top{
+	    		width: 100%;
+	    		height: 40px;
+
+	    	}
+	    	.content-list-top img{
+	    		width: 15px;
+	    		height: 20px;
+	    	}
+	    	
+	    	.list-left-photo{
+	    		margin-top: 10px;
+	    		margin-left: 20px;
+	    	}
+	    	.list-left-photo img{
+	    		height: 20px;
+	    	}
+	    	.num{
+	    		margin-top: 7px;
+	    		margin-left: 10px;
+	    		line-height: 30px;
+	    		font-size:16px;
+	    		color:#777;
+	    		
+	    	}
+	    	.content-address{
+	    		margin-top: 5px;
+	    		color: #555;
+	    		padding-bottom: 10px;
+	    		padding-top: 5px;
+	    		margin-left: 20px;
+	    	}
+	    	.mui-btn{
+	    		padding:2px 5px;
+	    	}
+	    	.content-price{
+	    		height: 130px;
+	    		width: 90%;
+	    		margin: auto 25px auto 25px;
+	    		background: url("img/back_blue1.png") no-repeat;
+	    		background-size:100% 100% ;
+	    	} 
+	    	.content-price-span{
+	    		width: 80%;
+	    		margin: auto;
+	    		height: 120px;
+	    		color: white;
+	    		line-height: 120px;
+	    	}
+	    	.content-price-span input{
+	    		display: inline;
+	    		width: 120px;
+	    		padding: 0px;
+	    		border:0px;
+	    		margin: 0px;
+	    		background: transparent;
+	    		font-size: 28px;
+	    		text-align: center;
+	    	}
+	    	.content-price-span span{
+	    		font-size: 28px;
+	    	}
+	    	hr{
+	    		border: 1px dashed #999;
+	    	}
+	    	.text{
+	    		width: 90%;
+	    		margin: auto;
+	    		height: 300px;
+	    	}
+	    	.text-top{
+	    		height: 40px;
+	    		width: 100%;
+	    	}
+	    	.text-top-img{
+	    		float: left;
+	    		height: 40px;
+	    	}
+	    	.text-top-img img{
+	    		margin-top: 5px;
+	    		height: 25px;
+	    		width: 25px;
+	    		border-radius: 20px;
+	    	}
+	    	.text-top-span{
+	    		float: left;
+	    		line-height: 35px;
+	    		padding-left: 10px;
+	    	}
+	    	.text-top-span span{
+	    		line-height: 30px;
+	    	}
+	    	.text-top-right{
+	    		height: 40px;
+	    		line-height: 35px;
+	    		float: right;
+	    	}
+	    	.text-list{
+	    		line-height: 30px;
+	    	}
+	    	#next{
+	    		font-size: 16px!important;
+	    		width: 80%;
+				margin: auto;
+				border-radius:20px!important ;
+	    	}
+	    	.div-right{
+	    		float: right;
+	    		text-align: right;
+	    		margin-right: 20px;
+	    	}
+	    	.text-select{
+	    		float: left;
+	    		width: 15%;
+	    		text-align: center;
+	    	}
+	    	.text-select img{
+	    		width: 30px;
+	    		margin-top: 20px;
+	    	}
+	    	.text-body{
+	    		background: url("img/back_due.png") no-repeat;
+	    		background-size:100% 100% ;
+	    		padding: 10px 0px 20px 50px;
+	    		float: left;
+	    		width: 85%;
+	    		color: white;
+	    	}
+	    	.mui-content{
+	    		position: fixed;
+	    		width: 100%;
+	    		top: 44;
+	    	}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+			<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+			});
+			var textWidth = function(text){ 
+        	var sensor = $('<pre>'+ text +'</pre>').css({display: 'none'}); 
+	        $('body').append(sensor); 
+	        var width = sensor.width();
+	        sensor.remove(); 
+	        return width;
+    	}; 
+	    $("input").unbind('keydown').bind('keydown', function(){
+	        $(this).width(textWidth($(this).val()));
+	    });
+	    $(function(){
+				$(".img").click(function(){
+					if(this.src.indexOf("img/duigou.png")>=0){
+						this.src="img/duigou_1.png";
+					}else{
+						this.src="img/duigou.png";
+					}
+				})
+			})
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">转发订单</h1>
+		    <a id="help"class="mui-pull-right top-tubiao top-tubiao-right">
+				<div class="mui-text-center">
+					<img src="img/kefu.png" alt="" />
+				</div>
+			</a>
+		</header>
+		<div class="mui-content">
+			<div class="content">
+				<div class="content-list">
+					<div class="content-list-top">
+						<div class="mui-pull-left list-left-photo">
+							<img src="img/fire-1.png" alt="" />
+						</div>
+						<div class="mui-pull-left num">171020120586</div>
+					</div>
+					
+					<div class="content-address">
+						<span>南开———乌马营</span>
+						<div class="div-right mui-text-right">
+							<span>已分配</span>
+							<span style="color:#007AFF">2</span>
+							<span>人</span>
+						</div>
+					</div>
+					<div class="content-price">
+						<div class="mui-text-center content-price-span">
+							￥&nbsp;<input type="text"value="输入金额"  >&nbsp;元/吨
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr />
+			
+			
+			<nav class="mui-bar mui-bar-tab mui-text-center">
+			    <input type="submit" value="确认转发" id="next"class="mui-btn mui-text-center ">
+			</nav>
+		</div>
+		<div style='height: 270px;'></div>
+		<div class="text"style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+				<div class="text-public">
+					<div class="text-select">
+						<img src="img/duigou.png" class="img"alt="" />
+					</div>
+					<div class="text-body">
+						<div class="text-list">
+							<span>天伊朗</span>
+						</div>
+						<div class="text-list">
+							<span>13000000000</span>
+						</div>
+						
+					</div>
+				</div>
+				<div class="text-public">
+					<div class="text-select">
+						<img src="img/duigou.png" class="img"alt="" />
+					</div>
+					<div class="text-body">
+						<div class="text-list">
+							<span>天伊朗</span>
+						</div>
+						<div class="text-list">
+							<span>13000000000</span>
+						</div>
+						
+					</div>
+				</div>
+				<div class="text-public">
+					<div class="text-select">
+						<img src="img/duigou.png"class="img" alt="" />
+					</div>
+					<div class="text-body">
+						<div class="text-list">
+							<span>天伊朗</span>
+						</div>
+						<div class="text-list">
+							<span>13000000000</span>
+						</div>
+						
+					</div>
+				</div>
+				<div class="text-public">
+					<div class="text-select">
+						<img src="img/duigou.png" class="img"alt="" />
+					</div>
+					<div class="text-body">
+						<div class="text-list">
+							<span>天伊朗</span>
+						</div>
+						<div class="text-list">
+							<span>13000000000</span>
+						</div>
+					</div>
+				</div>
+				<div class="text-public">
+					<div class="text-select">
+						<img src="img/duigou.png" class="img"alt="" />
+					</div>
+					<div class="text-body">
+						<div class="text-list">
+							<span>天伊朗</span>
+						</div>
+						<div class="text-list">
+							<span>13000000000</span>
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+
+</html>

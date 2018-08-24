@@ -1,0 +1,408 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+				*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 12px 6px 0px 8px;
+	    	}
+	    	.top{
+	    		width: 100%!important;
+	    		position:static;
+	    		height: 160px;
+	    		background: url("img/background_blue.png") no-repeat;
+				background-size:100% 100% ;
+	    	}
+	    	.top-content{
+	    		width: 90%;
+	    		margin: 48px auto auto auto;
+	    		color: white;
+	    		height: 30px;
+	    	}
+	    	.top-input input{
+	    		padding: 0px;
+	    		margin: 5px;
+	    		width: 70%;
+	    		height: 20px;
+	    		border-radius: 0px;
+	    		border-top:0px;
+	    		border-left:0px;
+	    		border-right:0px;
+	    		border-bottom:1px solid white;
+	    		background: transparent;
+	    	}
+	    	.mui-action-back,.mui-title{
+	    		color: white;
+	    	}
+	    	.content-first{
+	    		width: 92%;
+	    		height: 100px;
+	    		background: url("img/red_back_1.png") no-repeat;
+				background-size:100% 100px ;
+	    		margin: -55px auto auto auto;
+	    		position:relative;
+	    	}
+	    	.top-img{
+	    		float: left;
+	    		width: 30px;
+	    		height: 30px;
+	    	}
+	    	.top-img img{
+	    		height: 30px;
+	    		width: 30px;
+	    	}
+	    	.top-span{
+	    		float: left;
+	    		line-height: 30px;
+	    		margin-left: 15px;
+	    	}
+	    	.top-right{
+	    		float: right;
+	    		height: 30px;
+	    	}
+	    	.top-right span{
+	    		line-height: 30px;
+	    	}
+	    	.mui-icon-arrowright{
+	    		padding: 0px!important;
+	    		margin-right: 5px;
+	    		line-height: 20px;
+	    	}
+	    	.content-top{
+	    		float: left;
+	    		color: white;
+	    		margin: 10px auto auto 20px;
+	    	}
+	    	.whole-top{
+	    		height: 50px;
+	    	}
+	    	.left-body{
+	    		float: left;
+	    		width: 40%;
+	    		text-align: left;
+	    		margin-left: 20px;
+	    		color: white;
+	    		margin-top: 5px;
+	    	}
+	    	.left-body span{
+	    		font-size: 25px;
+	    	}
+	    	.content-second-left{
+	    		width: 46%;
+	    	}
+	    	.content-second-right{
+	    		width: 46%;
+	    		margin-left: 8%;
+	    	}
+	    	.content-second{
+	    		width: 90%;
+	    		margin: 10px auto 10px auto;
+	    		height: 140px;
+	    	}
+	    	.content-second-top{
+	    		height: 25px;
+	    	}
+	    	.content-second-top img{
+	    		height: 18px;
+	    	}
+	    	.body-left{
+	    		float: left;
+	    		width: 85%;
+	    	}
+	    	.body-left-img{
+	    		float: left;
+	    		width: 39%;
+	    	}
+	    	.body-right-img{
+	    		float: left;
+	    		width: 26px;
+	    	}
+	    	.body-left-img img{
+	    		width: 100%;
+				height: 100px;
+	    	}
+	    	.body-right-img img{
+	    		width: 26px;
+	    		margin-top: 74px;
+	    	}
+	    	.body-left img{
+	    		width: 100%;
+				height: 100px;
+	    	}
+	    	.body-right{
+	    		float: left;
+	    		width: 15%;
+	    	}
+	    	.top a{
+	    		margin-left: 15px;
+	    		margin-right: 10px;
+	    	}
+	    	.body-right img{
+	    		width: 26px;
+	    		margin-top: 74px;
+	    	}
+	    	.content-third{
+	    		width: 92%;
+	    		height: 100px;
+	    		background: url("img/red_back_1.png") no-repeat;
+				background-size:100% 100px ;
+	    		margin: -10px auto auto auto;
+	    		position:relative;
+	    		padding: 10px;
+	    	}
+	    	.content-default{
+	    		width: 92%;
+	    		height: 440px;
+	    		background: url("img/red_back_1.png") no-repeat;
+				background-size:100% 100% ;
+	    		margin: -10px auto auto auto;
+	    		position:relative;
+	    		padding: 10px;
+	    	}
+	    	.body-info{
+	    		height: 28px;
+	    	}
+	    	.body-info1{
+	    		height: 28px;
+	    		border-bottom: 1px solid #dedede;
+	    	}
+	    	.list{
+	    		height: 30px;
+	    		width: 92%;
+	    		border:1px solid white;
+	    		border-radius: 5px;
+	    		margin-bottom: 12px;
+	    		margin-left: 10px;
+	    		color: white;
+	    	}
+	    	.list-left{
+	    		float: left;
+	    		line-height: 30px;
+	    	}
+	    	.list-right{
+	    		float: left;
+	    		width: 60%;
+	    	}
+	    	.list-right input{
+	    		padding: 0px 0px 0px 5px;
+	    		border: 0px;
+	    		background: transparent;
+	    		margin: 0px;
+	    		height: 30px;
+	    		line-height: 30px;
+	    		width: 100%;
+	    		font-size: 16px;
+	    	}
+	    	.div-div{
+	    		height: 40px;
+	    	}
+	    	#next{
+	    		font-size: 16px!important;
+	    		width: 80%;
+				margin: auto;
+				border-radius:20px!important ;
+	    	}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+			});
+		</script>
+		<div class="mui-content">
+			<div class="mui-bar mui-bar-tab top">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">信息管理</h1>
+			    <a class="mui-pull-right top-tubiao top-tubiao-right" id="help">
+					<div class="mui-text-center">
+						<img src="img/icon_p.png" alt="" />
+					</div>
+				</a>
+				<div class="top-content">
+					<div class="top-img">
+						<img src="img/img.png" alt="" />
+					</div>
+					<div class="top-span">
+						<span >京H.12445(自由客)</span>
+					</div>
+					<div class="top-right">
+						<span>等待验证</span>
+					</div>
+				</div>
+			</div>
+			<div class="content-first">
+				<div class="whole-top">
+					<div class="content-top">
+						完成单数
+					</div>
+				</div>
+				<div class="content-body">
+					<div class="left-body">本月:<span> 23</span></div>
+					<div class="left-body">总计:<span> 357</span></div>
+				</div>
+			</div>
+			<div class="content-second">
+				<div class="content-second-left mui-pull-left">
+					<div class="content-second-top">
+						<div class="mui-pull-left">
+							A类驾驶证 :&nbsp;
+						</div>
+						<div class="mui-pull-left">
+							<img src="img/bacr.png" alt="" />
+						</div>	
+					</div>
+					<div class="content-second-body">
+						<div class="body-left">
+							<img src="img/background.png" alt="" />
+						</div>
+						<div class="body-right">
+							<a href=""><img src="img/shenqing.png" alt="" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content-third">
+				<div class="list">
+					<div class="list-left">
+						<span >身份证号:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="222222222222222222"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >身份证号:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="222222222222222222"/>
+					</div>
+				</div>
+				
+			</div>
+			<div class="content-second">
+				<div class="content-second-left mui-pull-left">
+					<div class="content-second-top">
+						<div class="mui-pull-left">
+							车辆行驶证 :&nbsp;
+						</div>
+						<div class="mui-pull-left">
+							<img src="img/page.png" alt="" />
+						</div>	
+					</div>
+					<div class="content-second-body">
+						<div class="body-left">
+							<img src="img/schuan.png" alt="" />
+						</div>
+						<div class="body-right">
+							<a href=""><img src="img/shenqing.png" alt="" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content-default">
+				<div class="list">
+					<div class="list-left">
+						<span >车牌号码: </span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="津 A 000001"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >使用性质:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="请输入使用性质"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >品牌型号:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="品牌型号"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >总质量:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="未识别请输入"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >装备质量:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="装备质量"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >核定载质量:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="核定载质量"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >准牵引总质量:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="准牵引总质量"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >有效期至:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="2019.03.06"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >车辆识别代码:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="XXXXXXXXXX"/>
+					</div>
+				</div>
+			</div>
+			<div class="div-div">
+				
+			</div>
+			<nav class="mui-bar mui-bar-tab mui-text-center">
+			    <input type="submit" value="提 交" id="next"class="mui-btn mui-text-center ">
+			</nav>
+		</div>
+	</body>
+
+</html>

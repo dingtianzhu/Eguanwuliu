@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+				*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 12px 6px 0px 8px;
+	    	}
+	    	.mui-content{
+	    		background: #fff;
+	    		height: 600px;
+	    	}
+	    	.top{
+/*	    		width: 95%;*/
+	    		margin-left: 12px;
+	    		margin-top: 10px;
+	    	}
+	    	.top span{
+	    		line-height: 25px;
+	    	}
+	    	.top-left img{
+	    		width: 25px;
+	    		height: 25;
+	    	}
+	    	.content{
+	    		margin-left: 23px;
+	    		border-left: 3px solid #999;
+	    		margin-top: 5px ;
+	    		padding-left: 10px;
+	    	}
+	    	.content input{
+				/*float: left;*/
+				margin-right: 10px;
+				width: 60%;
+				height: 30px;
+				padding: 0px;
+				border: 0px;
+				margin-bottom: 0px;
+	    	}
+	    	.mui-table-view-cell>a:not(.mui-btn){
+	    		padding: 5px;
+	    	}
+	    	.content select{
+	    		width: 25%;
+	    		margin-bottom: 0px;
+	    		font-size: 18px;
+	    		padding: 5px 0px 5px 0px;
+	    	}
+	    	.content span{
+	    		margin-top: 5px;
+	    	}
+	    	.mui-table-view:before{
+	    		height: 0px;
+	    	}
+	    	.mui-navigate-right:after, .mui-push-right:after {
+	    		content:'';
+	    	}
+	    	.num:after{
+	    		content:'\e583'!important;
+	    	}
+			.mui-table-view-cell:after{
+				left:-13px;
+				height: 1px;
+			}
+			.num-input{
+				width: 50px!important;
+				float: right;
+				margin-right: 25px!important;
+			}
+	    	.mui-btn{
+	    		font-size: 16px!important;
+	    		width: 60%;
+				margin: auto;
+				border-radius:20px!important ;	    	
+	    	}
+	    	.content p{
+	    		color:#eb7374;
+	    		text-align: right;
+	    		margin-right: 20px;
+	    		font-size: 16px;
+	    	}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+			});
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">货源信息</h1>
+		    <a id="help"class="mui-pull-right top-tubiao top-tubiao-right">
+				<div class="mui-text-center">
+					<img src="img/kefu.png" alt="" />
+				</div>
+			</a>
+		</header>
+		<div class="mui-content">
+			<div class="top">
+				<div class="top-left mui-pull-left">
+					<img id="first_step" src="img/duigou_1.png" alt="" />
+				</div>
+				<span>&nbsp;货物信息</span>
+			</div>
+			<div class="content">
+				<ul class="mui-table-view">
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right">
+				                <lable >货物名称 : </lable>
+								<input type="text" id="merchanname" onkeyup="checkfillstate(1)" placeholder="请输入货物信息"/>
+				            </a>
+				        </li>
+				        <li class="mui-table-view-cell ">
+				            <a class="mui-navigate-right num">
+				                <lable >货物数量T(吨) </lable>
+								<input type="text" id="tiji" onkeyup="checkfillstate(1)" class="num-input"placeholder="00000"/>
+				            </a>
+				        </li>
+				    </ul>
+				<span> &nbsp;货物描述 : </span>
+				<select class="select" id="merchandise" >
+					
+					<option value="item-1">件装货物</option><span class="mui-icon mui-icon-arrowdown"></span>
+					<option value="item-2">液体货物</option>
+					<option value="item-3">固体粉状</option>
+					<option value="item-4">固体颗粒</option>
+				</select>
+				<span class="mui-icon mui-icon-arrowdown"></span>
+			</div>
+			<div class="top">
+				<div class="top-left mui-pull-left">
+					<img id="second_step" src="img/duigou.png" alt="" />
+				</div>
+				<span>&nbsp;订单要求</span>
+			</div>
+			<div class="content">
+				<span> &nbsp;车辆要求 : </span>
+				<select class="select" id="clyq" >
+					<option value="item-1">平板式</option>
+					<option value="item-2">移动式压力罐</option>
+					<option value="item-3">常压罐</option>
+				</select>
+				<span class="mui-icon mui-icon-arrowdown"></span>
+				<br />
+				<span> &nbsp;罐体要求 : </span>
+				<input type="text" value="——无——"/>
+				<br />
+				<span> &nbsp;结款方式 : </span>
+				<select class="select" id="jkfs">
+					<option value="item-1">线上支付</option>
+					<option value="item-2">线下到付</option>
+				</select>
+				<span class="mui-icon mui-icon-arrowdown"></span>
+				<p class="">
+					交易平台有手续费1%
+				</p>
+			</div>
+			<nav class="mui-bar mui-bar-tab mui-text-center">
+			    <input type="submit" onclick="recordFillData()" value="下一步" id="next"class="mui-btn mui-text-center">
+			</nav>
+		</div>
+	</body>
+	<script>
+		function checkfillstate(type){
+			if(type==1){	//检查第一个板块是否填写完整
+				var merchanname=document.getElementById("merchanname").value;
+				var tiji=document.getElementById("tiji").value;
+				var merchandise=document.getElementById("merchandise").value;
+				if(merchanname.trim()!=""&&tiji.trim()!=""){
+					document.getElementById("first_step").src="img/duigou.png";			
+				}else{
+					document.getElementById("first_step").src="img/duigou_1.png";
+				}
+			}
+		}
+		function recordFillData(){
+			
+			var obj={};
+			
+			obj.merchanname=document.getElementById("merchanname").value;
+			obj.tiji=document.getElementById("tiji").value;
+			obj.merchandise=document.getElementById("merchandise").value;
+			
+			obj.clyq=document.getElementById("clyq").value;
+			obj.gtyq=document.getElementById("gtyq").value;
+			obj.jkfs=document.getElementById("jkfs").value;
+			
+			//alert(document.getElementById("first_step").src);
+			if(document.getElementById("first_step").src.indexOf("duigou.png")>0){
+				plus.storage.setItem("huoyuanInfo",JSON.stringify(obj));	
+				mui.openWindow({
+					url: 'next.html',
+					id: 'next'
+				});
+			}else{
+				mui.toast("请完善信息后再点击下一步 ！");
+				return;
+			}
+			
+		}
+	</script>
+
+</html>

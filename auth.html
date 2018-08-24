@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+				*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 12px 6px 0px 8px;
+	    	}
+	    	.content-car{
+	    		width: 95%;
+	    		margin: 15px auto;
+	    	}
+	    	.car-top span{
+	    		margin-left: 5px;
+	    		font-size: 20px;
+	    		line-height: 25px;
+	    	}
+	    	.car-top-img{
+	    		float: left;
+	    	}
+	    	.car-top-img img{
+	    		height: 25px;
+	    	}
+	    	.car-select{
+	    		border-left: 3px solid #999;
+	    		margin-left: 11px;
+	    		margin-top: 5px;
+	    	}
+	    	.back{
+	    		margin-left: 10px;
+	    		height: 250px;
+	    		background: url("img/background.png") no-repeat;
+				background-size:100% 100% ;
+	    	}
+	    	.background{
+	    		margin-left: 10px;
+	    		height: 100px;
+	    		background: url("img/background.png") no-repeat;
+				background-size:100% 100% ;
+	    	}
+	    	.car-info{
+	    		border-left: 3px solid #FFF;
+	    		padding-left: 10px;
+	    	}
+	    	.car-info h5{
+	    		color:white;
+	    	}
+	    	label{
+	    		padding-top: 2px!important;
+	    		padding-bottom: 5px!important;
+	    	}
+	    	.mui-btn{
+	    		font-size: 16px!important;
+	    		width: 60%;
+				margin: auto;
+				border-radius:20px!important ;	    	
+	    	}
+	    	.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before {
+	    		font-size: 26px;
+	    		line-height: 24px;
+	    		color: white!important;
+	    	}
+	    	/*input[name='checkbox']{
+	    		 background-color: rgba(255,255,255,1)!important;
+	    		 border-radius: 25px;
+	    		 
+	    		 height: 23px!important;
+	    		 width: 23px!important;
+	    	}*/
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+			});
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">备案授权</h1>
+		    <a id="help"class="mui-pull-right top-tubiao top-tubiao-right">
+				<div class="mui-text-center">
+					<img src="img/kefu.png" alt="" />
+				</div>
+			</a>
+		</header>
+		<div class="mui-content">
+			<div class="content-car">
+				<div class="car-top">
+					<div class="car-top-img">
+						<img src="img/duigou.png" alt="" />
+					</div>
+					<span>选择备案车辆</span>
+				</div>
+				<div class="car-select">
+					<div class="back"style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+						<div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>车头: 津A000001</h5>
+									<h5>车挂: 津A000001</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div>
+						<div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>车头: 津A000001</h5>
+									<h5>车挂: 津A000001</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div><div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>车头: 津A000001</h5>
+									<h5>车挂: 津A000001</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div><div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>车头: 津A000001</h5>
+									<h5>车挂: 津A000001</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div><div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>车头: 津A000001</h5>
+									<h5>车挂: 津A000001</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div><div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>车头: 津A000001</h5>
+									<h5>车挂: 津A000001</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div><div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>车头: 津A000001</h5>
+									<h5>车挂: 津A000001</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div><div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>车头: 津A000001</h5>
+									<h5>车挂: 津A000001</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div>
+						<div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>车头: 津A000001</h5>
+									<h5>车挂: 津A000001</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div>
+						<div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>车头: 津A000001</h5>
+									<h5>车挂: 津A000001</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div>
+						<div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>车头: 津A000001</h5>
+									<h5>车挂: 津A000001</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div>
+						<div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>车头: 津A000001</h5>
+									<h5>车挂: 津A000001</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content-car">
+				<div class="car-top">
+					<div class="car-top-img">
+						<img src="img/duigou_1.png" alt="" />
+					</div>
+					<span>选择备案人员</span>
+				</div>
+				<div class="car-select">
+					<div class="background"style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+						<div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>姓名: 赵钱孙李</h5>
+									<h5>身份证: 1234564555665554</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div>
+						<div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>姓名: 赵钱孙李</h5>
+									<h5>身份证: 1234564555665554</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div>
+						<div class="mui-input-row mui-checkbox mui-left">
+							<label>
+								<div class="car-info">
+									<h5>姓名: 赵钱孙李</h5>
+									<h5>身份证: 1234564555665554</h5>
+								</div>
+							</label>
+							<input name="checkbox" value="Item 2" type="checkbox" checked>
+						</div>
+					</div>
+				</div>
+			</div>
+			<nav class="mui-bar mui-bar-tab mui-text-center">
+			    <input type="submit" value="确 认" id="release"class="mui-btn mui-text-center">
+			</nav>
+		</div>
+	</body>
+</html>

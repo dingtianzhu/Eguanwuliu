@@ -1,0 +1,419 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--<link rel="stylesheet" href="css/bootstrap.min.css"type="text/css">-->
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<!--<script src="js/jquery.min.js"></script>-->
+		<!--<script src="js/bootstrap.min.js"></script>-->
+		<style type="text/css">
+		*{
+			font-family: "微软雅黑";
+		}
+		body{
+			background-color: #e7e7e7;
+		}
+		.mui-content{
+			background: #e7e7e7;
+		}
+    	.font{
+    		font-size: 12px!important;
+    	}
+    	.mui-table-view-cell{
+    		padding: 0px!important;
+    	}
+    	.top-content{
+    		margin:auto;
+				height: 170px;
+				width:100%;
+				background: url("img/banner.png") no-repeat;
+				background-size:100% 170px ;
+    	}
+    	.top-tubiao-left{
+    		color:white;
+			font-size: 15px;
+    	}
+    	.top-tubiao-right{
+    		color:white;
+			font-size: 10px;
+			line-height: 10px;
+    	}
+    	.top-tubiao img{
+    		width: 18px;
+    		height: 20px;
+    	}
+    	.top-tubiao-left img{
+    		margin: 10px auto auto 10px;
+    	}
+    	.top-tubiao-right img{
+    		margin: 5px 8px 0px 8px;
+    	}
+    	.top-pull-right{
+    		margin: 10px 10px auto auto;
+    	}
+    	.top-tubiao-left span{
+    		padding-top: 5px;
+    		padding-left: 5px;
+    		line-height: 30px;
+    	}
+    	.mui-media-body{
+    		margin-top: 0px!important;
+    	}
+    	.mui-grid-9 img{
+    		width: 30px;
+    	}
+    	.info{
+    		height: 150px;
+    		width: 100%;
+    		background: #F9F9F9;
+    		padding-top: 8px;
+    		margin-top: 10px!important;
+    	}
+    	.grid{
+    		margin-top: 10px;
+    	}
+    	.mui-grid-view.mui-grid-9{
+    		background:white;
+    	}
+    	.mui-table-view.mui-grid-view .mui-table-view-cell{
+    		background: white;
+    		border-color: white;
+    	}
+    	.info-top{
+    		width: 95%;
+    		height: 38px;
+			margin: auto;
+    		
+    	}
+    	.info-top-left{
+    		float: left;
+    		height: 32px;
+    		margin-top: 5px;
+    	}
+    	.info-top-left img{
+    		width: 32px;
+    		height: 32px;
+    	}
+    	.info-top-right{
+    		float: left;
+    		margin-left: 10px;
+    	}
+    	.info-top-right-font h5{
+    		margin:5px auto 0px auto;
+
+    	}
+    	.info-top-right-font span{
+    		color: #797979;
+    		font-size: 10px;
+    	}
+    	.info-top-right-font{
+    		float: left;
+    	}
+    	.info-top-right-img{
+    		float: right;
+    		margin-right: 10px;
+
+    	}
+    	.info-top-right-img img{
+    		width: 20px;
+    		float: right;
+    		margin-top: 15px;
+    	}
+    	.info-content{
+    		height: 66px;
+    	}
+    	.info-content h4{
+    		font-size: 18px;
+    	}
+    	.info-content span{
+    		font-size: 12px;
+    		color:  #797979;
+    	}
+    	.info-footer{
+    		height:38px ;
+    		background: #ededed;
+    	}
+    	.info-footer a{
+    		line-height: 38px;
+    		color: #929292;
+    		width: 100%!important;
+    		background: #000000;
+    	}
+    	.info-footer-left{
+    		float: left;
+    		width: 100%;
+    		border-right: solid 1px #CCCCCC;
+    	}
+		#dialog-overlay {
+			 width:100%; 
+			 height:100%;
+			 filter:alpha(opacity=50); 
+			 -moz-opacity:0.5; 
+			 -khtml-opacity: 0.5; 
+			 opacity: 0.5; 
+			 position:absolute; 
+			 background:#000; 
+			 top:0; left:0; 
+			 z-index:3000; 
+			 display:none;
+		}
+		#dialog-box {
+		 -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+		 -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+		 -moz-border-radius: 5px;
+		    -webkit-border-radius: 5px;
+		 background:#fff;
+		 width:90%; 
+		 position:absolute; 
+		 z-index:5000; 
+		 display:none;
+		 padding: 20px;
+		}
+		
+		#dialog-box .dialog-content {
+		 color:#666; 
+		 font-family:arial;
+		 font-size:11px; 
+		 border-right: 1px solid #eee;
+		 border-bottom: 1px solid #eee;
+		}
+		
+		#dialog-box .dialog-content p {
+		 font-weight:700; margin:0;
+		}
+		
+		#dialog-box .dialog-content ul {
+		 padding:0; 
+		}
+    </style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				scanf = document.getElementById('scanf');
+				scanf.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'scanf.html',
+						id: 'scanf'
+					})
+				});
+				hOrder = document.getElementById('hOrder');
+				hOrder.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'hOrder.html',
+						id: 'hOrder'
+					})
+				});
+				huoyuanInfo = document.getElementById('huoyuanInfo');
+				huoyuanInfo.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'huoyuanInfo.html',
+						id: 'huoyuanInfo'
+					})
+				});
+				myorder = document.getElementById('myorder');
+				myorder.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'myorder.html',
+						id: 'myorder'
+					})
+				});
+				news = document.getElementById('news');
+				news.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'news.html',
+						id: 'news'
+					})
+				});
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+				helptop = document.getElementById('helptop');
+				helptop.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+				fax = document.getElementById('fax');
+				fax.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'fax.html',
+						id: 'fax'
+					})
+				});
+				lookInfo = document.getElementById('lookInfo');
+				lookInfo.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'lookInfo.html',
+						id: 'lookInfo'
+					})
+				});
+				test = document.getElementById('test');
+				test.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'test.html',
+						id: 'test'
+					})
+				});
+			});
+			$(document).ready(function () {
+				$('a.btn-ok, #dialog-overlay, #dialog-box').click(function () {  
+					$('#dialog-overlay, #dialog-box').hide();  
+					return false;
+				});
+				$(window).resize(function () {
+					if (!$('#dialog-box').is(':hidden')) popup();  
+				}); 
+			});
+			function popup(message) {
+			 var maskHeight = $(window).height();  
+			 var maskWidth = $(window).width();
+			   var dialogTop =  (maskHeight - ($('#dialog-box').height()))/2-20;  
+			   var dialogLeft = (maskWidth/2) - ($('#dialog-box').width()/2)-20; 
+			 $('#dialog-overlay').css({height:maskHeight, width:maskWidth}).show();
+			 $('#dialog-box').css({top:dialogTop, left:dialogLeft}).show();
+			 $('#dialog-message').html(message);
+			}
+		</script>
+		<div id="dialog-overlay"></div>
+		<div id="dialog-box">
+			<div class="dialog-content">
+				<div id="dialog-message">
+					<ul class="mui-table-view mui-grid-view mui-grid-9">
+					   <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					       <a href="#"id="test">
+					       		<img src="img/myorder1.png"alt="" />
+					           <div class="mui-media-body font">
+					           	测试页面
+					           </div>
+					       </a>
+					   </li>
+					   <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					       <a href="#">
+					       	<img src="img/lishi1.png" alt="" />
+					           <div class="mui-media-body font">敬请期待</div>
+					       </a>
+					   </li>
+					   <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					       <a href="#">
+					       	<img src="img/xinwen.png" alt="" />
+					           <div class="mui-media-body font">敬请期待</div>
+					       </a>
+					   </li>
+					   
+			       </ul>
+				</div>
+			</div>
+		</div>
+		<div class="mui-content "style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+		    <div class="top-content">
+				<a class=" mui-pull-left top-tubiao top-tubiao-left">
+					<div class="mui-pull-left">
+						<img src="img/icon_map.png" alt="" />
+					</div>
+						<span class="mui-pull-left">天津</span>
+				</a>
+				<a id="helptop"class="mui-pull-right top-tubiao top-tubiao-right">
+					<div class="mui-text-center">
+						<img src="img/icon_p.png" alt="" />
+	           			<div class="mui-media-body font mui-text-center">客服</div>
+					</div>
+				</a>
+			</div>
+			<div class="grid">
+				<ul class="mui-table-view mui-grid-view mui-grid-9">
+				   <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+				       <a href="#"id="scanf">
+				       		<img src="img/saosao.png" alt="" />
+				           <div class="mui-media-body font">扫一扫</div>
+				       </a>
+				   </li>
+				   <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+				       <a href="#"id="huoyuanInfo">
+				       		<img src="img/jiedan1.png" alt="" />
+				           <div class="mui-media-body font">发布货源</div>
+				       </a>
+				   </li>
+				   <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+				       <a href="#"id="myorder">
+				       		<img src="img/myorder1.png"alt="" />
+				           <div class="mui-media-body font">我的订单</div>
+				       </a>
+				   </li>
+				   <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+				       <a href="#"id="hOrder">
+				       	<img src="img/lishi1.png" alt="" />
+				           <div class="mui-media-body font">历史订单</div>
+				       </a>
+				   </li>
+				   <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+				       <a href="#"id="news">
+				       	<img src="img/xinwen.png" alt="" />
+				           <div class="mui-media-body font">新闻中心</div>
+				       </a>
+				   </li>
+				   <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+				       <a href="#"id="help">
+				       	<img src="img/help.png" alt="" />
+				           <div class="mui-media-body font">帮助中心</div>
+				       </a>
+				   </li>
+				   <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+				       <a href="#"id="fax">
+				       	<img src="img/fax.png" alt="" />
+				           <div class="mui-media-body font">传真功能</div>
+				       </a>
+				   </li>
+				   <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+						<a href="javascript:popup();" class=""id="more"data-toggle="modal" data-target="#myModal">
+						<img src="img/qita.png" alt="" />
+						<div class="mui-media-body font">更多</div>
+						</a>
+				   </li>
+		       </ul>
+			</div>
+	       <div class="info">
+	       		<div class="info-top">
+	       			<div class="info-top-left">
+	       				<img src="img/tihuotongzhi.png"/>
+	       			</div>
+	       			<div class="info-top-right">
+	       				<div class="info-top-right-font">
+	       					<h5>提货通知</h5>
+	       					<span>刚刚</span>
+	       				</div>
+	       			</div>
+	       			<div class="info-top-right-img">
+       					<a href="">
+       						<img src="img/more.png" alt="" />
+       					</a>
+       				</div>
+	       		</div>
+	       		<div class="info-content mui-text-center">
+	       			<h4>备案号:00001</h4>
+	       			<span>已提货</span>
+	       		</div>
+	       		<div class="info-footer">
+	       			<a href="#" id="lookInfo">
+	       				<div class="info-footer-left mui-text-center">查看详情</div>
+	       			</a>
+	       		</div>
+	       </div>
+
+		</div>
+	</body>
+
+</html>

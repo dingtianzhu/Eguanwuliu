@@ -1,0 +1,470 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 20px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 12px 6px 0px 8px;
+	    	}
+	    	.mui-slider{z-index: auto;}
+        .mui-pull-top-tips {
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                margin-left: -25px;
+                width: 40px;
+                height: 70px;
+                border-radius: 100%;
+            }
+            .mui-bar~.mui-pull-top-tips {
+                top: 24px;
+            }
+            .mui-pull-top-wrapper {
+                width: 70px;
+                height: 70px;
+                display: block;
+                text-align: center;
+                background-color: #efeff4;
+                border: 1px solid #ddd;
+                border-radius: 25px;
+                background-clip: padding-box;
+                box-shadow: 0 4px 10px #bbb;
+                overflow: hidden;
+            }
+            .mui-pull-top-tips.mui-transitioning {
+                -webkit-transition-duration: 200ms;
+                transition-duration: 200ms;
+            }
+            .mui-pull-top-tips .mui-pull-loading {
+                /*-webkit-backface-visibility: hidden;
+                -webkit-transition-duration: 400ms;
+                transition-duration: 400ms;*/
+
+                margin: 0;
+            }
+            .mui-pull-top-wrapper .mui-icon,
+            .mui-pull-top-wrapper .mui-spinner {
+                margin-top: 7px;
+            }
+            .mui-pull-top-wrapper .mui-icon.mui-reverse {
+                /*-webkit-transform: rotate(180deg) translateZ(0);*/
+            }
+            .mui-pull-bottom-tips {
+                text-align: center;
+                background-color: #efeff4;
+                font-size: 15px;
+                line-height: 70px;
+                color: #777;
+            }
+            .mui-pull-top-canvas {
+                overflow: hidden;
+                background-color: #fafafa;
+                border-radius: 70px;
+                box-shadow: 0 4px 10px #bbb;
+                width: 70px;
+                height: 70px;
+                margin: 0 auto;
+            }
+            .mui-pull-top-canvas canvas {
+                width: 70px;
+            }
+            .mui-slider-indicator.mui-segmented-control {
+                background: white;
+            }
+            .mui-scroll-wrapper.mui-segmented-control{
+            	height: 70px;
+            }
+            .mui-scroll{
+            	width: 100%!important;
+            	height: 70px!important;
+            }
+            .mui-fullscreen .mui-segmented-control~.mui-slider-group{
+            	top:70px;
+            }
+            .mui-segmented-control .mui-control-item{
+            	line-height: 20px;
+            	margin-top: 20px;
+            	padding: 0px!important;
+            }
+            /*样式*/
+           *{
+				font-family: "微软雅黑";
+			}
+	    	.mui-control-item img{
+	    		width: 20px;
+	    		height: 20px;
+	    	}
+	    	.content{
+	    		background: url("img/cue_back_1.png") no-repeat;
+				background-size:100% 100% ;
+				height: 150px;
+				margin: 5px auto auto 10px;
+				padding: 10px;
+	    	}
+	    	.content-top{
+	    		height: 30px;	
+	    	}
+	    	.content-top-h5{
+	    		line-height: 30px;
+	    		color: white;
+	    		margin-left:10px ;
+	    		float:left;
+	    		font-size: 16px;
+	    	}
+	    	.content-top-left-img{
+	    		float: left;
+	    		margin-left: 15px;
+	    	}
+	    	.content-top-left-img img{
+	    		height: 30px;
+	    		width: 30px!important;
+	    		border-radius: 30px;
+	    	}
+	    	.content-top-right-img{
+	    		float: right;
+	    		margin-right: 20px;
+	    	}
+	    	.content-top-right-img img{
+	    		height: 10px;
+	    		line-height: 30px;
+	    		width: 20px!important;
+	    		margin: 10px 5px auto auto;
+	    	}
+	    	.content-body{
+	    		height: 80px;
+	    		margin-top: 10px;
+	    		margin-left: 15px;
+	    	}
+	    	.content-body h5{
+	    		color: white;
+	    		font-size: 16px;
+	    		line-height: 20px;
+	    	}
+			#dialog-overlay {
+
+			 width:100%; 
+			 height:100%;
+			 filter:alpha(opacity=50); 
+			 -moz-opacity:0.5; 
+			 -khtml-opacity: 0.5; 
+			 opacity: 0.5; 
+			 position:absolute; 
+			 background:#000; 
+			 top:0; left:0; 
+			 z-index:3000; 
+			 display:none;
+		}
+		#dialog-box {
+		 -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+		 -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+		 -moz-border-radius: 5px;
+		    -webkit-border-radius: 5px;
+		 padding: 20px;
+		 background:white;
+		 width:90%; 
+		 position:absolute; 
+		 z-index:50000; 
+		 display:none;
+		}
+		
+		#dialog-box .dialog-content {
+		 text-align:left; 
+		 color:#666; 
+		 font-family:arial;
+		 font-size:11px; 
+		}
+		
+		
+		#dialog-box .dialog-content p {
+		 font-weight:700; margin:0;
+		}
+		
+		#dialog-box .dialog-content ul {
+		 padding:0; 
+		}
+		.alert{
+			width: 80%;
+			margin: auto;
+			height: 50px;
+			margin-top: 10px;
+		}
+		.alert-active{
+			border: 1px solid #007AFF;
+		}
+		.alert-img img{
+			height: 30px;
+			margin-bottom: -8px;
+		}
+		.alert-img span{
+			line-height: 50px;
+			font-size: 20px;
+			margin-bottom: 20px;
+			margin-left: 10px;
+		}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="js/mui.min.js"></script>
+	<script src="js/mui.pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/mui.pullToRefresh.material.js" ></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				addriver = document.getElementById('addriver');
+				addriver.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'addriver.html',
+						id: 'addriver'
+					})
+				});
+				addcar = document.getElementById('addcar');
+				addcar.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'addcar.html',
+						id: 'addcar'
+					})
+				});
+				addfree = document.getElementById('addfree');
+				addfree.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'freecus.html',
+						id: 'freecus'
+					})
+				});
+			});
+			$(document).ready(function () {
+				$('a.btn-ok, #dialog-overlay, #dialog-box').click(function () {  
+					$('#dialog-overlay, #dialog-box').hide();  
+					return false;
+				});
+				$(window).resize(function () {
+					if (!$('#dialog-box').is(':hidden')){
+						popup();
+					} 
+				}); 
+			});
+			function updateIcon(){
+			var arr={
+				img0:{
+					gray:"img/peo_icon_1.png",
+					light:"img/peo_icon.png"
+				},
+				img1:{
+					gray:"img/car_icon.png",
+					light:"img/car_icon_1.png"
+				}
+			};
+			
+					
+				var iconContainers=$(".icon_change");
+//				console.log("查找到tab键"+iconContainers.length);
+				for(var i=0;i<iconContainers.length;i++){
+					//console.log(i+"=>"+$(iconContainers[i]).hasClass("mui-active"));
+					var img=$(iconContainers[i]).find("img")[0];
+					if(!$(iconContainers[i]).hasClass("mui-active")){
+						img.src= arr[img.id].light;	
+					}else{
+						img.src=arr[img.id].gray;
+					}
+				}
+			}
+			$(function(){
+				$(".for_icon_change").on('tap',updateIcon);
+				$(".body-button>.mui-btn").click(function(){
+					
+					if(this.innerText=="竞价"){
+						mui.openWindow({url:"jingjia.html",id:"jingjia"});	
+					}
+							
+				});
+			});
+			function popup(message) {
+			 var maskHeight = $(window).height();  
+			 var maskWidth = $(window).width();
+			   var dialogTop =  (maskHeight - ($('#dialog-box').height()))/2-20;  
+			   var dialogLeft = (maskWidth/2) - ($('#dialog-box').width()/2)-20; 
+			 $('#dialog-overlay').css({height:maskHeight, width:maskWidth}).show();
+			 $('#dialog-box').css({top:dialogTop, left:dialogLeft}).show();
+			 $('#dialog-message').html(message);
+			   
+			}
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">车队</h1>
+		    <a class="mui-pull-right top-tubiao top-tubiao-right"href="javascript:popup();" data-toggle="modal" data-target="#myModal">
+				<div class="mui-text-center">
+					<img src="img/add.png" alt="" />
+				</div>
+			</a>
+			<a class="mui-pull-right top-tubiao top-tubiao-right">
+				<div class="mui-text-center">
+					<img src="img/icon_j.png" alt="" />
+				</div>
+			</a>
+		</header>
+		<div id="dialog-overlay"></div>
+		<div id="dialog-box">
+			<div class="dialog-content">
+				<div id="dialog-message">
+					<a id="addriver">
+						<div class="alert alert-active">
+							<div class="alert-img mui-text-center">
+								<img src="img/my-news.png" alt="" />
+								<span>新增司机</span>
+							</div>
+						</div>
+					</a>
+					<a id="addcar">
+						<div class="alert">
+							<div class="alert-img mui-text-center">
+								<img src="img/car_b.png" alt="" />
+								<span>新增车辆</span>
+							</div>
+						</div>
+					</a>
+					<a id="addfree">
+						<div class="alert">
+							<div class="alert-img mui-text-center">
+								<img src="img/anyone.png" alt="" />
+								<span>其他自由客</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="mui-content">
+        <div id="purchaselist" class="mui-slider mui-fullscreen">
+            <div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                <div class="mui-scroll for_icon_change">
+                	<div class="mui-col mui-col-xs-6 mui-text-center mui-pull-left">
+	                    <a class="mui-control-item  icon_change mui-active" href="#item1mobile">
+			           		<img src="img/peo_icon_1.png"alt="" id="img0"/>
+			           		<div class="mui-media-body ">人员管理</div>
+	                    </a>
+					</div>
+					<div class="mui-col mui-col-xs-6 mui-text-center mui-pull-left">
+	                    <a class="mui-control-item icon_change" href="#item2mobile">
+							<img src="img/car_icon_1.png"alt="" id="img1"/><span class="mui-badge mui-badge-warning">3</span></span>
+			           		<div class="mui-media-body ">车辆管理</div>
+	                    </a>
+	                </div> 
+                </div>
+            </div>
+            <div class="mui-slider-group">
+                <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                    <div id="scroll1" class="mui-scroll-wrapper" style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+                        <div class="mui-scroll">
+                        	<div class="content">
+                        		<div class="content-top">
+                        			<div class="content-top-left-img">
+                        				<img src="img/img.png" alt="" />
+                        			</div>
+                        			<div class="content-top-h5">田伊朗(自由客)</div>
+                        			<div class="content-top-right-img">
+                        				<img src="img/jiantou_10.png" alt="" />
+                        			</div>
+                        		</div>
+                        		<div class="content-body">
+                        			<h5>手机：18722222222</h5>
+                        			<h5>主驾：乾坤</h5>
+                        			<h5>副驾：迎彩坤</h5>
+                        		</div>
+                        	</div>
+                        	<div class="content">
+                        		<div class="content-top">
+                        			<div class="content-top-left-img">
+                        				<img src="img/img.png" alt="" />
+                        			</div>
+                        			<div class="content-top-h5">田伊朗(自由客)</div>
+                        			<div class="content-top-right-img">
+                        				<img src="img/jiantou_10.png" alt="" />
+                        			</div>
+                        		</div>
+                        		<div class="content-body">
+                        			<h5>手机：18722222222</h5>
+                        			<h5>主驾：乾坤</h5>
+                        			<h5>副驾：迎彩坤</h5>
+                        		</div>
+                        	</div>
+                        	
+                        	
+						   <!--/接/-->
+                        </div>
+                    </div>
+                </div>
+                <div id="item2mobile" class="mui-slider-item mui-control-content">
+                    <div class="mui-scroll-wrapper"style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+                        <div class="mui-scroll">
+                        	<div class="content">
+                        		<div class="content-top">
+                        			<div class="content-top-left-img">
+                        				<img src="img/img.png" alt="" />
+                        			</div>
+                        			<div class="content-top-h5">田伊朗(自由客)</div>
+                        			<div class="content-top-right-img">
+                        				<img src="img/jiantou_10.png" alt="" />
+                        			</div>
+                        		</div>
+                        		<div class="content-body">
+                        			<h5>手机：18722222222</h5>
+                        			<h5>主驾：乾坤</h5>
+                        			<h5>副驾：迎彩坤</h5>
+                        		</div>
+                        	</div>
+                        	<div class="content">
+                        		<div class="content-top">
+                        			<div class="content-top-left-img">
+                        				<img src="img/img.png" alt="" />
+                        			</div>
+                        			<div class="content-top-h5">田伊朗(自由客)</div>
+                        			<div class="content-top-right-img">
+                        				<img src="img/jiantou_10.png" alt="" />
+                        			</div>
+                        		</div>
+                        		<div class="content-body">
+                        			<h5>手机：18722222222</h5>
+                        			<h5>主驾：乾坤</h5>
+                        			<h5>副驾：迎彩坤</h5>
+                        		</div>
+                        	</div>
+                        	<div class="content">
+                        		<div class="content-top">
+                        			<div class="content-top-left-img">
+                        				<img src="img/img.png" alt="" />
+                        			</div>
+                        			<div class="content-top-h5">田伊朗(自由客)</div>
+                        			<div class="content-top-right-img">
+                        				<img src="img/jiantou_10.png" alt="" />
+                        			</div>
+                        		</div>
+                        		<div class="content-body">
+                        			<h5>手机：18722222222</h5>
+                        			<h5>主驾：乾坤</h5>
+                        			<h5>副驾：迎彩坤</h5>
+                        		</div>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	</body>
+	
+</html>

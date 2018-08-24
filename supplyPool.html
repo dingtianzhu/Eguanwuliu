@@ -1,0 +1,425 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<link href="css/mui.picker.min.css" rel="stylesheet" />
+		<style>
+			*{
+				font-family: "微软雅黑";
+			}
+	    	.font{
+	    		font-size: 12px!important;
+	    	}
+
+	    	.top-content{
+	    		margin:auto;
+					height: 65px;
+					width:100%;
+					background: white;
+					padding-top: 10px;
+	    	}
+	    	.top-tubiao-left{
+	
+				font-size: 15px;
+	    	}
+	    	.top-tubiao-right{
+	
+				font-size: 10px;
+				line-height: 10px;
+	    	}
+	    	.top-tubiao img{
+	    		width: 18px;
+	    		height: 20px;
+	    	}
+	    	.top-tubiao-left img{
+	    		margin: 12px auto auto 10px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 15px 8px 0px 8px;
+	    	}
+	    	.top-pull-right{
+	    		margin: 10px 10px auto auto;
+	    	}
+	    	.top-tubiao-left span{
+	    		padding-top: 6px;
+	    		padding-left: 5px;
+	    		line-height: 30px;
+	    	}
+	    	.mui-media-body{
+	    		margin-top: 0px!important;
+	    	}
+	    	.top-search{
+	    		padding:8px;
+	    		background: url("img/huhuan.png") no-repeat;
+	    		background-size:100% 100% ;
+	    		height: 45px;
+	    		width: 95%;
+	    		margin: auto;
+	    	}
+	    	.top-search span{
+	    		margin-left: 20px;
+	    		color: white;
+	    		
+	    	}
+	    	.chufadi{
+	    		line-height: 30px;
+	    		float: left;
+	    		width: 35%;
+	    	}
+	    	.mudidi{
+	    		float: left;
+	    		line-height: 30px;
+	    		width: 35%;
+	    	}
+	    	.shuangjiantou{
+	    		float: left;
+	    		width: 15%;
+	    		text-align: center;
+	    		line-height: 30px;
+	    	}
+	    	.shuangjiantou img{
+	    		width: 20px;
+	    		margin-top: 2px;
+	    	}
+	    	.search-img{
+	    		width: 10%;
+	    		float: right;
+	    		margin-right: 10px;
+	    	}
+	    	.search-img img{
+	    		height: 30px;
+	    	}
+	    	.chufadi input{
+	    		width: 75px;
+	    		padding: 0px;
+	    		margin: 0px;
+	    		height: 30px;
+	    		background: transparent;
+	    		color: white;
+	    		margin-left: 10px;
+	    		border: 0px;
+	    		text-align: right;
+	    	}
+	    	.mudidi input{
+	    		width: 75px;
+	    		padding: 0px;
+	    		margin: 0px;
+	    		height: 30px;
+	    		background: transparent;
+	    		color: white;
+	    		border: 0px;
+	    		text-align: right;
+	    	}
+	    	.content{
+	    		width: 100%;
+	    	}
+	    	.content-list-top{
+	    		width: 100%;
+	    		height: 40px;
+
+	    	}
+	    	.content-list-top img{
+	    		width: 15px;
+	    		height: 20px;
+	    	}
+	    	.dian{
+	    		width: 10px;
+	    		height: 10px;
+	    		border-radius:20px;
+	    		background: #ff9a70;
+	    	}
+	    	.waiquan{
+	    		width: 20px;
+	    		height: 20px;
+	    		border-radius:20px;
+	    		background: #ffe8df;
+	    		padding: 5px;
+	    		margin-top: 12px;
+	    		margin-left: 7px;
+	    	}
+	    	.list-left-photo{
+	    		margin-top: 10px;
+	    		margin-left: 10px;
+	    	}
+	    	.list-left-photo img{
+	    		height: 20px;
+	    	}
+	    	.num{
+	    		margin-top: 7px;
+	    		margin-left: 10px;
+	    		line-height: 30px;
+	    		font-size:16px;
+	    		color:#777;
+	    		
+	    	}
+	    	.mui-btn-danger{
+	    		color:#ff9a70!important;
+	    		border-color:#ff9a70!important ;
+	    	}
+	    	.button{
+	    		height: 35px;
+	    		width: 100%;
+	    		text-align: right;
+	    	}
+	    	.button button{
+	    		margin-top: 10px;
+	    		padding: 3px 5px 0px 5px;
+	    		margin-right: 20px;
+	    	}
+	    	.mui-btn-outlined{
+	    		font-size: 14px
+	    	}
+	    	.kuozhan{
+	    		padding-left: 20px;
+	    	}
+	    	.kuozhan img{
+	    		margin-top: 15px;
+	    		width: 18px;
+	    		height: 10px;
+	    		margin-right: 20px;
+	    	}
+	    	.info{
+	    		margin: 10px 15px auto 5px;
+	    		height: 300px;
+	    		background: url("img/background.png") no-repeat;
+	    		background-size:100% 100% ;
+	    		padding-top: 8px;
+	    	}
+	    	.info span{
+	    		margin-bottom:5px;
+	    		margin-left: 15px;
+	    		color: white;
+	    		font-size: 15px;
+	    	}
+	    	.dixian{
+	    		height: 30px;
+	    		width: 30%;
+	    		float: left;
+	    		line-height: 30px;
+	    		margin-left: 5px;
+	    	}
+	    	.dixian hr{
+	    		margin-top: 20px; 
+	    		height:20px;
+	    		border:none;
+	    		border-top:2px solid #ddd;"
+	    	}
+	    	.dixian-span{
+	    		height: 30px;
+	    		float: left;
+	    		line-height: 30px;
+	    		padding-top: 6px;
+	    	}
+	    	.dixian-span span{
+	    		margin-top: 20px;
+	    		margin-left: 5px;
+	    		font-size: 15px;
+	    		color: #999;
+	    	}
+	    	.list-span{
+	    		line-height: 30px;
+	    		width: 100%;
+	    	}
+	    	.div-top{
+	    		width: 100%;
+	    		height: 24px;
+	    	}
+	    	.content-address{
+	    		color: #555;
+	    		border-left: solid 3px #999 ;
+	    		padding-bottom: 8px;
+	    		padding-top: 5px;
+	    		padding-left: 15px;
+	    		margin-left: 15px;
+	    	}
+	    	.mui-btn{
+	    		padding:2px 5px;
+	    	}
+	    	
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+				
+			});
+			function jingjia(){
+				mui.openWindow({
+					url: 'jingjia.html',
+					id: 'jingjia'
+				})
+			}
+			function hid(){
+				if (document.getElementById('info').style.display == "none"){
+					document.getElementById('jiantou').src = "img/jiantou_5.png";
+					document.getElementById('info').style.display = "block"; 
+				}else{
+					document.getElementById('jiantou').src = "img/jiantou_1.png";
+					document.getElementById('info').style.display = "none"; 
+				}
+			}
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//					//级联示例
+					var cityPicker3 = new $.PopPicker({
+						layer: 3
+					});
+					cityPicker3.setData(cityData3);
+					var showCityPickerButton = doc.getElementById('showCityPicker3');
+					var cityResult3 = doc.getElementById('cityResult3');
+					showCityPickerButton.addEventListener('tap', function(event) {
+						cityPicker3.show(function(items) {
+							cityResult3.innerText =(items[2] || {}).text ;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+					
+					var cityPicker = new $.PopPicker({
+						layer: 3
+					});
+					cityPicker.setData(cityData3);
+					var showCityPickerButton = doc.getElementById('showCityPicker');
+					var cityResult = doc.getElementById('cityResult');
+					showCityPickerButton.addEventListener('tap', function(event) {
+						cityPicker.show(function(items) {
+							cityResult.innerText =(items[2] || {}).text ;
+							//返回 false 可以阻止选择框的关闭
+							//return false;
+						});
+					}, false);
+				});
+			})(mui, document);
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class=" mui-pull-left top-tubiao top-tubiao-left">
+					<div class="mui-pull-left">
+						<img src="img/dizhi.png" alt="" />
+					</div>
+						<span class="mui-pull-left">天津</span>
+			</a>
+		    <h1 class="mui-title">货源池</h1>
+		    <a id="help"class="mui-pull-right top-tubiao top-tubiao-right">
+				<div class="mui-text-center">
+					<img src="img/kefu.png" alt="" />
+				</div>
+			</a>
+		</header>
+		<div class="mui-content">
+
+			<div class="top-content">
+				<div class="top-search">
+					<div class="chufadi"id='showCityPicker3'>
+						<a >
+							<span id='cityResult3'>出发地</span>
+							<span class="mui-icon mui-icon-arrowdown"style="margin-left: 0px;"></span>
+						</a>
+					</div>
+					<div class="shuangjiantou">
+						<img src="img/jiaohu.png" alt="" />
+					</div>
+					<div class="mudidi" id='showCityPicker'>
+						<a >
+							<span id='cityResult'>目的地</span>
+							<span class="mui-icon mui-icon-arrowdown"style="margin-left: 0px;"></span>
+						</a>
+					</div>
+					<div class="search-img">
+						<img src="img/search.png" alt="" />
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="content-list">
+					<div class="content-list-top">
+						<div class="waiquan mui-pull-left">
+							<div class="dian"></div>
+						</div>
+						<div class="mui-pull-left list-left-photo">
+							<img src="img/fire-1.png" alt="" />
+						</div>
+						<div class="mui-pull-left num">171020120586</div>
+						<div class="mui-pull-right kuozhan"onclick="hid()">
+							<a><img id="jiantou"src="img/jiantou_1.png" alt="" /></a>
+						</div>
+						
+					</div>
+					<div class="content-address">
+						<div class="div"><span>南开———乌马营</span></div>
+						<div class="button">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined"onclick="jingjia()">竞价</button>
+						</div>
+						<div class="info"id="info" style="display:none;">
+							<div class="div-top">
+								<span class="mui-pull-left">订单号:171020120586</span>
+								<span style="float: right;margin-right: 10px;">2017年7月6日</span>
+							</div>
+							<hr style="border: dashed 1px white;"/>
+							<div class="div-content">
+								<div class="list-span">
+									<span>起点:&nbsp; 山东省 乐陵市 王庄</span>
+								</div>
+								<div class="list-span">
+									<span>终点:&nbsp; 天津市 滨海新区 黄环街道103号</span>
+								</div>
+								<div class="list-span">
+									<span>货物:&nbsp; 乙醇</span>
+								</div>
+								<div class="list-span">
+									<span>数量(T):&nbsp; 600</span>
+								</div>
+								<div class="list-span">
+									<span>罐体要求:&nbsp; 什么什么什么</span>
+								</div>
+								<div class="list-span">
+									<span>结款方式:&nbsp; 电子转账</span>
+								</div>
+								<div class="list-span">
+									<span>发货时间:&nbsp; 2017年6月10日</span>
+								</div>
+								<div class="list-span">
+									<span>竞拍价格:&nbsp; 3000/吨</span>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="content-list">
+					<div class="content-list-top">
+						<div class="waiquan mui-pull-left">
+							<div class="dian"></div>
+						</div>
+						<div class="dixian">
+							<hr  />
+						</div>
+						<div class="dixian-span"><span>我是有底线的</span></div>
+						<div class="dixian">
+							<hr  />
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

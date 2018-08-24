@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <style type="text/css">
+        .mui-slider{z-index: -1;}
+        .mui-pull-top-tips {
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                margin-left: -25px;
+                width: 40px;
+                height: 70px;
+                border-radius: 100%;
+            }
+            .mui-bar~.mui-pull-top-tips {
+                top: 24px;
+            }
+            .mui-pull-top-wrapper {
+                width: 70px;
+                height: 70px;
+                display: block;
+                text-align: center;
+                background-color: #efeff4;
+                border: 1px solid #ddd;
+                border-radius: 25px;
+                background-clip: padding-box;
+                box-shadow: 0 4px 10px #bbb;
+                overflow: hidden;
+            }
+            .mui-pull-top-tips.mui-transitioning {
+                -webkit-transition-duration: 200ms;
+                transition-duration: 200ms;
+            }
+            .mui-pull-top-tips .mui-pull-loading {
+                /*-webkit-backface-visibility: hidden;
+                -webkit-transition-duration: 400ms;
+                transition-duration: 400ms;*/
+
+                margin: 0;
+            }
+            .mui-pull-top-wrapper .mui-icon,
+            .mui-pull-top-wrapper .mui-spinner {
+                margin-top: 7px;
+            }
+            .mui-pull-top-wrapper .mui-icon.mui-reverse {
+                /*-webkit-transform: rotate(180deg) translateZ(0);*/
+            }
+            .mui-pull-bottom-tips {
+                text-align: center;
+                background-color: #efeff4;
+                font-size: 15px;
+                line-height: 70px;
+                color: #777;
+            }
+            .mui-pull-top-canvas {
+                overflow: hidden;
+                background-color: #fafafa;
+                border-radius: 70px;
+                box-shadow: 0 4px 10px #bbb;
+                width: 70px;
+                height: 70px;
+                margin: 0 auto;
+            }
+            .mui-pull-top-canvas canvas {
+                width: 70px;
+            }
+            .mui-slider-indicator.mui-segmented-control {
+                background: white;
+            }
+            .mui-scroll-wrapper.mui-segmented-control{
+            	height: 70px;
+            }
+            .mui-scroll{
+            	width: 100%!important;
+            	height: 70px!important;
+            }
+            .mui-fullscreen .mui-segmented-control~.mui-slider-group{
+            	top:70px;
+            }
+            .mui-segmented-control .mui-control-item{
+            	line-height: 20px;
+            	margin-top: 20px;
+            	padding: 0px!important;
+            }
+            /*样式*/
+           *{
+				font-family: "微软雅黑";
+			}
+	    	.mui-control-item img{
+	    		width: 20px;
+	    		height: 20px;
+	    	}
+	    	.content{
+				margin: 5px auto auto 15px;
+	    	}
+	    	.top-content{
+	    		height: 35px;
+	    	}
+	    	.top-content-right{
+	    		height: 30px;
+	    		margin-top: 5px;
+	    		width: 90%;
+	    	}
+	    	.top-content-right img{
+	    		height: 22px;
+	    		width: 20px!important;
+	    		margin-left: 8px;
+	    	}
+	    	.top-content-right h5{
+	    		display: inline;
+	    		font-size: 18px;
+	    		margin-left: 8px;
+	    	}
+	    	.jiantou img{
+	    		height: 10px;
+	    		width: 20px;
+	    		margin-top: 8px;
+	    	}
+	    	.mui-table-view-cell {
+	    		padding: 0px;
+	    	}
+	    	.mui-table-view{
+	    		background: #eee;
+	    	}
+	    	.mui-table-view-cell>.mui-slider-handle{
+	    		background: #eee;
+	    	}
+	    	.mui-table-view-cell>.mui-slider-right>{
+	    		padding: 0px 10px;
+	    		background: #eee;
+	    	}
+	    	.body-content{
+	    		border-left: 2px solid #999;
+	    		margin-left: 9px;
+	    		padding-left: 17px;
+	    	}
+	    	.body-content span{
+	    		font-size: 18px;
+	    	}
+	    	.body-button{
+	    		text-align: right;
+	    		padding-right: 10px;
+	    	}
+	    	.body-button button{
+	    		margin:10px 1% ;
+	    	}
+	    	.mui-btn{
+	    		padding:2px 5px 0px 5px;
+	    	}
+	    	.mui-btn img{
+	    		height: 25px;
+	    		width: 25px!important;
+	    	}
+	    	.waihongdian{
+	    		padding: 5px;
+	    		width: 20px;
+	    		height: 20px;
+	    		border-radius:40px;
+	    		background: #ffe8df;
+	    		margin-top: 8px;
+	    		float: left;
+	    	}
+	    	.mui-table-view-cell>.mui-slider-right>.mui-btn{
+	    		padding: 12px;
+	    	}
+	    	.mui-table-view-cell>.mui-slider-left>.mui-btn:after, .mui-table-view-cell>.mui-slider-right>.mui-btn:after{
+	    		height: 0px;
+	    		width: 0px;
+	    	}
+	    	.neihongdian{
+	    		width: 10px;
+	    		height: 10px;
+	    		border-radius:20px;
+	    		background: #ff9a70;
+	    	}
+	    	.wailandian{
+	    		padding: 5px;
+	    		width: 20px;
+	    		height: 20px;
+	    		border-radius:40px;
+	    		background: #d4f5fe;
+	    		margin-top: 8px;
+	    		float: left;
+	    	}
+	    	.neilandian{
+	    		width: 10px;
+	    		height: 10px;
+	    		border-radius:20px;
+	    		background: #26c6ff;
+	    	}
+	    	.delete{
+	    		border-radius: 10px!important;
+	    		margin: 15px 10px;
+	    	}
+	    	.mui-slider-right,.mui-disabled{
+	    		width: 80px!important;
+	    	}
+	    	.GPS{
+	    		width: 100%;
+	    		height: 100px;
+	    		padding-right: 10px;
+	    	}
+	    	.GPS img{
+	    		width: 100%;
+	    		height: 100%;
+	    		margin-right: 20px;
+	    	}
+	    	.info{
+	    		margin: 10px 15px auto 5px;
+	    		background: url("img/background.png") no-repeat;
+	    		background-size:100% 100% ;
+	    		padding-top: 8px;
+	    	}
+	    	.body-button-panel{
+	    		margin: 10px 15px auto 5px;
+	    		height: 120px;
+	    		background: url("img/background.png") no-repeat;
+	    		background-size:100% 100% ;
+	    		padding-top: 8px;
+	    		color: white;
+	    	}
+	    	.panel-img{
+	    		height: 30px;
+	    		width: 100%!important;
+	    	}
+	    	.panel-time{
+	    		margin-right: 10px;
+	    		margin-top: 10px;
+	    		float: right;
+	    	}
+	    	.left-img{
+	    		float: left;
+	    		margin-left: 10px;
+	    		
+	    	}
+	    	.left-img img{
+	    		height: 30px;
+	    		width: 30px!important;
+	    	}
+	    	.panel-span{
+	    		margin-left: 10px;
+	    		line-height: 30px;
+	    	}
+	    	.panel-span-right{
+	    		float: right;
+	    		margin-right: 10px;
+	    	}
+	    	.info span{
+	    		margin-bottom:5px;
+	    		margin-left: 15px;
+	    		color: white;
+	    		font-size: 15px;
+	    	}
+	    	.list-span{
+	    		line-height: 30px;
+	    		width: 100%;
+	    	}
+	    	.div-top{
+	    		width: 100%;
+	    		height: 24px;
+	    	}
+	    	.dixian{
+	    		height: 30px;
+	    		width: 30%;
+	    		float: left;
+	    		line-height: 30px;
+	    		margin-left: 5px;
+	    	}
+	    	.dixian hr{
+	    		margin-top: 16px; 
+	    		height:20px;
+	    		border:none;
+	    		border-top:2px solid #ddd;"
+	    	}
+	    	.dixian-span{
+	    		height: 30px;
+	    		float: left;
+	    		line-height: 30px;
+	    		padding-top: 2px;
+	    	}
+	    	.dixian-span span{
+	    		margin-top: 18px;
+	    		margin-left: 5px;
+	    		font-size: 15px;
+	    		color: #999;
+	    	}
+	    	#dialog-overlay {
+
+			 width:100%; 
+			 height:100%;
+			 filter:alpha(opacity=50); 
+			 -moz-opacity:0.5; 
+			 -khtml-opacity: 0.5; 
+			 opacity: 0.5; 
+			 position:absolute; 
+			 background:#000; 
+			 top:0; left:0; 
+			 z-index:3000; 
+			 display:none;
+		}
+		#dialog-box {
+		 -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+		 -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+		 -moz-border-radius: 5px;
+		    -webkit-border-radius: 5px;
+		 padding: 20px;
+		 background:white;
+		 width:90%; 
+		 position:absolute; 
+		 z-index:50000; 
+		 display:none;
+		}
+		
+		#dialog-box .dialog-content {
+		 text-align:left; 
+		 color:#666; 
+		 font-family:arial;
+		 font-size:11px; 
+		}
+		
+		
+		#dialog-box .dialog-content p {
+		 font-weight:700; margin:0;
+		}
+		
+		#dialog-box .dialog-content ul {
+		 padding:0; 
+		}
+		.alert{
+			width: 80%;
+			margin: auto;
+			height: 50px;
+			margin-top: 10px;
+		}
+		.alert-active{
+			border: 1px solid #007AFF;
+		}
+		.alert-img img{
+			height: 30px;
+			margin-bottom: -8px;
+		}
+		.alert-img span{
+			line-height: 50px;
+			font-size: 20px;
+			margin-bottom: 20px;
+			margin-left: 10px;
+		}
+    </style>
+</head>
+<body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js">
+	</script>
+	<script type="text/javascript">
+		 mui.init();
+		 (function($) {
+				$('#OA_task_1').on('tap', '.mui-btn', function(event) {
+					var elem = this;
+					var li = elem.parentNode.parentNode;
+					mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+						if (e.index == 0) {
+							li.parentNode.removeChild(li);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(li);
+							}, 0);
+						}
+					});
+				});
+				var btnArray = ['确认', '取消'];
+				//第二个demo，向左拖拽后显示操作图标，释放后自动触发的业务逻辑
+				$('#OA_task_2').on('slideleft', '.mui-table-view-cell', function(event) {
+					var elem = this;
+					mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+						if (e.index == 0) {
+							elem.parentNode.removeChild(elem);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(elem);
+							}, 0);
+						}
+					});
+				});
+				//第二个demo，向右拖拽后显示操作图标，释放后自动触发的业务逻辑
+				$('#OA_task_2').on('slideright', '.mui-table-view-cell', function(event) {
+					var elem = this;
+					mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+						if (e.index == 0) {
+							elem.parentNode.removeChild(elem);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(elem);
+							}, 0);
+						}
+					});
+				});
+			})(mui);
+		function updateIcon(){
+			var arr={
+				img0:{
+					gray:"img/icon_1.png",
+					light:"img/icon_5.png"
+				},
+				img1:{
+					gray:"img/icon-2.png",
+					light:"img/icon-6.png"
+				},
+				img2:{
+					gray:"img/lihuo.png",
+					light:"img/lihuo_1.png"
+				},
+				img3:{
+					gray:"img/icon-4.png",
+					light:"img/icon-8.png"
+				}
+			};
+			
+					
+				var iconContainers=$(".for_icon_change");
+				for(var i=0;i<iconContainers.length;i++){
+					var img=$(iconContainers[i]).find("img")[0];
+					if($(iconContainers[i]).hasClass("mui-active")){
+						img.src= arr[img.id].light;	
+					}else{
+						img.src=arr[img.id].gray;
+					}
+				}
+			}
+			$(document).ready(function () {
+				$('a.btn-ok, #dialog-overlay, #dialog-box').click(function () {  
+					$('#dialog-overlay, #dialog-box').hide();  
+					return false;
+				});
+				$(window).resize(function () {
+					if (!$('#dialog-box').is(':hidden')){
+						popup();
+					} 
+				}); 
+			});
+			function popup(message) {
+				 var maskHeight = $(window).height();  
+				 var maskWidth = $(window).width();
+				   var dialogTop =  (maskHeight - ($('#dialog-box').height()))/2-20;  
+				   var dialogLeft = (maskWidth/2) - ($('#dialog-box').width()/2)-20; 
+				 $('#dialog-overlay').css({height:maskHeight, width:maskWidth}).show();
+				 $('#dialog-box').css({top:dialogTop, left:dialogLeft}).show();
+				 $('#dialog-message').html(message);
+			}
+			$(function(){
+				$(".mui-scroll").on('tap',updateIcon);
+				$(".body-button>.mui-btn").click(function(){
+					if(this.innerText=="竞价"){
+						mui.openWindow({url:"jingjia.html",id:"jingjia"});	
+					}else if(this.innerText=="待报价"){
+						mui.openWindow({url:"carPoolOrder.html",id:"carPoolOrder"});
+					}else if(this.innerText=="分派司机"){
+						mui.openWindow({url:"assignD.html",id:"assignD"});
+					}else if(this.innerText=="查看报价"){
+						mui.openWindow({url:"lookPrice.html",id:"lookPrice"});
+					}else if(this.innerText=="查看司机"){
+						mui.openWindow({url:"orderDivide.html",id:"orderDivide"});
+					}else if(this.innerText=="转发订单"){
+						mui.openWindow({url:"turnOrder.html",id:"turnOrder"});
+					}else if(this.innerText=="付款"){
+						popup();
+					}
+							
+				});
+			});
+		function hid(img){
+//			console.log(img.src);
+		
+			var nextdiv=img.parentNode.parentNode.parentNode;
+			var div=$(nextdiv).next("div").find(".max_box")[0];
+			
+			
+			if (div.style.display == "none"){
+				img.src = "img/jiantou_5.png";
+				div.style.display = "block"; 
+			}else{
+				img.src = "img/jiantou_1.png";
+				div.style.display = "none"; 
+			}
+		}
+	</script>
+	<div id="dialog-overlay"></div>
+	<div id="dialog-box">
+		<div class="dialog-content">
+			<div id="dialog-message">
+				<a id="addriver">
+					<div class="alert alert-active">
+						<div class="alert-img mui-text-center">
+							<img src="img/a.png" alt="" />
+							<span>在线支付</span>
+						</div>
+					</div>
+				</a>
+				<a id="addcar">
+					<div class="alert">
+						<div class="alert-img mui-text-center">
+							<img src="img/b.png" alt="" />
+							<span>货到付款</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+    <div class="mui-content">
+        <div id="purchaselist" class="mui-slider mui-fullscreen">
+            <div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                <div class="mui-scroll">
+                	<div class="mui-col mui-col-xs-3 mui-text-center mui-pull-left">
+	                    <a class="mui-control-item  mui-active for_icon_change" href="#item1mobile">
+			           		<img src="img/icon_5.png"id="img0"alt=""/>
+			           		<div class="mui-media-body ">等待报价</div>
+	                    </a>
+					</div>
+					<div class="mui-col mui-col-xs-3 mui-text-center mui-pull-left">
+	                    <a class="mui-control-item for_icon_change" href="#item2mobile">
+			           		<img src="img/icon-2.png"id="img1"alt="" /><span class="mui-badge mui-badge-warning">2</span></span>
+			           		<div class="mui-media-body ">竞价中</div>
+	                    </a>
+					</div>
+					<div class="mui-col mui-col-xs-3 mui-text-center mui-pull-left">
+	                    <a class="mui-control-item for_icon_change" href="#item3mobile">
+			           		<img src="img/icon-4.png"id="img3"alt="" /><span class="mui-badge mui-badge-warning">4</span></span>
+			           		<div class="mui-media-body ">竞价成功</div>
+	                    </a>
+					</div>
+					<div class="mui-col mui-col-xs-3 mui-text-center mui-pull-left">
+	                    <a class="mui-control-item for_icon_change" href="#item4mobile">
+							<img src="img/lihuo.png"id="img2"alt=""/><span class="mui-badge mui-badge-warning">3</span></span>
+			           		<div class="mui-media-body ">货物送达</div>
+	                    </a>
+	                </div>
+                </div>
+            </div>
+            <div class="mui-slider-group">
+                <div id="item1mobile" class="mui-slider-item mui-control-content mui-active" >
+                    <div id="scroll1" class="mui-scroll-wrapper"style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+                        <div class="mui-scroll" >
+                        	<ul class="mui-table-view"id="OA_task_1">
+							   <li class="mui-table-view-cell">
+							    	<div class="mui-slider-right mui-disabled">
+							    			<a class="mui-btn mui-btn-warning mui-btn-red delete">
+							    				<img src="img/remove.png" alt="" />
+							    			</a>
+									</div>
+									<div class="mui-slider-handle">
+										<div class="content">
+			                        		<div class="top-content">
+			                        			<div class="waihongdian">
+			                        				<div class="neihongdian">
+			                        					
+			                        				</div>
+			                        			</div>
+			                        			<div class="top-content-right mui-pull-left">
+			                        				<img src="img/fire-1.png" class="mui-pull-left"alt="" />
+			                        				<h5 class="mui-pull-left">170020120586</h5>
+			                        				<a class="jiantou mui-pull-right">
+			                        					<img src="img/jiantou_1.png" onclick="hid(this)" class=""/>
+			                        				</a>
+			                        			</div>
+			                        		</div>
+			                        		<div class="body-content">
+			                        			<span>南开——乌马营</span>
+			                        			<div class="body-button">
+			                        				<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">竞价</button>
+			                        			</div>
+			                        			<div class="max_box" style="display: none;">
+			                        				<div class="info" >
+														<div class="div-top">
+															<span class="mui-pull-left">订单号:171020120586</span>
+															<span style="float: right;margin-right: 10px;">2017年7月6日</span>
+														</div>
+														<hr style="border: dashed 1px white;"/>
+														<div class="div-content">
+															<div class="list-span">
+																<span>起点:&nbsp; 山东省 乐陵市 王庄</span>
+															</div>
+															<div class="list-span">
+																<span>终点:&nbsp; 天津市 滨海新区 黄环街道103号</span>
+															</div>
+															<div class="list-span">
+																<span>货物:&nbsp; 乙醇</span>
+															</div>
+															<div class="list-span">
+																<span>数量(T):&nbsp; 600</span>
+															</div>
+															<div class="list-span">
+																<span>罐体要求:&nbsp; 什么什么什么</span>
+															</div>
+															<div class="list-span">
+																<span>结款方式:&nbsp; 电子转账</span>
+															</div>
+															<div class="list-span">
+																<span>发货时间:&nbsp; 2017年6月10日</span>
+															</div>
+															<div class="list-span">
+																<span>竞拍价格:&nbsp; 3000/吨</span>	
+															</div>
+														</div>
+													</div>
+			                        			</div>
+			                        		</div>
+			                        	</div>
+									</div>
+							    </li>
+							</ul>
+							<ul class="mui-table-view"id="OA_task_1">
+							   <li class="mui-table-view-cell">
+							    	<div class="mui-slider-right mui-disabled">
+							    			<a class="mui-btn mui-btn-warning mui-btn-red delete">
+							    				<img src="img/remove.png" alt="" />
+							    			</a>
+									</div>
+									<div class="mui-slider-handle">
+										<div class="content">
+			                        		<div class="top-content">
+			                        			<div class="waihongdian">
+			                        				<div class="neihongdian">
+			                        					
+			                        				</div>
+			                        			</div>
+			                        			<div class="top-content-right mui-pull-left">
+			                        				<img src="img/fire-1.png" class="mui-pull-left"alt="" />
+			                        				<h5 class="mui-pull-left">170020120586</h5>
+			                        				<a class="jiantou mui-pull-right">
+			                        					<img src="img/jiantou_1.png" onclick="hid(this)" class=""/>
+			                        				</a>
+			                        			</div>
+			                        		</div>
+			                        		<div class="body-content">
+			                        			<span>南开——乌马营</span>
+			                        			<div class="body-button">
+			                        				<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">竞价</button>
+			                        			</div>
+			                        			<div class="max_box" style="display: none;">
+			                        				<div class="info" >
+														<div class="div-top">
+															<span class="mui-pull-left">订单号:171020120586</span>
+															<span style="float: right;margin-right: 10px;">2017年7月6日</span>
+														</div>
+														<hr style="border: dashed 1px white;"/>
+														<div class="div-content">
+															<div class="list-span">
+																<span>起点:&nbsp; 山东省 乐陵市 王庄</span>
+															</div>
+															<div class="list-span">
+																<span>终点:&nbsp; 天津市 滨海新区 黄环街道103号</span>
+															</div>
+															<div class="list-span">
+																<span>货物:&nbsp; 乙醇</span>
+															</div>
+															<div class="list-span">
+																<span>数量(T):&nbsp; 600</span>
+															</div>
+															<div class="list-span">
+																<span>罐体要求:&nbsp; 什么什么什么</span>
+															</div>
+															<div class="list-span">
+																<span>结款方式:&nbsp; 电子转账</span>
+															</div>
+															<div class="list-span">
+																<span>发货时间:&nbsp; 2017年6月10日</span>
+															</div>
+															<div class="list-span">
+																<span>竞拍价格:&nbsp; 3000/吨</span>	
+															</div>
+														</div>
+													</div>
+			                        			</div>
+			                        		</div>
+			                        	</div>
+									</div>
+							    </li>
+							</ul>
+							<ul class="mui-table-view"id="OA_task_1">
+							   <li class="mui-table-view-cell">
+							    	<div class="mui-slider-right mui-disabled">
+						    			<div class="mui-btn mui-btn-warning delete">
+						    				<a href=""><img src="img/remove.png" alt="" /></a>
+						    			</div>
+									</div>
+									<div class="mui-slider-handle">
+										<div class="content">
+			                        		<div class="top-content">
+			                        			<div class="waihongdian">
+			                        				<div class="neihongdian">
+			                        					
+			                        				</div>
+			                        			</div>
+			                        			<div class="dixian">
+													<hr  />
+												</div>
+												<div class="dixian-span"><span>我是有底线的</span></div>
+												<div class="dixian">
+													<hr  />
+												</div>
+			                        		</div>
+			                        	</div>
+									</div>
+							    </li>
+							</ul>
+						   <!--/接/-->
+                        </div>
+                    </div>
+                </div>
+                <div id="item2mobile" class="mui-slider-item mui-control-content">
+                    <div class="mui-scroll-wrapper"style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+                        <div class="mui-scroll">
+                        	<ul class="mui-table-view"id="OA_task_1">
+							   <li class="mui-table-view-cell">
+							    	<div class="mui-slider-right mui-disabled">
+						    			<a class="mui-btn mui-btn-warning mui-btn-red delete">
+						    				<img src="img/remove.png" alt="" />
+						    			</a>
+									</div>
+									<div class="mui-slider-handle">
+										<div class="content">
+			                        		<div class="top-content">
+			                        			<div class="waihongdian">
+			                        				<div class="neihongdian">
+			                        					
+			                        				</div>
+			                        			</div>
+			                        			<div class="top-content-right mui-pull-left">
+			                        				<img src="img/fire-1.png" class="mui-pull-left"alt="" />
+			                        				<h5 class="mui-pull-left">170020120586</h5>
+			                        				<a class="jiantou mui-pull-right">
+			                        					<img src="img/jiantou_1.png"onclick="hid(this)" alt="" class=""/>
+			                        				</a>
+			                        			</div>
+			                        		</div>
+			                        		<div class="body-content">
+			                        			<span>南开——乌马营</span>
+			                        			<div class="body-button-panel">
+													<span style="font-size:20px;margin-left:10px">当前竞价</span>
+													<hr style="border: 1px dashed white;"/>
+													<div class="panel-img">
+														<div class="left-img">
+															<img src="img/img.png" alt="" />
+														</div>
+														<div class="panel-span">
+															<span style="font-size:20px;">用户名</span>
+															<span style="font-size:10px;">(自由客)</span>
+															<div class="panel-span-right">
+																<span style="font-size: 20px;">2000元/吨</span>
+															</div>
+														</div>
+														<div class="panel-time">
+															<span style="font-size: 12px;">2017/05/05 14:44</span>
+														</div>
+													</div>
+												</div>
+			                        			<div class="max_box" style="display: none;">
+			                        				<div class="info" >
+														<div class="div-top">
+															<span class="mui-pull-left">订单号:171020120586</span>
+															<span style="float: right;margin-right: 10px;">2017年7月6日</span>
+														</div>
+														<hr style="border: dashed 1px white;"/>
+														<div class="div-content">
+															<div class="list-span">
+																<span>起点:&nbsp; 山东省 乐陵市 王庄</span>
+															</div>
+															<div class="list-span">
+																<span>终点:&nbsp; 天津市 滨海新区 黄环街道103号</span>
+															</div>
+															<div class="list-span">
+																<span>货物:&nbsp; 乙醇</span>
+															</div>
+															<div class="list-span">
+																<span>数量(T):&nbsp; 600</span>
+															</div>
+															<div class="list-span">
+																<span>罐体要求:&nbsp; 什么什么什么</span>
+															</div>
+															<div class="list-span">
+																<span>结款方式:&nbsp; 电子转账</span>
+															</div>
+															<div class="list-span">
+																<span>发货时间:&nbsp; 2017年6月10日</span>
+															</div>
+															<div class="list-span">
+																<span>竞拍价格:&nbsp; 3000/吨</span>	
+															</div>
+														</div>
+													</div>
+			                        			</div>
+			                        		</div>
+			                        	</div>
+									</div>
+							    </li>
+							</ul>
+							<ul class="mui-table-view"id="OA_task_1">
+							   <li class="mui-table-view-cell">
+							    	<div class="mui-slider-right mui-disabled">
+						    			<a class="mui-btn mui-btn-warning mui-btn-red delete">
+						    				<img src="img/remove.png" alt="" />
+						    			</a>
+									</div>
+									<div class="mui-slider-handle">
+										<div class="content">
+			                        		<div class="top-content">
+			                        			<div class="waihongdian">
+			                        				<div class="neihongdian">
+			                        					
+			                        				</div>
+			                        			</div>
+			                        			<div class="top-content-right mui-pull-left">
+			                        				<img src="img/fire-1.png" class="mui-pull-left"alt="" />
+			                        				<h5 class="mui-pull-left">170020120586</h5>
+			                        				<a class="jiantou mui-pull-right">
+			                        					<img src="img/jiantou_1.png"onclick="hid(this)" alt="" class=""/>
+			                        				</a>
+			                        			</div>
+			                        		</div>
+			                        		<div class="body-content">
+			                        			<span>南开——乌马营</span>
+			                        			<div class="body-button-panel">
+													<span style="font-size:20px;margin-left:10px">当前竞价</span>
+													<hr style="border: 1px dashed white;"/>
+													<div class="panel-img">
+														<div class="left-img">
+															<img src="img/img.png" alt="" />
+														</div>
+														<div class="panel-span">
+															<span style="font-size:20px;">用户名</span>
+															<span style="font-size:10px;">(自由客)</span>
+															<div class="panel-span-right">
+																<span style="font-size: 20px;">2000元/吨</span>
+															</div>
+														</div>
+														<div class="panel-time">
+															<span style="font-size: 12px;">2017/05/05 14:44</span>
+														</div>
+													</div>
+												</div>
+			                        			<div class="max_box" style="display: none;">
+			                        				<div class="info" >
+														<div class="div-top">
+															<span class="mui-pull-left">订单号:171020120586</span>
+															<span style="float: right;margin-right: 10px;">2017年7月6日</span>
+														</div>
+														<hr style="border: dashed 1px white;"/>
+														<div class="div-content">
+															<div class="list-span">
+																<span>起点:&nbsp; 山东省 乐陵市 王庄</span>
+															</div>
+															<div class="list-span">
+																<span>终点:&nbsp; 天津市 滨海新区 黄环街道103号</span>
+															</div>
+															<div class="list-span">
+																<span>货物:&nbsp; 乙醇</span>
+															</div>
+															<div class="list-span">
+																<span>数量(T):&nbsp; 600</span>
+															</div>
+															<div class="list-span">
+																<span>罐体要求:&nbsp; 什么什么什么</span>
+															</div>
+															<div class="list-span">
+																<span>结款方式:&nbsp; 电子转账</span>
+															</div>
+															<div class="list-span">
+																<span>发货时间:&nbsp; 2017年6月10日</span>
+															</div>
+															<div class="list-span">
+																<span>竞拍价格:&nbsp; 3000/吨</span>	
+															</div>
+														</div>
+													</div>
+			                        			</div>
+			                        		</div>
+			                        	</div>
+									</div>
+							    </li>
+							</ul>
+							<ul class="mui-table-view"id="OA_task_1">
+							   <li class="mui-table-view-cell">
+							    	<div class="mui-slider-right mui-disabled">
+						    			<div class="mui-btn mui-btn-warning delete">
+						    				<a href=""><img src="img/remove.png" alt="" /></a>
+						    			</div>
+									</div>
+									<div class="mui-slider-handle">
+										<div class="content">
+			                        		<div class="top-content">
+			                        			<div class="waihongdian">
+			                        				<div class="neihongdian">
+			                        					
+			                        				</div>
+			                        			</div>
+			                        			<div class="dixian">
+													<hr  />
+												</div>
+												<div class="dixian-span"><span>我是有底线的</span></div>
+												<div class="dixian">
+													<hr  />
+												</div>
+			                        		</div>
+			                        	</div>
+									</div>
+							    </li>
+							</ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="item3mobile" class="mui-slider-item mui-control-content">
+                    <div id="scroll1" class="mui-scroll-wrapper" style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+                        <div class="mui-scroll">
+                        	<ul class="mui-table-view"id="OA_task_1">
+							   <li class="mui-table-view-cell">
+							    	<div class="mui-slider-right mui-disabled">
+							    			<a class="mui-btn mui-btn-warning mui-btn-red delete">
+							    				<img src="img/remove.png" alt="" />
+							    			</a>
+									</div>
+									<div class="mui-slider-handle">
+										<div class="content">
+			                        		<div class="top-content">
+			                        			<div class="waihongdian">
+			                        				<div class="neihongdian">
+			                        					
+			                        				</div>
+			                        			</div>
+			                        			<div class="top-content-right mui-pull-left">
+			                        				<img src="img/fire-1.png" class="mui-pull-left"alt="" />
+			                        				<h5 class="mui-pull-left">170020120586</h5>
+			                        				<a class="jiantou mui-pull-right">
+			                        					<img src="img/jiantou_1.png" onclick="hid(this)" />
+			                        				</a>
+			                        			</div>
+			                        		</div>
+			                        		<div class="body-content">
+			                        			<span>南开——乌马营</span>
+			                        			<div class="body-button">
+			                        				<button type="button" class="mui-btn mui-btn-default mui-btn-outlined">线上支付</button>
+			                        				<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">分派司机</button>
+			                        			</div>
+			                        			
+			                        			<div class="max_box" style="display: none;">
+			                        				<div class="info" >
+														<div class="div-top">
+															<span class="mui-pull-left">订单号:171020120586</span>
+															<span style="float: right;margin-right: 10px;">2017年7月6日</span>
+														</div>
+														<hr style="border: dashed 1px white;"/>
+														<div class="div-content">
+															<div class="list-span">
+																<span>起点:&nbsp; 山东省 乐陵市 王庄</span>
+															</div>
+															<div class="list-span">
+																<span>终点:&nbsp; 天津市 滨海新区 黄环街道103号</span>
+															</div>
+															<div class="list-span">
+																<span>货物:&nbsp; 乙醇</span>
+															</div>
+															<div class="list-span">
+																<span>数量(T):&nbsp; 600</span>
+															</div>
+															<div class="list-span">
+																<span>罐体要求:&nbsp; 什么什么什么</span>
+															</div>
+															<div class="list-span">
+																<span>结款方式:&nbsp; 电子转账</span>
+															</div>
+															<div class="list-span">
+																<span>发货时间:&nbsp; 2017年6月10日</span>
+															</div>
+															<div class="list-span">
+																<span>竞拍价格:&nbsp; 3000/吨</span>	
+															</div>
+														</div>
+													</div>
+			                        			</div>
+			                        		</div>
+			                        	</div>
+									</div>
+							    </li>
+							</ul>
+							<ul class="mui-table-view"id="OA_task_1">
+							   <li class="mui-table-view-cell">
+							    	<div class="mui-slider-right mui-disabled">
+							    			<a class="mui-btn mui-btn-primary  delete">
+							    				<img src="img/remove.png" alt="" />
+							    			</a>
+									</div>
+									<div class="mui-slider-handle">
+										<div class="content">
+			                        		<div class="top-content">
+			                        			<div class="wailandian">
+			                        				<div class="neilandian">
+			                        					
+			                        				</div>
+			                        			</div>
+			                        			<div class="top-content-right mui-pull-left">
+			                        				<img src="img/fire-2.png" class="mui-pull-left"alt="" />
+			                        				<h5 class="mui-pull-left">170020120586</h5>
+			                        				<a href=""class="jiantou mui-pull-right">
+			                        					<img src="img/jiantou_2.png" alt="" class=""/>
+			                        				</a>
+			                        			</div>
+			                        		</div>
+			                        		<div class="body-content">
+			                        			<span>南开——乌马营</span>
+			                        			<div class="body-button">
+			                        				<button type="button" class="mui-btn mui-btn-default mui-btn-outlined">线下支付</button>
+			                        				<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">分派司机</button>
+			                        			</div>
+			                        		</div>
+			                        	</div>
+									</div>
+							    </li>
+							</ul>
+							<ul class="mui-table-view"id="OA_task_1">
+							   <li class="mui-table-view-cell">
+							    	<div class="mui-slider-right mui-disabled">
+						    			<div class="mui-btn mui-btn-warning delete">
+						    				<a href=""><img src="img/remove.png" alt="" /></a>
+						    			</div>
+									</div>
+									<div class="mui-slider-handle">
+										<div class="content">
+			                        		<div class="top-content">
+			                        			<div class="waihongdian">
+			                        				<div class="neihongdian">
+			                        					
+			                        				</div>
+			                        			</div>
+			                        			<div class="dixian">
+													<hr  />
+												</div>
+												<div class="dixian-span"><span>我是有底线的</span></div>
+												<div class="dixian">
+													<hr  />
+												</div>
+			                        		</div>
+			                        	</div>
+									</div>
+							    </li>
+							</ul>
+						   <!--/接/-->
+                        </div>
+                    </div>
+                </div>
+                <div id="item4mobile" class="mui-slider-item mui-control-content">
+                    <div id="scroll1" class="mui-scroll-wrapper"style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+                        <div class="mui-scroll">
+                        	<ul class="mui-table-view"id="OA_task_1">
+							   <li class="mui-table-view-cell">
+							    	<div class="mui-slider-right mui-disabled">
+						    			<div class="mui-btn mui-btn-warning delete">
+						    				<a href=""><img src="img/remove.png" alt="" /></a>
+						    			</div>
+									</div>
+									<div class="mui-slider-handle">
+										<div class="content">
+			                        		<div class="top-content">
+			                        			<div class="waihongdian">
+			                        				<div class="neihongdian">
+			                        					
+			                        				</div>
+			                        			</div>
+			                        			<div class="top-content-right mui-pull-left">
+			                        				<img src="img/fire-1.png" class="mui-pull-left"alt="" />
+			                        				<h5 class="mui-pull-left">170020120586</h5>
+			                        				<a  class="jiantou mui-pull-right">
+			                        					<img src="img/jiantou_1.png" onclick="hid(this)"alt="" class=""/>
+			                        				</a>
+			                        			</div>
+			                        		</div>
+			                        		<div class="body-content">
+			                        			<span>南开——乌马营</span>
+			                        			<div class="body-button">
+			                        				<button type="button" class="mui-btn mui-btn-default mui-btn-outlined">已送达</button>
+			                        				<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">查看司机</button>
+			                        			</div>
+			                        			<div class="max_box" style="display: none;">
+			                        				<div class="info" >
+														<div class="div-top">
+															<span class="mui-pull-left">订单号:171020120586</span>
+															<span style="float: right;margin-right: 10px;">2017年7月6日</span>
+														</div>
+														<hr style="border: dashed 1px white;"/>
+														<div class="div-content">
+															<div class="list-span">
+																<span>起点:&nbsp; 山东省 乐陵市 王庄</span>
+															</div>
+															<div class="list-span">
+																<span>终点:&nbsp; 天津市 滨海新区 黄环街道103号</span>
+															</div>
+															<div class="list-span">
+																<span>货物:&nbsp; 乙醇</span>
+															</div>
+															<div class="list-span">
+																<span>数量(T):&nbsp; 600</span>
+															</div>
+															<div class="list-span">
+																<span>罐体要求:&nbsp; 什么什么什么</span>
+															</div>
+															<div class="list-span">
+																<span>结款方式:&nbsp; 电子转账</span>
+															</div>
+															<div class="list-span">
+																<span>发货时间:&nbsp; 2017年6月10日</span>
+															</div>
+															<div class="list-span">
+																<span>竞拍价格:&nbsp; 3000/吨</span>	
+															</div>
+														</div>
+													</div>
+			                        			</div>
+			                        		</div>
+			                        	</div>
+									</div>
+							    </li>
+							</ul>
+							<ul class="mui-table-view"id="OA_task_1"class="mui-table-view">
+							   <li class="mui-table-view-cell">
+							    	<div class="mui-slider-right mui-disabled">
+						    			<a class="mui-btn mui-btn-primary  delete">
+						    				<img src="img/remove.png" alt="" />
+						    			</a>
+									</div>
+									<div class="mui-slider-handle">
+										<div class="content">
+			                        		<div class="top-content">
+			                        			<div class="wailandian">
+			                        				<div class="neilandian">
+			                        					
+			                        				</div>
+			                        			</div>
+			                        			<div class="top-content-right mui-pull-left">
+			                        				<img src="img/fire-2.png" class="mui-pull-left"alt="" />
+			                        				<h5 class="mui-pull-left">170020120586</h5>
+			                        				<a class="jiantou mui-pull-right">
+			                        					<img src="img/jiantou_2.png" onclick="hid(this)" class=""/>
+			                        				</a>
+			                        			</div>
+			                        		</div>
+			                        		<div class="body-content">
+			                        			<span>南开——乌马营</span>
+			                        			<div class="body-button">
+			                        				<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined">确认送达</button>
+			                        				<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">查看司机</button>
+			                        			</div>
+			                        			<div class="max_box" style="display: none;">
+			                        				<div class="info" >
+														<div class="div-top">
+															<span class="mui-pull-left">订单号:171020120586</span>
+															<span style="float: right;margin-right: 10px;">2017年7月6日</span>
+														</div>
+														<hr style="border: dashed 1px white;"/>
+														<div class="div-content">
+															<div class="list-span">
+																<span>起点:&nbsp; 山东省 乐陵市 王庄</span>
+															</div>
+															<div class="list-span">
+																<span>终点:&nbsp; 天津市 滨海新区 黄环街道103号</span>
+															</div>
+															<div class="list-span">
+																<span>货物:&nbsp; 乙醇</span>
+															</div>
+															<div class="list-span">
+																<span>数量(T):&nbsp; 600</span>
+															</div>
+															<div class="list-span">
+																<span>罐体要求:&nbsp; 什么什么什么</span>
+															</div>
+															<div class="list-span">
+																<span>结款方式:&nbsp; 电子转账</span>
+															</div>
+															<div class="list-span">
+																<span>发货时间:&nbsp; 2017年6月10日</span>
+															</div>
+															<div class="list-span">
+																<span>竞拍价格:&nbsp; 3000/吨</span>	
+															</div>
+														</div>
+													</div>
+			                        			</div>
+			                        		</div>
+			                        	</div>
+									</div>
+							    </li>
+							</ul>
+							<ul class="mui-table-view"id="OA_task_1">
+							   <li class="mui-table-view-cell">
+							    	<div class="mui-slider-right mui-disabled">
+						    			<div class="mui-btn mui-btn-warning delete">
+						    				<a href=""><img src="img/remove.png" alt="" /></a>
+						    			</div>
+									</div>
+									<div class="mui-slider-handle">
+										<div class="content">
+			                        		<div class="top-content">
+			                        			<div class="waihongdian">
+			                        				<div class="neihongdian">
+			                        					
+			                        				</div>
+			                        			</div>
+			                        			<div class="dixian">
+													<hr  />
+												</div>
+												<div class="dixian-span"><span>我是有底线的</span></div>
+												<div class="dixian">
+													<hr  />
+												</div>
+			                        		</div>
+			                        	</div>
+									</div>
+							    </li>
+							</ul>
+
+						   <!--/接/-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/mui.min.js"></script>
+    <script src="js/mui.pullToRefresh.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/mui.pullToRefresh.material.js" ></script>
+    <script type="text/javascript">
+    	mui.init();
+    	mui('.mui-slider').slider().setStopped(true);
+    </script>
+</body>
+</html>

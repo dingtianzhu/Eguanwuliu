@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			.top-content{
+    			margin:auto;
+				height: 260px;
+				width:100%;
+				background: url("img/background_blue.png") no-repeat;
+				background-size:100% 260px ;
+    		}
+    		.top-tubiao-left{
+	    		color:white;
+				font-size: 14px;
+	    	}
+	    	.top-tubiao-right{
+	    		color:white;
+				font-size: 12px;
+	    	}
+	    	.top-tubiao img{
+	    		width: 18px;
+	    		height: 20px;
+	    	}	
+	    	*{
+				font-family: "微软雅黑";
+			}
+	    	.font{
+	    		font-size: 12px!important;
+	    	}
+	    	.top-tubiao-left{
+	    		color:white;
+				font-size: 15px;
+	    	}
+	    	.top-tubiao-right{
+	    		color:white;
+				font-size: 8px;
+				line-height: 10px;
+	    	}
+	    	.top-tubiao img{
+	    		width: 18px;
+	    		height: 20px;
+	    	}
+	    	.top-tubiao-left img{
+	    		margin: 10px auto auto 10px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 5px 8px 0px 8px;
+	    	}
+	    	.top-pull-right{
+	    		margin: 10px 10px auto auto;
+	    	}
+	    	.top-tubiao-left span{
+	    		padding-top: 5px;
+	    		padding-left: 5px;
+	    		line-height: 30px;
+	    	}
+	    	.mui-media-body{
+	    		padding-top: 0px!important;
+	    		margin-top: 0px!important;
+	    	}
+	    	.top{
+	    		height: 80px;
+	    		
+	    		width: 100%;
+	    	}
+	    	.top-center{
+	    		width: 100%;
+	    		height: 68px;
+	    		margin: auto;
+	    	}
+	    	.top-center img{
+	    		width: 68px;
+	    		height: 68px;
+	    	}
+	    	.top-footer{
+	    		width: 100%;
+	    		height: 80px;
+	    		line-height: 80px;
+	    	}
+	    	.top-footer span{
+	    		color: white;
+	    	}
+	    	#my span{
+	    		color:#26c6ff;
+	    	}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				myinfo = document.getElementById('myinfo');
+				myinfo.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'myinfo.html',
+						id: 'myinfo'
+					})
+				});
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+			});
+		</script>
+		<div class="mui-content">
+		    <div class="top-content">
+		    	<div class="top">
+		    		<a class=" mui-pull-left top-tubiao top-tubiao-left">
+						<div class="mui-pull-left">
+							<img src="img/icon_map.png" alt="" />
+						</div>
+							<span class="mui-pull-left">天津</span>
+					</a>
+					<a id="help"class="mui-pull-right top-tubiao top-tubiao-right">
+						<div class="mui-text-center">
+							<img src="img/icon_p.png" alt="" />
+		           			<div class="mui-media-body font mui-text-center">客服</div>
+						</div>
+					</a>
+		    	</div>
+				<div class="top-center mui-text-center">
+					<img src="img/iconfont-wo.png"/>
+				</div>
+				<div class="top-footer mui-text-center">
+					<span>minge</span>
+					<span style="margin-left: 20px;">车队</span>
+				</div>
+			</div>
+		</div>
+		<div style="height: 70px;width: 90%;margin: -20px auto auto auto;border-radius: 2px;;box-shadow: 0 0 0px 2px #efeff4;">
+			<ul class="mui-table-view"style="border-radius: 2px">
+		        <li class="mui-table-view-cell"style="line-height: 40px;border-radius: 5px;">
+		            <a class="mui-navigate-right" id="myinfo">
+		                <span style="color:#0097f9"><img src="img/my-news.png" alt="" style="height: 20px;width: 20px;"/></span><span>&nbsp;&nbsp;个人信息</span><span style="float:right;font-size:12px;margin-right: 20px;;">实名认证</span>
+		            </a>
+		        </li>
+			</ul>
+		</div>
+	</body>
+</html>

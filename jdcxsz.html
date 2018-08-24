@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="HandheldFriendly" content="true"/>
+		<meta name="MobileOptimized" content="320"/>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/common.js"></script>
+		<script src="js/mui.min.js"></script>
+		<link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8"/>
+		<style>
+				*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 10px 15px 0px auto;
+	    	}
+	    	.top{
+	    		width: 100%!important;
+	    		position:static;
+	    		height: 160px;
+	    		background: url("img/background_blue.png") no-repeat;
+				background-size:100% 160px ;
+	    	}
+	    	.top-content{
+	    		width: 90%;
+	    		margin: 48px auto auto auto;
+	    		color: white;
+	    		height: 30px;
+	    	}
+	    	.top-input input{
+	    		padding: 0px;
+	    		margin: 5px;
+	    		width: 70%;
+	    		height: 20px;
+	    		border-radius: 0px;
+	    		border-top:0px;
+	    		border-left:0px;
+	    		border-right:0px;
+	    		border-bottom:1px solid white;
+	    		background: transparent;
+	    	}
+	    	.mui-action-back,.mui-title{
+	    		color: white;
+	    		margin-left: 10px;
+	    	}
+	    	
+	    	.top-img{
+	    		float: left;
+	    		width: 40px;
+	    		height: 40px;
+	    	}
+	    	.top-img img{
+	    		height: 40px;
+	    		width: 40px;
+	    	}
+	    	.top-span{
+	    		float: left;
+	    		line-height: 40px;
+	    		margin-left: 15px;
+	    	}
+	    	.top-right{
+	    		float: right;
+	    		height: 30px;
+	    	}
+	    	.top-right span{
+	    		line-height: 40px;
+	    	}
+	    	.content-first{
+	    		width: 90%;
+	    		height: 240px;
+	    		background: url("img/red_back_1.png") no-repeat;
+				background-size:100% 100% ;
+	    		margin: -50px auto auto auto;
+	    		padding: 10px 10px 10px 15px;
+	    		position:relative;
+	    		color: white;
+	    	}
+	    	.content-second{
+	    		width: 90%;
+	    		height: 240px;
+	    		background: url("img/red_back_1.png") no-repeat;
+				background-size:100% 100% ;
+	    		margin: -10px auto auto auto;
+	    		padding: 10px 10px 10px 15px;
+	    		position:relative;
+	    		color: white;
+	    	}
+	    	.zhaoxiang{
+	    		width: 96%;
+	    		background-color:rgba(255,255,254,0.5);
+				border-radius: 10px;
+				height: 190px;
+	    	}
+	    	.shili{
+	    		width: 96%;
+	    		/*background-color:rgba(255,255,254,0.5);*/
+	    		background: url("img/jdcxsz.png") no-repeat;
+				background-size:100% 100% ;
+				border-radius: 10px;
+				height: 190px;
+	    	}
+	    	.zhaoxiang-span span{
+	    		color: white;
+	    	}
+	    	.zhaoxiang{
+	    		padding-top: 50px;
+	    	}
+	    	.zhaoxiang-img{
+	    		margin-top: 5px;
+	    	}
+	    	.zhaoxiang-img img{
+	    		height: 50px;
+	    	}
+	    	#next{
+	    		font-size: 16px!important;
+	    		width: 80%;
+				margin: auto;
+				border-radius:20px!important ;
+	    	}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+				next = document.getElementById('next');
+				next.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'guachexingshizheng.html',
+						id: 'guachexingshizheng'
+					})
+				});
+			});
+			var server="http://tianzhu.applinzi.com/index.php/Info/upload";
+var files=[];
+// 上传文件
+function upload(){
+	if(files.length<=0){
+		plus.nativeUI.alert("没有添加上传文件！");
+		return;
+	}
+	outSet("开始上传：")
+	var wt=plus.nativeUI.showWaiting();
+	var task=plus.uploader.createUpload(server,
+		{method:"POST"},
+		function(t,status){ //上传完成
+			if(status==200){
+				outLine("上传成功："+t.responseText);
+				plus.storage.setItem("uploader",t.responseText);
+				var w=plus.webview.create("scanf.html","scanf.html",{scrollIndicator:'none',scalable:false});
+				w.addEventListener("loaded",function(){
+					wt.close();
+					w.show("slide-in-right",300);
+				},false);
+			}else{
+				outLine("上传失败："+status);
+				wt.close();
+			}
+		}
+	);
+	task.addData("client","HelloH5+");
+	task.addData("uid",getUid());
+//	for(var i=0;i<files.length;i++){
+//		var f=files[i];
+//		task.addFile(f.path,{key:f.name});
+//	}
+	task.start();
+}
+// 拍照添加文件
+function appendByCamera(){
+	plus.camera.getCamera().captureImage(function(p){
+		appendFile(p);
+	});	
+}
+// 从相册添加文件
+function appendByGallery(){
+	plus.gallery.pick(function(p){
+        appendFile(p);
+    });
+}
+// 添加文件
+var index=1;
+function appendFile(p){
+	var fe=document.getElementById("files");
+	var li=document.createElement("li");
+	var n=p.substr(p.lastIndexOf('/')+1);
+	li.innerText=n;
+	fe.appendChild(li);
+	files.push({name:"uploadkey"+index,path:p});
+	index++;
+	empty.style.display="none";
+}
+// 产生一个随机数
+function getUid(){
+	return Math.floor(Math.random()*100000000+10000000).toString();
+}	
+		</script>
+		<div class="mui-content" style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+			<div class="mui-bar mui-bar-tab top">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">添加人员</h1>
+			    <a class="mui-pull-right top-tubiao top-tubiao-right" id="help">
+					<div class="mui-text-center">
+						<img src="img/icon_p.png" alt="" />
+					</div>
+				</a>
+				<div class="top-content">
+					<div class="top-img">
+						<img src="img/img.png" alt="" />
+					</div>
+					<div class="top-span">
+						<span >京H.12445(自由客)</span>
+					</div>
+					<div class="top-right">
+						<span>等待验证</span>
+					</div>
+				</div>
+			</div>
+			<div class="content-first">
+				<a href="">
+					<div class="zhaoxiang"onclick="appendByCamera()">
+						<div class="zhaoxiang-span mui-text-center">
+							<span>点击上传</span>
+						</div>
+						<div class="zhaoxiang-img mui-text-center">
+							<img src="img/zhaoxiang.png" alt="" />
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="content-second">
+				<a href="">
+					<div class="shili">
+					</div>
+				</a>
+			</div>
+			<nav class="mui-bar mui-bar-tab mui-text-center">
+			    <input type="submit" value="下一步" id="next"class="mui-btn mui-text-center ">
+			</nav>
+		</div>
+	</body>
+
+</html>

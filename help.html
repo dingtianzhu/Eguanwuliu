@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+			*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+
+	    	.top-tubiao-right img{
+	    		margin: 12px 6px 0px 8px;
+	    	}
+	    	.mui-table-view-cell img{
+	    		height: 30px;
+	    		width: 28px;
+	    		margin-top: 5px;
+	    	}
+	    	.mui-table-view-cell li{
+	    		padding:0px!important;
+	    	}
+	    	.dian{
+	    		width: 9px;
+	    		height: 9px;
+	    		border-radius:9px;
+	    		background: #ff9a70;
+/*	    		margin: 3px;*/
+	    	}
+	    	.waiquan{
+	    		width: 15px;
+	    		height: 15px;
+	    		border-radius:15px;
+	    		background: #ffe8df;
+	    		padding: 3px;
+	    		margin-top: 15px;
+	    	}
+	    	.num{
+	    		margin-top: 12px;
+	    		margin-left: 5px;
+	    		font-size:16px;
+	    		color:#777;
+	    	}
+	    	.content-list-top{
+	    		height: 30px;
+	    		margin-left: 15px;
+	    	}
+	    	.content-address{
+	    		margin-top: 5px;
+	    		color: #555;
+	    		border-left: solid 2px #999 ;
+	    		height: 70px;
+	    		width: 94%;
+	    		padding-top: 5px;
+	    		padding-left: 15px;
+	    	}
+	    	.mui-btn{
+	    		font-size: 16px!important;
+	    		width: 80%;
+				margin: auto;
+				border-radius:20px!important ;	    	
+	    	}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">帮助中心</h1>
+		    <a class="mui-pull-right top-tubiao top-tubiao-right">
+				<div class="mui-text-center">
+					<img src="img/kefu.png" alt="" />
+				</div>
+			</a>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view" style="line-height: 30px;">
+		        <li class="mui-table-view-cell" style="line-height: 40px;">
+		            <a class="mui-navigate-right">
+		            	<div class="kefu-img mui-pull-left">
+		            		<img src="img/kefu.png" alt="" />
+		            	</div>
+		                
+		                <span >&nbsp;&nbsp;在线客服</span>
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell" style="line-height: 40px;">
+		            <a class="mui-navigate-right">
+		                <div class="kefu-img mui-pull-left">
+		            		<img src="img/kefu001.png" alt="" />
+		            	</div>
+		                <span >&nbsp;&nbsp;在线客服</span>
+		            </a>
+		        </li>
+		    </ul>
+		    <br />
+		    <h5 style="margin-left: 20px;">常见问题</h5>
+		    <div class="content-list">
+				<div class="content-list-top">
+					<div class="waiquan mui-pull-left">
+						<div class="dian"></div>
+					</div>
+					<div class="mui-pull-left num">自由客身份能使用什么功能？</div>
+				</div><hr style="margin-left: 28px;border: solid 1.5px #ff9a70;width: 90%;"/>
+				<div class="content-address mui-pull-right">
+						<h5>自由客身份可以对</h5>
+						<h5>订单进行竞价</h5>
+						<h5>但仅限于小于5万的订单······</h5>
+					</div>
+			</div>
+			<div class="content-list">
+				<div class="content-list-top">
+					<div class="waiquan mui-pull-left">
+						<div class="dian"></div>
+					</div>
+					<div class="mui-pull-left num">自由客身份能使用什么功能？</div>
+				</div><hr style="margin-left: 28px;border: solid 1.5px #ff9a70;width: 90%;"/>
+				<div class="content-address mui-pull-right">
+						<h5>自由客身份可以对</h5>
+						<h5>订单进行竞价</h5>
+						<h5>但仅限于小于5万的订单······</h5>
+					</div>
+			</div>
+			<div class="tiwen">
+				<nav class="mui-bar mui-bar-tab mui-text-center">
+				    <input type="submit" value="提 问" id="question"class="mui-btn mui-text-center">
+				</nav>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,497 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+<link />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<link href="css/mui.picker.min.css" rel="stylesheet" />
+		<link href="css/LArea.css" rel="stylesheet" />
+		<!--<link href="css/mui.poppicker.css" rel="stylesheet" />-->
+		<style>
+			*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 12px 6px 0px 8px;
+	    	}
+	    	.mui-content{
+	    		background: #fff;
+	    		height: 600px;
+	    	}
+	    	.top{
+	    		margin-left: 12px;
+	    		margin-top: 10px;
+	    		height: 30px;
+	    	}
+	    	.top span{
+	    		line-height: 25px;
+	    	}
+	    	.top-left img{
+	    		width: 25px;
+	    		height: 25;
+	    	}
+	    	.content{
+	    		margin-left: 23px;
+	    		border-left: 3px solid #999;
+	    		margin-top: 5px ;
+	    		padding-left: 10px;
+	    	}
+	    	.content input{
+				margin-right: 10px;
+				width: 70%;
+				height: 30px;
+				padding: 0px;
+				border: 0px;
+				margin-bottom: 0px;
+	    	}
+	    	.div-list{
+	    		width: 100%;
+	    		height: 35px;
+	    	}
+	    	.mui-table-view-cell>a:not(.mui-btn){
+	    		padding: 2px;
+	    	}
+	    	.content select{
+	    		width: 30%;
+	    		margin-bottom: 0px;
+	    		font-size: 18px;
+	    		padding: 5px 0px 5px 0px;
+	    	}
+	    	.content img{
+	    		width: 12px;
+	    		height: 8px;
+	    	}
+	    	.content span{
+	    		margin-left: 2px;
+	    		line-height: 30px;
+	    	}
+	    	.mui-table-view:before{
+	    		height: 0px;
+	    	}
+	    	.mui-navigate-right:after, .mui-push-right:after {
+	    		content:'';
+	    	}
+	    	.num:after{
+	    		content:'\e583'!important;
+	    	}
+			.mui-table-view-cell:after{
+				left:-13px;
+				height: 0px;
+			}
+			.mui-table-view:after{
+				height: 0px;
+			}
+			.num-input{
+				width: 50px!important;
+				float: right;
+				margin-right: 25px!important;
+			}
+	    	#release{
+	    		font-size: 16px!important;
+	    		width: 60%;
+				margin: auto;
+				border-radius:20px!important ;	    	
+	    	}
+	    	.content p{
+	    		color:#eb7374;
+	    		text-align: right;
+	    		margin-right: 20px;
+	    		font-size: 16px;
+	    	}
+	    	.content a{
+	    		line-height: 27px;
+	    	}
+	    	.address{
+	    		margin-right: 20px;
+	    		font-size: 16px;
+	    		line-height: 25px;
+	    		margin-top: 0px;
+	    	}
+	    	.start-time{
+	    		font-size: 16px;
+	    	}
+	    	.mui-icon-arrowright{
+	    		font-size: 16px;
+	    		color: #797979;
+	    	}
+	    	#cityResult3{
+	    		/*margin-right:20px;*/
+	    	}
+	    	#dialog-overlay {
+			 width:100%; 
+			 height:100%;
+			 filter:alpha(opacity=50); 
+			 -moz-opacity:0.5; 
+			 -khtml-opacity: 0.5; 
+			 opacity: 0.5; 
+			 position:absolute; 
+			 background:#000; 
+			 top:0; left:0; 
+			 z-index:3000; 
+			 display:none;
+		}
+		#dialog-box {
+		 -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+		 -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5);
+		 -moz-border-radius: 5px;
+		    -webkit-border-radius: 5px;
+		 background:#fff;
+		 width:70%;
+		 height: 200px; 
+		 position:absolute; 
+		 z-index:5000; 
+		 display:none;
+		 padding: 20px;
+		}
+		
+		#dialog-box .dialog-content {
+		 color:#666; 
+		 font-family:arial;
+		 font-size:11px; 
+		}
+		
+		#dialog-box .dialog-content p {
+		 font-weight:700; margin:0;
+		}
+		
+		#dialog-box .dialog-content ul {
+		 padding:0; 
+		}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script src="js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/dataconfig.js"></script>
+		
+		<script src="js/LAreaData1.js"></script>
+		<script src="js/LAreaData2.js"></script>
+		<script src="js/LArea.js"></script>
+		<script src="js/jquery.min.js"></script>
+		
+		<script type="text/javascript">
+			mui.init()
+			
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+				var release = document.getElementById('release');
+				release.addEventListener('tap', function() {
+					//alert(sytm.getKey());
+					if(document.getElementById("first_step").src.indexOf("/duigou_1.png")>0||
+					document.getElementById("second_step").src.indexOf("/duigou_1.png")>0||
+					document.getElementById("third_step").src.indexOf("/duigou_1.png")>0
+					){
+						mui.toast("您尚未完善所有信息，请完善信息后点击发布！");
+						return;
+					}
+					
+					var obj=JSON.parse(plus.storage.getItem("huoyuanInfo"));
+					obj.fahuo_name=document.getElementById("fahuo_name").value;
+					obj.fahuo_mobile=document.getElementById("fahuo_mobile").value;
+					obj.shouhuo_name=document.getElementById("shouhuo_name").value;
+					obj.shouhuo_mobile=document.getElementById("shouhuo_mobile").vlaue;
+					obj.from_maddress=document.getElementById("code_from_maddress").value;
+					obj.from_address=document.getElementById("from_address").value;
+					obj.to_maddress=document.getElementById("code_to_maddress").value;
+					obj.to_address=document.getElementById("to_address").value;
+					obj.fahuo_date=document.getElementById("fahuo_date").innerText;
+					
+					obj.acttype="order_add";
+					obj.key=sytm.getKey();
+					console.log(JSON.stringify(obj));
+					
+					mui.ajax(sytm.getUrl("global"),{
+						dataType:'json',
+						type:'post',
+						data:obj,
+						timeout:6000,
+						success:function(data){
+							//alert(JSON.stringify(data));
+							if(data.result=="success"){
+								mui.toast("发布成功");
+							}
+							//alert(data);
+//							if(data=="true"){
+//								mui.toast("信息发布成功!");
+//								//补全redirectSuccess后，将上面语句toast删掉就好，提示 用一个种方式就行
+//								redirectSuccess();
+//							}else{
+//								mui.toast("信息发布失败!");
+//								redirectFail();
+//							}
+						},error:function(err){
+							mui.toast("网络连接已中断");
+						}
+					});
+					
+//					mui.openWindow({
+//						url: 'release.html',
+//						id: 'release'
+//					})
+				});
+				
+			});
+			
+			function redirectSuccess(){
+				
+			}
+			
+			function redirectFail(){
+				
+			}
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					var area1=new LArea();
+					area1.init({
+						'trigger':'#from_maddress',
+						'valueTo':'#code_from_maddress',
+						'keys':{
+							id:'value',
+							name:'text'
+						},
+						'type':2,
+						'data':[provs_data, citys_data, dists_data]
+					});
+					
+					var area2=new LArea();
+					area2.init({
+						'trigger':'#to_maddress',
+						'valueTo':'#code_to_maddress',
+						'keys':{
+							id:'value',
+							name:'text'
+						},
+						'type':2,
+						'data':[provs_data, citys_data, dists_data]
+					});
+					
+					
+					
+					
+					
+					var btns = mui('#time');
+				　        btns.each(function(i,btn){
+				　　  	btn.addEventListener('tap',function(){
+				　　　	var dtPicker = new mui.DtPicker({
+						    beginDate:new Date(),//开始时间，即所显示的时间里，最早的年份日期
+                    		endDate:new Date(2100,12,31),//不传参数，表示为当前时间
+				　　　　		"type":"date"
+				　　　	});
+				　　		dtPicker.show(function(i) {
+							//mui.alert(JSON.stringify(i));
+							document.getElementById('timeshow1').getElementsByClassName("selectcontent")[0].innerText =i.y.text + "-" + i.m.text+"-"+i.d.text ;
+							//返回 false 可以阻止选择框的关闭
+							//return false;()
+							checkfillstate(3);
+						});
+//					document.getElementById('showtime').innerText=(items[0] || {}).text + " " + (items[1] || {}).text;
+				　},false);
+				});
+				});
+			})(mui, document);	
+		///
+		///	sytm
+		///	2017.09.20		
+		///
+		$(document).ready(function () {
+				$('a.btn-ok, #dialog-overlay, #dialog-box').click(function () {  
+					$('#dialog-overlay, #dialog-box').hide();  
+					return false;
+				});
+				$(window).resize(function () {
+					if (!$('#dialog-box').is(':hidden')) popup();  
+				}); 
+			});
+			function popup(message) {
+			 var maskHeight = $(window).height();  
+			 var maskWidth = $(window).width();
+			   var dialogTop =  (maskHeight - ($('#dialog-box').height()))/2-20;  
+			   var dialogLeft = (maskWidth/2) - ($('#dialog-box').width()/2)-20; 
+			 $('#dialog-overlay').css({height:maskHeight, width:maskWidth}).show();
+			 $('#dialog-box').css({top:dialogTop, left:dialogLeft}).show();
+			 $('#dialog-message').html(message);
+			}
+		function checkfillstate(type){
+			if(type==1){
+				var fahuo_name=document.getElementById("fahuo_name").value;
+				var fahuo_mobile=document.getElementById("fahuo_mobile").value;
+				if(fahuo_mobile.trim().length>6&&fahuo_name.trim().length>1){
+					document.getElementById("first_step").src="img/duigou.png";
+				}else{
+					document.getElementById("first_step").src="img/duigou_1.png";
+				}
+			}else if(type==2){
+				var shouhuo_name=document.getElementById("shouhuo_name").value;
+				var shouhuo_mobile=document.getElementById("shouhuo_mobile").value;
+				if(shouhuo_mobile.trim().length>6&&shouhuo_name.trim().length>1){
+					document.getElementById("second_step").src="img/duigou.png";
+				}else{
+					document.getElementById("second_step").src="img/duigou_1.png";
+				}
+			}else if(type==3){
+				
+				var from_address=document.getElementById("from_address").value;
+				var to_address=document.getElementById("to_address").value;
+				var fahuo_date=document.getElementById("fahuo_date").innerText;
+				var from_maddress=document.getElementById("code_from_maddress").value;
+				var to_maddress=document.getElementById("code_to_maddress").value;
+				if(from_address.trim().length>0&&
+				to_address.trim().length>0&&
+				fahuo_date.trim()!="请选择发货时间"
+				&&to_maddress.trim()!="请选择到达地址"&&
+				from_maddress.trim()!='请选择出发地址'){
+					document.getElementById("third_step").src="img/duigou.png";
+				}else{
+					document.getElementById("third_step").src="img/duigou_1.png";
+				}
+			}
+		}
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">货源信息</h1>
+		    <a id="help"class="mui-pull-right top-tubiao top-tubiao-right">
+				<div class="mui-text-center">
+					<img src="img/kefu.png" alt="" />
+				</div>
+			</a>
+		</header>
+		<div id="dialog-overlay"></div>
+		<div id="dialog-box">
+			<div class="dialog-content">
+				<div id="dialog-message">
+					<div class="mui-text-center whole">
+						<div class="success-img" style="margin-top: 20px;">
+							<img src="img/duigou.png" alt="" />
+						</div>
+						<div class="success-span">
+							<span style="font-size: 20px;font-family:'微软雅黑';font-weight: 700;margin-top: 5px;">发布成功</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mui-content">
+			<div class="top">
+				<div class="top-left mui-pull-left">
+					<img id="first_step" src="img/duigou_1.png" alt="" />
+				</div>
+				<span>&nbsp;发货人信息</span>
+			</div>
+			<div class="content">
+				<ul class="mui-table-view">
+			        <li class="mui-table-view-cell">
+			            <a class="mui-navigate-right">
+			                <lable >&nbsp;姓名 : </lable>
+							<input id="fahuo_name" onkeyup="checkfillstate(1)" type="text" placeholder="请输入发货人姓名"/>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell">
+			            <a class="mui-navigate-right">
+			                <lable >&nbsp;电话 : </lable>
+							<input id="fahuo_mobile" onkeyup="checkfillstate(1)" type="text" placeholder="请输入发货人电话"/>
+			            </a>
+			        </li>
+			    </ul>
+			</div>
+			<div class="top">
+				<div class="top-left mui-pull-left">
+					<img id="second_step" src="img/duigou_1.png" alt="" />
+				</div>
+				<span>&nbsp;收货人信息</span>
+			</div>
+			<div class="content">
+				<ul class="mui-table-view">
+			        <li class="mui-table-view-cell">
+			            <a class="mui-navigate-right">
+			                <lable >&nbsp;姓名 : </lable>
+							<input id="shouhuo_name" onkeyup="checkfillstate(2)" type="text" placeholder="请输入收货人姓名"/>
+			            </a>
+			        </li>
+			        <li class="mui-table-view-cell">
+			            <a class="mui-navigate-right">
+			                <lable >&nbsp;电话 : </lable>
+							<input id="shouhuo_mobile" onkeyup="checkfillstate(2)" type="text" placeholder="请输入收货人电话"/>
+			            </a>
+			        </li>
+			    </ul>
+			</div>
+			<div class="top">
+				<div class="top-left mui-pull-left">
+					<img id="third_step" src="img/duigou_1.png" alt="" />
+				</div>
+				<span>&nbsp;出发地</span>
+				<a id='showCityPicker3'class="mui-pull-right address">
+					<div id='cityResult3'>
+						<span class="selectcontent" id="from_maddress">
+							请选择出发地址
+					</span>
+						<input type="hidden" id="code_from_maddress" />
+						<span class="mui-icon mui-icon-arrowright"></span>
+					</div>
+				</a>
+			</div> 
+			
+			<div class="content">
+				<div class="div-list">
+					<ul class="mui-table-view">
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right">
+				                <lable >&nbsp;详细地址: </lable>
+								<input type="text" id="from_address" onkeyup="checkfillstate(3)" placeholder="请输入详细地址"/>
+				            </a>
+				        </li>
+				    </ul>
+				</div>
+				<div class="div-list">
+					<span>&nbsp;到达地</span>
+				    <a id='showCityPicker'class="mui-pull-right address">
+						<div id='cityResult'>
+							<span class="selectcontent" id="to_maddress">请选择到达地址</span>
+							<input type="hidden" id="code_to_maddress"/>
+							<span class="mui-icon mui-icon-arrowright"></span>
+						</div>
+					</a>
+				</div>
+			    <div class="div-list">
+			    	<ul class="mui-table-view">
+				        <li class="mui-table-view-cell">
+				            <a class="mui-navigate-right">
+				                <lable >&nbsp;详细地址: </lable>
+								<input type="text" id="to_address" onkeyup="checkfillstate(3)" placeholder="请输入详细地址"/>
+				            </a>
+				        </li>
+				    </ul>
+			    </div>
+			    <span>&nbsp;发货时间</span>
+				<a id="time"class="mui-pull-right address">
+					<div id="timeshow1">
+						<span class="selectcontent" id="fahuo_date">请选择发货时间</span>
+					<span class="mui-icon mui-icon-arrowright"></span>
+					</div>
+				</a>
+
+			</div>
+			<nav class="mui-bar mui-bar-tab mui-text-center">
+			    <input type="submit" value="发 布" onclick="popup()"id="release"class="mui-btn mui-text-center ">
+			</nav>
+		</div>
+	</body>
+</html>

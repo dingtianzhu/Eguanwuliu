@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+				*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 10px 15px 0px auto;
+	    	}
+	    	.top{
+	    		width: 100%!important;
+	    		position:static;
+	    		height: 160px;
+	    		background: url("img/background_blue.png") no-repeat;
+				background-size:100% 160px ;
+	    	}
+	    	.top-content{
+	    		width: 90%;
+	    		margin: 48px auto auto auto;
+	    		color: white;
+	    		height: 30px;
+	    	}
+	    	.top-input input{
+	    		padding: 0px;
+	    		margin: 5px;
+	    		width: 70%;
+	    		height: 20px;
+	    		border-radius: 0px;
+	    		border-top:0px;
+	    		border-left:0px;
+	    		border-right:0px;
+	    		border-bottom:1px solid white;
+	    		background: transparent;
+	    	}
+	    	.mui-action-back,.mui-title{
+	    		color: white;
+	    		margin-left: 10px;
+	    	}
+	    	.content-first{
+	    		width: 94%;
+	    		background: url("img/red_back_1.png") no-repeat;
+				background-size:100% 100% ;
+	    		margin: -50px auto auto 16px;
+	    		padding: 15px;
+	    		padding-bottom: 85px;
+	    		position:relative;
+	    		color: white;
+	    	}
+	    	.content-first-top{
+	    		width: 96%;
+	    		height: 120px;
+				background-color:rgba(255,255,254,0.5);
+				border-radius: 10px;
+	    		margin: 5px auto 10px 0px;
+	    		padding: 15px;
+	    		padding: 10px;
+	    	}
+	    	
+	    	.top-img{
+	    		float: left;
+	    		width: 40px;
+	    		height: 40px;
+	    	}
+	    	.top-img img{
+	    		height: 40px;
+	    		width: 40px;
+	    	}
+	    	.top-span{
+	    		float: left;
+	    		line-height: 40px;
+	    		margin-left: 15px;
+	    	}
+	    	.top-right{
+	    		float: right;
+	    		height: 30px;
+	    	}
+	    	.top-right span{
+	    		line-height: 40px;
+	    	}
+	    	.span-left{
+	    		width: 50%;
+	    		float: left;
+	    	}
+	    	.list{
+	    		height: 30px;
+	    		width: 96%;
+	    		border:1px solid white;
+	    		border-radius: 5px;
+	    		margin-top: 12px;
+	    	}
+	    	.list-left{
+	    		float: left;
+	    		line-height: 30px;
+	    	}
+	    	.list-right{
+	    		float: left;
+	    		width: 60%;
+	    	}
+	    	.list-right input{
+	    		padding: 0px 0px 0px 5px;
+	    		border: 0px;
+	    		background: transparent;
+	    		margin: 0px;
+	    		height: 30px;
+	    		line-height: 30px;
+	    		width: 100%;
+	    		font-size: 16px;
+	    	}
+	    	#next{
+	    		font-size: 16px!important;
+	    		width: 80%;
+				margin: auto;
+				border-radius:20px!important ;
+	    	}
+	    	.top-span input{
+	    		display: inline;
+	    		width:40%;
+	    		float: left;
+	    		background: transparent;
+	    		border: 0px;
+	    		margin: 0px;
+	    		padding: 0px;
+	    	}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+				next = document.getElementById('next');
+				next.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'addriver1.html',
+						id: 'addriver1'
+					})
+				});
+			});
+			function edit(img){
+				var a=img.parentNode;
+				var b=$(a).childNodes("input");
+				console.log(b);
+				if(b.readonly=='readonly')
+				b.readonly='';
+				else({
+					b.readonly='readonly';
+				})
+			}
+		</script>
+		<div class="mui-content">
+			<div class="mui-bar mui-bar-tab top">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">添加人员</h1>
+			    <a class="mui-pull-right top-tubiao top-tubiao-right" id="help">
+					<div class="mui-text-center">
+						<img src="img/icon_p.png" alt="" />
+					</div>
+				</a>
+				<div class="top-content">
+					<div class="top-img">
+						<img src="img/img.png" alt="" />
+					</div>
+					<div class="top-span">
+						<input type="text" value="京H.12445"readonly="readonly"/>
+						<img src="img/wen.png" onclick="edit(this)" style="height: 20px;"/>
+					</div>
+					<div class="top-right">
+						<span>等待验证</span>
+					</div>
+				</div>
+			</div>
+			<div class="content-first">
+				<br />
+				牵引车机动车行驶证
+				<div class="list">
+					<div class="list-left">
+						<span >车牌号码:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="津A000001"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >使用性质:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="请输入使用性质"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >品牌型号:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="品牌型号"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >总质量:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="未识别请输入"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >装备质量:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="装备质量"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >核定载质量:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="核定载质量"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >外廓尺寸:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="外廓尺寸"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >准牵引总质量:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="准牵引总质量"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >有效期至:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="有效期"/>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list-left">
+						<span >车辆识别代码:</span>
+					</div>
+					<div class="list-right">
+						<input type="text" value="XXXXXXXX"/>
+					</div>
+				</div>
+			</div>
+			<nav class="mui-bar mui-bar-tab mui-text-center">
+			    <input type="submit" value="确 认" id="next"class="mui-btn mui-text-center ">
+			</nav>
+		</div>
+	</body>
+
+</html>

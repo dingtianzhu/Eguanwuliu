@@ -1,0 +1,395 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+				*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 10px 15px 0px auto;
+	    	}
+	    	.top{
+	    		width: 100%!important;
+	    		position:static;
+	    		height: 160px;
+	    		background: url("img/background_blue.png") no-repeat;
+				background-size:100% 160px ;
+	    	}
+	    	.top-content{
+	    		width: 90%;
+	    		margin: 48px auto auto auto;
+	    		color: white;
+	    		height: 30px;
+	    	}
+	    	.top-input input{
+	    		padding: 0px;
+	    		margin: 5px;
+	    		width: 70%;
+	    		height: 20px;
+	    		border-radius: 0px;
+	    		border-top:0px;
+	    		border-left:0px;
+	    		border-right:0px;
+	    		border-bottom:1px solid white;
+	    		background: transparent;
+	    	}
+	    	.mui-action-back,.mui-title{
+	    		color: white;
+	    		margin-left: 10px;
+	    	}
+	    	.content-first{
+	    		width: 90%;
+	    		height: 320px;
+	    		background: url("img/red_back_1.png") no-repeat;
+				background-size:100% 100% ;
+	    		margin: -50px auto auto auto;
+	    		padding: 10px;
+	    		position:relative;
+	    		color: white;
+	    	}
+	    	.content-first img{
+	    		height: 15px;
+	    	}
+	    	.content-second{
+	    		width: 90%;
+	    		height: 320px;
+	    		background: url("img/red_back_1.png") no-repeat;
+				background-size:100% 100% ;
+	    		margin: -30px auto auto auto;
+	    		padding: 10px;
+	    		position:relative;
+	    		color: white;
+	    	}
+	    	.content-first-top{
+	    		width: 96%;
+	    		height: 100px;
+				background-color:rgba(255,255,254,0.5);
+				border-radius: 10px;
+	    		margin: 5px auto 10px 0px;
+	    		padding: 15px;
+	    		padding: 10px;
+	    	}
+	    	.content-first-body{
+	    		width: 96%;
+	    		height: 230px;
+				background-color:rgba(255,255,254,0.5);
+				border-radius: 10px;
+	    		margin: 5px auto 10px 0px;
+	    		padding: 15px;
+	    		padding: 10px;
+	    	}
+	    	.first-top-left{
+	    		float: left;
+	    		width: 46%;
+	    		height: 80px;
+	    		background: url("img/id.png") no-repeat;
+				background-size:100% 100% ;
+	    	}
+	    	.foot-left-img{
+	    		margin-top: 5px;
+	    	}
+	    	.first-top-right{
+	    		float: left;
+	    		float: left;
+	    		width: 46%;
+	    		margin-left: 8%;
+	    		height: 80px;
+	    	}
+	    	.first-top-right span{
+	    		font-size: 13px;
+	    		color: white;
+	    		line-height: 25px;
+	    	}
+	    	.first-top-left img{
+	    		width: 100%;
+	    		height: 100%;
+	    	}
+	    	.first-top-right img{
+	    		width: 100%;
+	    		height: 100%;
+	    	}
+	    	.top-img{
+	    		float: left;
+	    		width: 40px;
+	    		height: 40px;
+	    	}
+	    	.top-img img{
+	    		height: 40px;
+	    		width: 40px;
+	    	}
+	    	.top-span{
+	    		float: left;
+	    		line-height: 40px;
+	    		margin-left: 15px;
+	    	}
+	    	.top-right{
+	    		float: right;
+	    		height: 30px;
+	    	}
+	    	.top-right span{
+	    		line-height: 40px;
+	    	}
+	    	.span-left{
+	    		width: 50%;
+	    		float: left;
+	    	}
+	    	.span-left img{
+	    		height: 15px;
+	    	}
+	    	.select{
+	    		width: 32%;
+	    		height: 25px;
+	    		padding: 0px;
+	    		margin: 0px;
+	    		background: transparent;
+	    	}
+	    	.select option{
+	    		width: 30%!important;
+	    	}
+	    	.div{
+	    		height: 25px;
+	    	}
+	    	.list{
+	    		height: 30px;
+	    		width: 100%;
+	    		border:1px solid white;
+	    		border-radius: 5px;
+	    		margin-bottom: 12px;
+	    	}
+	    	.list-left{
+	    		float: left;
+	    		line-height: 30px;
+	    	}
+	    	.list-right{
+	    		float: left;
+	    		width: 60%;
+	    	}
+	    	.list-right input{
+	    		padding: 0px 0px 0px 5px;
+	    		border: 0px;
+	    		background: transparent;
+	    		margin: 0px;
+	    		height: 30px;
+	    		line-height: 30px;
+	    		width: 100%;
+	    		font-size: 16px;
+	    	}
+	    	#panel2{
+	    		display: none;
+	    	}
+	    	#panel1{
+	    		display: block;
+	    	}
+	    	.mui-icon-arrowdown{
+	    		margin-left: -30px;
+	    		font-size: 15px;
+	    	}
+	    	.div-div{
+	    		height: 40px;
+	    	}
+	    	#next{
+	    		font-size: 16px!important;
+	    		width: 80%;
+				margin: auto;
+				border-radius:20px!important ;
+	    	}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+//				next = document.getElementById('next');
+//				next.addEventListener('tap', function() {
+//					mui.openWindow({
+//						url: 'addriver1.html',
+//						id: 'addriver1'
+//					})
+//				});
+			});
+			function ceg(){
+				var sel=document.getElementById('sel');
+                var sid=sel.selectedIndex;
+				if(sid==0){
+					$("#panel1").show();
+					$("#panel2").hide();	
+				}else{
+					$("#panel2").show();
+					$("#panel1").hide();
+				}
+			}
+			function photo(){
+				mui.openWindow({
+					url: 'addriver1.html',
+					id: 'addriver1'
+				})
+			}
+		</script>
+		<div class="mui-content">
+			<div class="mui-bar mui-bar-tab top">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">添加车辆</h1>
+			    <a class="mui-pull-right top-tubiao top-tubiao-right" id="help">
+					<div class="mui-text-center">
+						<img src="img/icon_p.png" alt="" />
+					</div>
+				</a>
+				<div class="top-content">
+					<div class="top-img">
+						<img src="img/img.png" alt="" />
+					</div>
+					<div class="top-span">
+						<span >京H.12445(自由客)</span>
+					</div>
+					<div class="top-right">
+						<span>等待验证</span>
+					</div>
+				</div>
+			</div>
+			<div class="content-first">
+				车辆行驶证:
+				<img src="img/page.png" alt="" />
+				<!--<div class="div">
+					<div class="span-left"><span class="">运输许可证:</span></div>
+					<span>押运员证:</span>
+				</div>-->
+				<div class="content-first-top">
+					<div class="first-top-left">
+						<a>
+							<img src="img/schuan.png" alt="" onclick="photo()"/>
+						</a>
+					</div>
+					<div class="first-top-right">
+						<a >
+							<img src="img/schuan.png" alt=""onclick="photo()" />
+						</a>
+					</div>
+				</div>
+				<div class="div">
+					<div class="span-left">
+						<span class="">运输证:</span>
+						<img src="img/yun.png" alt="" />
+					</div>
+				</div>
+				<div class="content-first-top">
+					
+					<div class="first-top-left">
+						<a >
+							<img src="img/schuan.png" alt=""onclick="photo();" />
+						</a>
+					</div>
+					<div class="first-top-right">
+						<a >
+							<img src="img/schuan.png" alt=""onclick="photo();" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="content-second">
+				<div >
+					<span class="">运输许可证:</span>
+						<select class="select"id="sel"  onchange="ceg()">
+							<option value="item-1">请选择类型</option>
+							<option value="item-1">常式压力</option>
+							<option value="item-2">移动式压力</option>
+						</select>
+					<span class="mui-icon mui-icon-arrowdown"></span>
+				</div>
+				<div class="content-first-body" id="panel1">
+					<div class="list">
+						<div class="list-left">
+							<span >报告编号:</span>
+						</div>
+						<div class="list-right">
+							<input type="text" value="00001"/>
+						</div>
+					</div>
+					<div class="list">
+						<div class="list-left">
+							<span >准运介质:</span>
+						</div>
+						<div class="list-right">
+							<input type="text" value=""/>
+						</div>
+					</div>
+					<div class="list">
+						<div class="list-left">
+							<span >下次检查日期:</span>
+						</div>
+						<div class="list-right">
+							<input type="text" value="2017.02.15"/>
+						</div>
+					</div>
+					<div class="first-top-left foot-left-img">
+						<a href="">
+							<img src="img/schuan.png" alt="" />
+						</a>
+					</div>
+				</div>
+				<div class="content-first-body"id="panel2">
+					<div class="list">
+						<div class="list-left">
+							<span >车牌号码:</span>
+						</div>
+						<div class="list-right">
+							<input type="text" value="00001"/>
+						</div>
+					</div>
+					<div class="list">
+						<div class="list-left">
+							<span >充装介质:</span>
+						</div>
+						<div class="list-right">
+							<input type="text" value=""/>
+						</div>
+					</div>
+					<div class="list">
+						<div class="list-left">
+							<span >下次检查日期:</span>
+						</div>
+						<div class="list-right">
+							<input type="text" value="2017.02.15"/>
+						</div>
+					</div>
+					<div class="first-top-left foot-left-img">
+						<!--<a href="#">-->
+							<img src="img/schuan.png" alt="" onclick="photo();"/>
+						<!--</a>-->
+					</div>
+				</div>
+			</div>
+			<hr />
+			<div class="div-div">
+				
+			</div>
+			<nav class="mui-bar mui-bar-tab mui-text-center">
+			    <input type="submit" value="确 认" id="next"class="mui-btn mui-text-center ">
+			</nav>
+		</div>
+		<script type="text/javascript">
+			
+			
+		</script>
+	</body>
+
+</html>

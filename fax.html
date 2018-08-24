@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+				*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 12px 6px 0px 8px;
+	    	}
+	    	.top{
+	    		width: 100%!important;
+	    		position:static;
+	    		height: 160px;
+	    		background: url("img/background_blue.png") no-repeat;
+				background-size:100% 160px ;
+	    	}
+	    	.top-content{
+	    		width: 90%;
+	    		margin: 48px auto auto auto;
+	    		color: white;
+	    	}
+	    	.top-input input{
+	    		padding: 0px;
+	    		margin: 5px;
+	    		width: 70%;
+	    		height: 20px;
+	    		border-radius: 0px;
+	    		border-top:0px;
+	    		border-left:0px;
+	    		border-right:0px;
+	    		border-bottom:1px solid white;
+	    		background: transparent;
+	    		color: white;
+	    	}
+	    	.mui-action-back,.mui-title{
+	    		color: white;
+	    	}
+	    	.content-first{
+	    		width: 90%;
+	    		height: 240px;
+	    		background: url("img/cue_back_1.png") no-repeat;
+				background-size:100% 240px ;
+	    		margin: -40px auto auto auto;
+	    		position:relative;
+	    		padding-left: 15px;
+	    		padding-top: 10px;
+	    	}
+	    	.content-first span{
+	    		line-height: 25px;
+	    		color: white;
+	    	}
+	    	.content-second{
+	    		width: 90%;
+	    		height: 140px;
+	    		background: url("img/red_back_1.png") no-repeat;
+				background-size:100% 140px ;
+	    		margin:auto;
+	    		padding-left: 15px;
+	    		padding-top: 5px;
+	    	}
+	    	.content-second span{
+	    		color:white;
+	    	}
+	    	.mui-btn{
+	    		font-size: 16px!important;
+	    		width: 60%;
+				margin: auto;
+				border-radius:20px!important ;	    	
+	    	}
+	    	.footer{
+	    		height: 50px;
+	    		line-height: 70px;
+	    	}
+	    	.driver{
+	    		height: 65px;
+	    	}
+	    	.driver-span{
+	    		float: left;
+	    	}
+	    	.driver-img{
+	    		float: left;
+	    		margin-left: 10px;
+	    	}
+	    	.driver-img img{
+	    		width: 22px;
+	    		height: 55px;
+	    	}
+	    	.content-second span{
+	    		line-height: 25px;
+	    	}
+	    	.driver-name{
+	    		float: left;
+	    	}
+	    	.driver-name span{
+	    		line-height: 30px;
+	    	}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+			});
+			$(function(){
+				$(".mui-bar img").click(function(){
+						mui.openWindow({url:"faxnext.html",id:"faxnext"});	
+				});
+			});
+		</script>
+		<div class="mui-content">
+			<div class="mui-bar mui-bar-tab top">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">传真功能</h1>
+			    <a class="mui-pull-right top-tubiao top-tubiao-right" id="help">
+					<div class="mui-text-center">
+						<img src="img/icon_p.png" alt="" />
+					</div>
+				</a>
+				<div class="top-content">
+					<div class="top-input">
+						<span >订单编号:</span>
+						<input type="text"value="1600283594" />
+					</div>
+					<div class="top-input">
+						<span >传真编号:</span>
+						<input type="text" value="010-12345678"/>
+					</div>
+				</div>
+			</div>
+			<div class="content-first">
+				<span>起点 : 山东省 乐陵市 王庄</span><br />
+				<span>终点 : 天津市 滨海新区 黄环街道103号 </span><br />
+				<span>货物 : 乙醇</span><br />
+				<span>数量(T) : 600</span><br />
+				<span>罐体要求 : 什么什么</span><br />
+				<span>结款方式 : 电子转账</span><br />
+				<span>发货时间 : 2017年2月4日</span><br />
+				<span>竞拍价格 : 30000/吨</span><br />
+			</div>
+			<div class="content-second">
+				<span>车牌号 : 津H 16830</span>
+				<div class="driver">
+					<div class="driver-span">
+						<span>司机姓名 : </span>
+					</div>
+					<div class="driver-img">
+						<img src="img/main.png" alt="" />
+					</div>
+					<div class="driver-name">
+						<span>主驾 : 赵四</span><br />
+						<span>副驾 : 熊二毛</span>
+					</div>
+				</div>
+				<div class="driver-tel">
+					<span>联系方式 : 13100000000</span>
+				</div>
+			</div>
+			<nav class="mui-bar mui-bar-tab mui-text-center">
+				<a >
+					<img src="img/queren.png" class="footer"alt="" />
+				</a>
+				<a >
+					<img src="img/xiugai.png" class="footer"alt="" />	
+				</a>
+			</nav>
+		</div>
+	</body>
+
+</html>

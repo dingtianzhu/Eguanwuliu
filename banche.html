@@ -1,0 +1,396 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+				*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 12px 6px 0px 8px;
+	    	}
+	    	.top{
+	    		width: 100%!important;
+	    		position:static;
+	    		height: 220px;
+	    		background: url("img/background_blue.png") no-repeat;
+				background-size:100% 220px ;
+	    	}
+	    	.top-content{
+	    		width: 90%;
+	    		margin: 48px auto auto auto;
+	    		color: white;
+	    		height: 30px;
+	    	}
+	    	.top-input input{
+	    		padding: 0px;
+	    		margin: 5px;
+	    		width: 70%;
+	    		height: 20px;
+	    		border-radius: 0px;
+	    		border-top:0px;
+	    		border-left:0px;
+	    		border-right:0px;
+	    		border-bottom:1px solid white;
+	    		background: transparent;
+	    	}
+	    	.mui-action-back,.mui-title{
+	    		color: white;
+	    	}
+	    	.content-first{
+	    		width: 92%;
+	    		height: 100px;
+	    		background: url("img/red_back_1.png") no-repeat;
+				background-size:100% 100px ;
+	    		margin: -55px auto auto auto;
+	    		position:relative;
+	    	}
+	    	.top-img{
+	    		float: left;
+	    		width: 30px;
+	    		height: 30px;
+	    	}
+	    	.top-img img{
+	    		height: 30px;
+	    		width: 30px;
+	    	}
+	    	.top-span{
+	    		float: left;
+	    		line-height: 30px;
+	    		margin-left: 15px;
+	    	}
+	    	.top-right{
+	    		float: right;
+	    		height: 30px;
+	    	}
+	    	.top-right span{
+	    		line-height: 30px;
+	    	}
+	    	.top-info{
+	    		border-bottom: 1px solid white;
+	    		margin-top: 10px;
+	    		margin-left: 20px;
+	    		height: 25px;
+	    		color: white;
+	    	}
+	    	.mui-icon-arrowright{
+	    		padding: 0px!important;
+	    		margin-right: 5px;
+	    		line-height: 20px;
+	    	}
+	    	.content-top{
+	    		float: left;
+	    		color: white;
+	    		margin: 10px auto auto 20px;
+	    	}
+	    	.whole-top{
+	    		height: 50px;
+	    	}
+	    	.left-body{
+	    		float: left;
+	    		width: 40%;
+	    		text-align: left;
+	    		margin-left: 20px;
+	    		color: white;
+	    		margin-top: 5px;
+	    	}
+	    	.left-body span{
+	    		font-size: 25px;
+	    	}
+	    	.content-second-left{
+	    		width: 46%;
+	    	}
+	    	.content-second-right{
+	    		width: 46%;
+	    		margin-left: 8%;
+	    	}
+	    	.content-second{
+	    		width: 90%;
+	    		margin: 10px auto 10px auto;
+	    		height: 140px;
+	    	}
+	    	.content-second-top{
+	    		height: 25px;
+	    	}
+	    	.content-second-top img{
+	    		height: 18px;
+	    	}
+	    	.body-left{
+	    		float: left;
+	    		width: 85%;
+	    	}
+	    	.body-left-img{
+	    		float: left;
+	    		width: 39%;
+	    	}
+	    	.body-right-img{
+	    		float: left;
+	    		width: 26px;
+	    	}
+	    	.body-left-img img{
+	    		width: 100%;
+				height: 100px;
+	    	}
+	    	.body-right-img img{
+	    		width: 26px;
+	    		margin-top: 74px;
+	    	}
+	    	.top a{
+	    		margin-left: 15px;
+	    		margin-right: 10px;
+	    	}
+	    	.body-left img{
+	    		width: 100%;
+				height: 100px;
+	    	}
+	    	.body-right{
+	    		float: left;
+	    		width: 15%;
+	    	}
+	    	.body-right img{
+	    		width: 26px;
+	    		margin-top: 74px;
+	    	}
+	    	.content-third{
+	    		width: 90%;
+	    		margin: auto;
+	    		height: 60px;
+	    	}
+	    	.body-info{
+	    		height: 28px;
+	    	}
+	    	.body-info1{
+	    		height: 28px;
+	    		border-bottom: 1px solid #dedede;
+	    	}
+	    	.input{
+	    		margin: 0px!important;
+	    		width:100%!important;
+	    		display:inline!important;
+	    		padding: 0px!important;
+	    		text-align: right!important;
+	    		height: 20px!important;
+	    		border: 0px!important;
+	    		background: transparent!important;
+	    	}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+			});
+			function jsz(){
+				mui.openWindow({
+					url:'addriver1.html',
+					id:'addriver1'
+				})
+			}
+			function clxsz(){
+				mui.openWindow({
+					url:'jdcxsz.html',
+					id:'jscxsz'
+				})
+			}
+			function dlysjyxkz(){
+				mui.openWindow({
+					url:'dlysjyxkz.html',
+					id:'dlysjyxkz'
+				})
+			}
+		</script>
+		<div class="mui-content">
+			<div class="mui-bar mui-bar-tab top">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">车队</h1>
+			    <a class="mui-pull-right top-tubiao top-tubiao-right" id="help">
+					<div class="mui-text-center">
+						<img src="img/icon_p.png" alt="" />
+					</div>
+				</a>
+				<div class="top-content">
+					<div class="top-img">
+						<img src="img/img.png" alt="" />
+					</div>
+					<div class="top-span">
+						<span >京H.12445(自由客)</span>
+					</div>
+					<div class="top-right">
+						<span>等待验证</span>
+					</div>
+				</div>
+				<div class="top-info">
+					<span class="mui-pull-left">主驾</span>
+					<span class="mui-icon mui-icon-arrowright mui-pull-right"></span>
+					<span class="mui-pull-right">赵启平</span>
+				</div>
+				<div class="top-info">
+					<span class="mui-pull-left">副驾</span>
+					<span class="mui-icon mui-icon-arrowright mui-pull-right"></span>
+					<span class="mui-pull-right">刘涛山</span>
+				</div>
+			</div>
+
+			<div class="content-first">
+				<div class="whole-top">
+					<div class="content-top">
+						完成单数
+					</div>
+				</div>
+				<div class="content-body">
+					<div class="left-body">本月:<span> 23</span></div>
+					<div class="left-body">总计:<span> 357</span></div>
+				</div>
+			</div>
+			<div class="content-second">
+				<div class="content-second-left mui-pull-left">
+					<div class="content-second-top">
+						<div class="mui-pull-left">
+							A类驾驶证 :&nbsp;
+						</div>
+						<div class="mui-pull-left">
+							<img src="img/bacr.png" alt="" />
+						</div>	
+					</div>
+					<div class="content-second-body">
+						<div class="body-left">
+							<img src="img/background.png" alt="" />
+						</div>
+						<div class="body-right">
+							<img src="img/shenqing.png"onclick="jsz()" alt="" />
+						</div>
+					</div>
+				</div>
+				<div class="content-second-right mui-pull-left">
+					<div class="content-second-top">
+						<div class="mui-pull-left">
+							<img src="img/che.png" alt="" />
+						</div>	
+					</div>
+					<div class="content-second-body">
+						<div class="body-left">
+							<img src="img/schuan.png" alt="" />
+						</div>
+						<div class="body-right">
+							<img src="img/shenqing.png" onclick="jsz()" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content-third">
+				<div class="body-info">
+					<span class="mui-pull-left">身份证号</span>
+					<div class="mui-pull-right"><span class="mui-icon mui-icon-arrowright "></span></div>
+					<div class="mui-pull-right mui-text-right"style="width: 70%;"><input type="text" class="input"value="5555555555555555552" /></div>
+				</div>
+				<div class="body-info1">
+					<span class="mui-pull-left">身份证号</span>
+					<div class="mui-pull-right"><span class="mui-icon mui-icon-arrowright "></span></div>
+					<div class="mui-pull-right mui-text-right"style="width: 70%;"><input type="text" class="input"value="5555555555555555552" /></div>
+				</div>
+			</div>
+			<div class="content-second">
+				<div class="content-second-left mui-pull-left">
+					<div class="content-second-top">
+						<div class="mui-pull-left">
+							车辆行驶证 :&nbsp;
+						</div>
+						<div class="mui-pull-left">
+							<img src="img/page.png" alt="" />
+						</div>	
+					</div>
+					<div class="content-second-body">
+						<div class="body-left">
+							<img src="img/schuan.png" alt="" />
+						</div>
+						<div class="body-right">
+							<img src="img/shenqing.png"onclick="clxsz()" alt="" />
+						</div>
+					</div>
+				</div>
+				<div class="content-second-right mui-pull-left">
+					<div class="content-second-top">
+					</div>
+					<div class="content-second-body">
+						<div class="body-left">
+							<img src="img/schuan.png" alt="" />
+						</div>
+						<div class="body-right">
+							<img src="img/shenqing.png"onclick="clxsz()" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content-second">
+				<div class="content-second-left mui-pull-left">
+					<div class="content-second-top">
+						<div class="mui-pull-left">
+							运输证 :&nbsp;
+						</div>
+						<div class="mui-pull-left">
+							<img src="img/yun.png" alt="" />
+						</div>	
+					</div>
+					<div class="content-second-body">
+						<div class="body-left">
+							<img src="img/background.png" alt="" />
+						</div>
+						<div class="body-right">
+							<img src="img/shenqing.png" alt="" />
+						</div>
+					</div>
+				</div>
+				<div class="content-second-right mui-pull-left">
+					<div class="content-second-top">
+					</div>
+					<div class="content-second-body">
+						<div class="body-left">
+							<img src="img/background.png" alt="" />
+						</div>
+						<div class="body-right">
+							<a href=""><img src="img/shenqing.png" alt="" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content-second">
+				<div class="content-second-content mui-pull-left">
+					<div class="content-second-top">
+						<div class="body-info">
+							<span class="mui-pull-left">道路运输许可证 :</span>
+							<span class="mui-icon mui-icon-arrowright mui-pull-right"></span>
+							<span class="mui-pull-right">10.06到2017.05.26</span>
+						</div>
+					</div>
+					<div class="content-second-body foot">
+						<div class="body-left-img">
+							<img src="img/background.png" alt="" />
+						</div>
+						<div class="body-right-img">
+							<img src="img/shenqing.png" alt=""onclick="dlysjyxkz()" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

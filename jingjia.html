@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/icons-extra.css" rel="stylesheet" />
+		<style>
+				*{
+				font-family: "微软雅黑";
+			}
+	    	.top-tubiao img{
+	    		width: 20px;
+	    		height: 22px;
+	    	}
+	    	.top-tubiao-right img{
+	    		margin: 12px 6px 0px 8px;
+	    	}
+	    	.content{
+	    		width: 100%;
+	    	}
+	    	.content-list-top{
+	    		width: 100%;
+	    		height: 40px;
+
+	    	}
+	    	.content-list-top img{
+	    		width: 15px;
+	    		height: 20px;
+	    	}
+	    	.dian{
+	    		width: 10px;
+	    		height: 10px;
+	    		border-radius:20px;
+	    		background: #ff9a70;
+	    	}
+	    	.waiquan{
+	    		width: 20px;
+	    		height: 20px;
+	    		border-radius:20px;
+	    		background: #ffe8df;
+	    		padding: 5px;
+	    		margin-top: 12px;
+	    		margin-left: 7px;
+	    	}
+	    	.list-left-photo{
+	    		margin-top: 10px;
+	    		margin-left: 10px;
+	    	}
+	    	.list-left-photo img{
+	    		height: 20px;
+	    	}
+	    	.num{
+	    		margin-top: 7px;
+	    		margin-left: 10px;
+	    		line-height: 30px;
+	    		font-size:16px;
+	    		color:#777;
+	    		
+	    	}
+	    	.content-address{
+	    		margin-top: 5px;
+	    		color: #555;
+	    		/*border-left: solid 3px #999 ;*/
+	    		padding-bottom: 10px;
+	    		padding-top: 5px;
+	    		padding-left: 15px;
+	    		margin-left: 14px;
+	    	}
+	    	.mui-btn{
+	    		padding:2px 5px;
+	    	}
+	    	.content-price{
+	    		height: 130px;
+	    		width: 90%;
+	    		margin: auto 25px auto 25px;
+	    		background: url("img/back_blue.png") no-repeat;
+	    		background-size:100% 100% ;
+	    	} 
+	    	.content-price-span{
+	    		width: 80%;
+	    		margin: auto;
+	    		height: 120px;
+	    		color: white;
+	    		line-height: 120px;
+	    	}
+	    	.content-price-span input{
+	    		display: inline;
+	    		width: 120px;
+	    		padding: 0px;
+	    		border:0px;
+	    		margin: 0px;
+	    		background: transparent;
+	    		font-size: 28px;
+	    		text-align: center;
+	    	}
+	    	.content-price-span span{
+	    		font-size: 28px;
+	    	}
+	    	hr{
+	    		border: 1px dashed #999;
+	    	}
+	    	.text{
+	    		width: 90%;
+	    		margin: auto;
+	    	}
+	    	.text-top{
+	    		height: 40px;
+	    		width: 100%;
+	    	}
+	    	.text-top-img{
+	    		float: left;
+	    		height: 40px;
+	    	}
+	    	.text-top-img img{
+	    		margin-top: 5px;
+	    		height: 25px;
+	    		width: 25px;
+	    		border-radius: 20px;
+	    	}
+	    	.text-top-span{
+	    		float: left;
+	    		line-height: 35px;
+	    		padding-left: 10px;
+	    	}
+	    	.text-top-span span{
+	    		line-height: 30px;
+	    	}
+	    	.text-top-right{
+	    		height: 40px;
+	    		line-height: 35px;
+	    		float: right;
+	    	}
+	    	.text-list{
+	    		line-height: 30px;
+	    	}
+	    	#next{
+	    		font-size: 16px!important;
+	    		width: 80%;
+				margin: auto;
+				border-radius:20px!important ;
+	    	}
+		</style>
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+			<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			mui.plusReady(function() {
+				help = document.getElementById('help');
+				help.addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'help.html',
+						id: 'help'
+					})
+				});
+			});
+			var textWidth = function(text){ 
+        	var sensor = $('<pre>'+ text +'</pre>').css({display: 'none'}); 
+	        $('body').append(sensor); 
+	        var width = sensor.width();
+	        sensor.remove(); 
+	        return width;
+    	}; 
+	    $("input").unbind('keydown').bind('keydown', function(){
+	        $(this).width(textWidth($(this).val()));
+	    });
+		</script>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">竞价</h1>
+		    <a id="help"class="mui-pull-right top-tubiao top-tubiao-right">
+				<div class="mui-text-center">
+					<img src="img/kefu.png" alt="" />
+				</div>
+			</a>
+		</header>
+		<div class="mui-content" style="OVERFLOW-Y: auto; OVERFLOW-X:hidden;">
+			<div class="content">
+				<div class="content-list">
+					<div class="content-list-top">
+						<div class="waiquan mui-pull-left">
+							<div class="dian"></div>
+						</div>
+						<div class="mui-pull-left list-left-photo">
+							<img src="img/fire-1.png" alt="" />
+						</div>
+						<div class="mui-pull-left num">171020120586</div>
+					</div>
+					<div class="content-address">
+						<span>南开———乌马营</span>
+					</div>
+					<div class="content-price">
+						<div class="mui-text-center content-price-span">
+							￥&nbsp;<input type="text"value="输入金额"  >&nbsp;元/吨
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr />
+			<div class="text">
+				<div class="text-top">
+					<div class="text-top-img">
+						<img src="img/img.png" alt="" />
+					</div>
+					<div class="text-top-span">
+						<span>天伊朗</span>
+					</div>
+					<div class="text-top-right">
+						<span>订单号 : 17012325123</span>
+					</div>
+				</div>
+				<div class="text-body">
+					<div class="text-list">
+						<span>起点: 山东省乐陵市王庄</span>
+					</div>
+					<div class="text-list">
+						<span>终点: 天津市 滨海新区 黄环街道103号</span>
+					</div>
+					<div class="text-list">
+						<span>货物: 乙醇</span>
+					</div>
+					<div class="text-list">
+						<span>数量(T): 600</span>
+					</div>
+					<div class="text-list">
+						<span>罐体要求: 社么什么</span>
+					</div>
+					<div class="text-list">
+						<span>结款方式: 电子转账</span>
+					</div>
+					<div class="text-list">
+						<span>发货时间: 2017年5月26日</span>
+					</div>
+				</div>
+			</div>
+			<nav class="mui-bar mui-bar-tab mui-text-center">
+			    <input type="submit" value="提 交" id="next"class="mui-btn mui-text-center ">
+			</nav>
+		</div>
+	</body>
+
+</html>

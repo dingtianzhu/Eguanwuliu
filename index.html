@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <style type="text/css">
+    	*{
+    		font-family: "微软雅黑";
+    	}
+    	.mui-content{
+    		background: linear-gradient(to bottom right, #709cfd , #3ecbff);
+    		background-size:100% 100% ;
+    		height: 100%;
+    		position: relative;
+    	}
+    	.top{
+    		margin: auto;
+    		width: 85%;
+    		padding-top: 20px;
+    	}
+    	.login-panel{
+    		height: 280px;
+    		width: 80%;
+    		background:#efefed;
+    		margin: 20px auto;
+    		padding-top:1px;
+    		border-radius: 20px;
+    	}
+    	.login-panel-top{
+    		width: 85%;
+    		height: 100px;
+    		margin:20px auto;
+    	}
+    	.login-panel-top img{
+    		height: 100px;
+    		width: 100px;
+    		background: lightcoral;
+    		border-radius: 80px;
+    	}
+    	.login-input{
+    		margin-top: 10px;
+    	}
+    	.login-input input{
+    		height: 24px;
+    		margin: 0px;
+    		padding: 0px ;
+    		padding-left: 5px;
+    		border-bottom: solid 2px #cdcdcd;
+    		border-top:solid 0px #999;
+    		border-left:solid 0px #999;
+    		border-right:solid 0px #999;
+    		background: #efefed;
+    		border-radius: 0px;
+    		font-size: 14px;
+    	}
+    	.login-input button{
+    		height: 24px;
+    		padding: 0px;
+    		margin-left: 10px;
+    	}
+    	.frist-input{
+    		height: 32px;
+    	}
+		.mui-btn{
+			background: #356cc9;
+			padding:0px 5px!important;
+			color:white;
+			border:0px;
+		}
+    	.frist-input span{
+    		font-size: 15px;
+    		font-weight: 700;
+    		color:#555 ;
+    	}
+    	.frist-input a{
+    		font-size: 12px;
+    		height: 13px;
+    	}
+    	.frist-input-footer{
+    		margin-top: 18px;
+    	}
+    	.checkbox{
+    		height: 13px!important;
+    	}
+    	.footer{
+    		height: 103px;
+    		width:80%;
+    		background: linear-gradient(to bottom right, lightblue ,  #3ecbff);
+    		margin:0px auto 0 auto;
+    		padding-top:10px;border-radius: 20px 20px 0px 0px;
+    	}
+    	.footer input{
+    		 width: 60%;
+    		 height: 40px;
+    		 border-radius: 20px;
+    	}
+    	h6{
+    		margin: 0px;
+    		display: inline;
+    		color: #222222;
+    	}
+    	.login-panel-top input{
+    		width: 50%;
+    		border: 0px;
+    		background: transparent;
+    		float: right;
+    		text-align: right;
+    	}
+    </style>
+    <script type="text/javascript" src="js/jquery.js"></script> 
+    <script type="text/javascript" charset="utf-8">
+
+        //使用全局变量来标注身份
+        var Identifier = ["货主","车队","中介","司机"];
+		var redirectHtml="ownerMain.html";
+
+        mui.init();
+        
+        mui.plusReady(function () {
+        	launchScreen();
+			var login = document.getElementById('login');
+			login.addEventListener('tap', login);
+			rule=document.getElementById('rule');
+			rule.addEventListener('tap',function(){
+				mui.openWindow({
+					url: 'mianzetiaokuan.html',
+					id: 'mianzetiaokuan'
+				})
+			})
+        });
+        
+        window.onload = function () {
+            document.querySelector('.mui-slider').addEventListener('slide', function (event) {
+                document.querySelector("#user_identifier").value = Identifier[event.detail.slideNumber];
+                if (event.detail.slideNumber == 3) {
+                    document.querySelector("#duanma").style.display = "block";
+                } else {
+                    document.querySelector("#duanma").style.display = "none";
+                }
+                //alert("当前身份是" + Identifier[event.detail.slideNumber]);
+                
+                switch(event.detail.slideNumber){
+	        		case 0:
+						redirectHtml="owner.html";	        		
+	        		break;
+	        		case 1:
+		        		redirectHtml="med.html";
+	        		break;
+	        		case 2:
+	        			redirectHtml="team.html";
+	        		break;
+	        		default:
+	        			redirectHtml="driver.html";
+	        		break;
+	        	}
+            });
+            
+
+            ///在页面加载成功1100毫秒后自动跳转一下身份，用以提醒用户身份可切换
+            setTimeout(function () {
+                //获得slider插件对象
+                var gallery = mui('.mui-slider');
+                gallery.slider().gotoItem(3);//跳转到第index张图片，index从0开始；
+            }, 1000);
+        }
+        function cutOver(img){
+        	if(img.name=='nan')
+        	{
+        		img.src='images/xiaonv.jpg';
+        		img.name='nv';
+        	}else{
+        		img.src='images/xiaoman.jpg';
+        		img.name='nan';
+        	}
+        }
+        function launchScreen() {
+	        //读取本地存储，检查是否为首次启动
+	        var showGuide = plus.storage.getItem("lauchFlag");
+	        if(showGuide){
+	            //有值，说明已经显示过了，无需显示；
+	            //关闭splash页面；
+	            plus.navigator.closeSplashscreen();
+	            plus.navigator.setFullscreen(false);
+	        }else{
+	            //显示启动导航
+	            mui.openWindow({
+	                id:'guide',
+	                url:'guide.html',
+	                show:{
+	                    aniShow:'none'
+	                },
+	                waiting:{
+	                    autoShow:false
+	                }
+	            });
+	        }
+	    }
+        function login(){
+        	//var Identifier = ["货主","车队","中介","司机"];,既然我已经设置了全局变量了。就不要在这里重复定义了
+        	//alert(redirectHtml);
+        	mui.openWindow({
+				url: redirectHtml,
+				id: 'main'
+			});
+        }
+        
+    </script>
+</head>
+<body>
+	<div class="mui-content"style="OVERFLOW-Y: hidden; OVERFLOW-X:hidden;">
+	   	<div class="top">
+	   		<div id="slider" class="mui-slider" >
+			 	<div class="mui-slider-group mui-slider-loop">
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+			  			<a href="#">
+			    			<img src="img/dirver.png">
+			  			</a>
+					</div>
+			<!-- 第一张 -->
+					<div class="mui-slider-item">
+					    <a href="#">
+					    	<img src="img/owner.png">
+					    </a>
+					</div>
+			<!-- 第二张 -->
+					<div class="mui-slider-item">
+			  			<a href="#">
+			    			<img src="img/med.png">
+			  			</a>
+					</div>
+			<!-- 第三张 -->
+					<div class="mui-slider-item">
+			  			<a href="#">
+			    			<img src="img/team.png">
+			  			</a>
+					</div>
+			<!-- 第四张 -->
+					<div class="mui-slider-item">
+			  			<a href="#">
+			    			<img src="img/dirver.png">
+			  			</a>
+					</div>
+			<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+			  			<a href="#">
+			    			<img src="img/owner.png">
+			  			</a>
+					</div>
+	   	  		</div>
+	   	  		<div class="mui-slider-indicator">
+	   	    		<div class="mui-indicator mui-active"></div>
+	   	    		<div class="mui-indicator"></div>
+	   	    		<div class="mui-indicator"></div>
+	   	    		<div class="mui-indicator"></div>
+	   	  		</div>
+	   		</div>
+	   	</div>
+	    <div class="login-panel">
+	    	<div class="login-panel-top">
+	    		<img src="images/xiaoman.jpg"alt=""onclick="cutOver(this)"name="nan"/>
+	    		<input type="text" value="XIAOMAN"/>
+				<!--<span class="nicheng"style="float:right;">XIAOMAN</span>-->
+	    	</div>
+	    	<div style="width: 85%;height: 160px;margin: auto;">
+
+                <!--hide input用于标记当前用户选择的身份-->
+                <input type="hidden" value="货主" id="user_identifier"/>
+                <div class="login-input">
+                	<div class="frist-input">
+                		<div class=" mui-col mui-col-xs-3  mui-pull-left">
+	                		<span>手机号:</span>
+	                	</div>
+	                	<div class=" mui-col mui-col-xs-5 mui-pull-left">
+	                		<input  type="text"placeholder="输入手机号" />
+	                	</div>
+                	</div>
+                	<div class="frist-input">
+                		<div class=" mui-col mui-col-xs-3  mui-pull-left">
+	                		<span>验证码:</span>
+	                	</div>
+	                	<div class=" mui-col mui-col-xs-5 mui-pull-left">
+	                		<input  type="text"placeholder="输入验证码" />
+	                	</div>
+	                	<div class=" mui-col mui-col-xs-4 mui-pull-left">
+	                		<button  class="mui-btn " onclick="settime(this)">获取验证码</button>
+	                	</div>
+                	</div>
+                	<div class="frist-input"id="duanma">
+                		<div class=" mui-col mui-col-xs-3  mui-pull-left">
+	                		<span>短&nbsp;&nbsp;&nbsp; 码:</span>
+	                	</div>
+	                	<div class=" mui-col mui-col-xs-5 mui-pull-left">
+	                		<input  type="text"placeholder="输入短码" />
+	                	</div>
+                	</div>
+                </div>
+                <div class="frist-input frist-input-footer">
+						<input type="checkbox"class="checkbox"/><h6> 已阅读并同意</h6><a href="javascript:;"id="rule">《免责条款》</a>
+				</div>
+	    	</div>
+	    </div>
+	    <div class="mui-text-center footer">
+	    	<div class="mui-content-padded">
+	    		<input id="login"onclick="login()" class="mui-text-center"type="submit" value="登 录"/>
+	    	</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script> 
+</head> 
+ 
+<body> 
+<script type="text/javascript"> 
+	var countdown=45;
+function settime(innerText) { 
+	
+if (countdown != 0) {
+	innerText.setAttribute("disabled", true); 
+	innerText.innerText="重新发送(" + countdown + ")"; 
+	countdown--;
+} else { 
+ 	innerText.removeAttribute("disabled"); 
+	innerText.innerText="获取验证码"; 
+	countdown = 45; 
+} 
+setTimeout(function() { 
+settime(innerText) 
+},1000) 
+} 
+</script> 
+</html>
